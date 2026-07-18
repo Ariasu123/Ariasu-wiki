@@ -5,8 +5,7 @@
 ## 目录结构
 
 - `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`rag/`）
-- `wiki/_assets/` — 图片等资源，一律存本地，不用外链
-- `index.md` — 全站内容目录，人和 LLM 的导航入口，每次增删页面必须更新
+- `index.md` — 全站内容目录（由发布脚本自动生成，不要手改）
 - `log.md` — 操作日志，每次操作必须追加
 
 ## 三个核心操作
@@ -57,7 +56,7 @@ status: draft | stable
 ## 链接规范
 
 - 页面间引用统一用 `[[wikilink]]` 或 `[[wikilink|显示名]]`。
-- 图片放 `wiki/_assets/`，用相对路径引用：`![](_assets/xxx.png)`。
+- 图片放本主题目录下的 `_assets/` 子目录（如 `wiki/llm/_assets/`），用标准 markdown 相对路径引用，不用外链。
 
 ## 日志格式
 
