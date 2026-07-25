@@ -30,6 +30,7 @@
 
 ## AI 基础设施
 
+- [AI Infra 领域概览](wiki/ai-infra/02-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/AI%20Infra%20%E9%A2%86%E5%9F%9F%E6%A6%82%E8%A7%88.md)
 - [CUDA 编程与 GPU 架构](wiki/ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
 - [学习规划](wiki/ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.md)
 - [vLLM / SGLang 学习路线（个人笔记）](wiki/ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md)
