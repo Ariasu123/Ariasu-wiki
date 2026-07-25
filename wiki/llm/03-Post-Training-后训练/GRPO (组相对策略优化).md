@@ -4,7 +4,7 @@ date: 2026-04-28
 ![](../_assets/Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GRPO%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 ## 一、 为什么需要 GRPO？（核心动机）
 
-关联阅读：可结合 [[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] 理解；GRPO 训练依赖已经具备基础输出能力的模型。
+关联阅读：可结合 [SFT 监督微调](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) 理解；GRPO 训练依赖已经具备基础输出能力的模型。
 
 
 在传统的 RLHF-PPO 算法中，为了训练一个策略模型（Actor），系统必须在显存中同时维护 4 个庞大的模型（Actor、Critic、Reward、Reference）。
@@ -80,8 +80,8 @@ $$\mathbb{D}_{KL}(\pi_{\theta} \parallel \pi_{ref}) = \frac{\pi_{ref}(o_i|q)}{\p
 
 ## 相关笔记
 
-- **前置**：[[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] — GRPO 训练依赖已经具备基础输出能力的模型。
-- **对比**：[[10-LLM-大语言模型/03-Post-Training-后训练/DPO (直接偏好优化)|DPO (直接偏好优化)]] — GRPO 的奖励驱动训练与 DPO 的偏好损失形成两条路线。
-- **对比**：[[10-LLM-大语言模型/03-Post-Training-后训练/GAE 与 Actor-Critic 架构|GAE 与 Actor-Critic 架构]] — GAE 与 Actor-Critic 是理解 GRPO 省略价值模型的基线。
-- **前置**：[[10-LLM-大语言模型/03-Post-Training-后训练/PPO (近端策略优化)|PPO (近端策略优化)]] — PPO 的裁剪目标是理解 GRPO 目标函数的基础。
-- **复习**：[[10-LLM-大语言模型/05-Review-复习总结/LLM_22|LLM 综合复习]] — 综合题库可检验 GRPO 的组采样、相对优势和规则奖励。
+- **前置**：[SFT 监督微调](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — GRPO 训练依赖已经具备基础输出能力的模型。
+- **对比**：[DPO (直接偏好优化)](DPO%20%28%E7%9B%B4%E6%8E%A5%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96%29.md) — GRPO 的奖励驱动训练与 DPO 的偏好损失形成两条路线。
+- **对比**：[GAE 与 Actor-Critic 架构](GAE%20%E4%B8%8E%20Actor-Critic%20%E6%9E%B6%E6%9E%84.md) — GAE 与 Actor-Critic 是理解 GRPO 省略价值模型的基线。
+- **前置**：[PPO (近端策略优化)](PPO%20%28%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — PPO 的裁剪目标是理解 GRPO 目标函数的基础。
+- **复习**：[LLM 综合复习](../05-Review-%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/LLM_22.md) — 综合题库可检验 GRPO 的组采样、相对优势和规则奖励。

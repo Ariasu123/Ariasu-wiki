@@ -2,7 +2,7 @@
 
 > 调研快照：2026-07-14。GitHub 约 31.1k Stars，最新 OSS Release 为 v3.213.0。Stars 和版本会持续变化，本文中的数字只代表调研当日状态。
 
-Langfuse 是一个开源 AI Engineering 平台。它不只是展示日志，而是把 LLM 应用的运行轨迹、成本与延迟、质量评分、数据集实验和 Prompt 版本串成持续改进闭环。它可以作为 [[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] 中“评估与观测”能力的一种工程实现。
+Langfuse 是一个开源 AI Engineering 平台。它不只是展示日志，而是把 LLM 应用的运行轨迹、成本与延迟、质量评分、数据集实验和 Prompt 版本串成持续改进闭环。它可以作为 [Harness Engineering](Harness%20Engineering.md) 中“评估与观测”能力的一种工程实现。
 
 ## 一句话结论
 
@@ -114,7 +114,7 @@ Langfuse 支持 Text Prompt 和 Chat Prompt，并提供：
 
 官方集成覆盖 OpenAI SDK、Anthropic、LangChain/LangGraph、LlamaIndex、LiteLLM、OpenAI Agents SDK、Claude Agent SDK、Ragas、Dify、Ragflow 等。选择集成时，应优先使用官方或框架原生集成，再对缺失的业务步骤做手工 Observation。
 
-[[30-Agent-Engineering-Agent工程/04-References-项目参考/AgentScope|AgentScope 2.0]] 提供 TracingMiddleware，为 Agent Reply、Model Call 和 Tool Execution 生成 OpenTelemetry Span；配置指向 Langfuse 的 OTLP Exporter 后即可接入，但 Exporter 鉴权、Span 映射和敏感字段脱敏需要显式处理。
+[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) 提供 TracingMiddleware，为 Agent Reply、Model Call 和 Tool Execution 生成 OpenTelemetry Span；配置指向 Langfuse 的 OTLP Exporter 后即可接入，但 Exporter 鉴权、Span 映射和敏感字段脱敏需要显式处理。
 
 ### 最小 Python 示例
 
@@ -161,7 +161,7 @@ Langfuse 的评测器、Dashboard、实验和 Saved View 都依赖 Trace 结构�
 - **短任务主动 flush**：后台批处理尚未发送完时进程退出会丢 Trace。
 - **控制噪声**：不把所有 HTTP、数据库和框架内部 Span 都当成业务步骤。
 
-这里的机器运行 Trace 与 [[30-Agent-Engineering-Agent工程/04-References-项目参考/专家trace要求|专家 Trace 要求]] 所讨论的任务沟通 Trace 不相同：前者由程序自动采集执行证据，后者强调用户和专家之间如何把目标、约束、反馈与验收表达清楚。两者结合后，既能读懂“要做什么”，也能验证“实际做了什么”。
+这里的机器运行 Trace 与 专家 Trace 要求 所讨论的任务沟通 Trace 不相同：前者由程序自动采集执行证据，后者强调用户和专家之间如何把目标、约束、反馈与验收表达清楚。两者结合后，既能读懂“要做什么”，也能验证“实际做了什么”。
 
 ## 自托管架构
 
@@ -232,7 +232,7 @@ Langfuse 采用 Open Core：
 
 ## MiniCode 接入设计（建议，尚未实现）
 
-[[50-Projects-项目/01-MiniCode/幻觉评测与版本控制|MiniCode 幻觉评测与版本控制]] 已经提出 Trace、回放、固定任务集、成本和版本对比。Langfuse 可以承载其中的观测与评测数据，但下述内容是后续设计建议，不代表 MiniCode 当前已经依赖或接入 Langfuse。
+MiniCode 幻觉评测与版本控制 已经提出 Trace、回放、固定任务集、成本和版本对比。Langfuse 可以承载其中的观测与评测数据，但下述内容是后续设计建议，不代表 MiniCode 当前已经依赖或接入 Langfuse。
 
 ### 对象映射
 
@@ -262,7 +262,7 @@ Observation 名称应保持稳定，例如 plan-task、read-file、run-tests、r
 
 ## RAG 接入设计（建议，尚未实现）
 
-对于 [[50-Projects-项目/03-Knowledge-Base-RAG-知识库RAG/问答优化与编排|知识库问答优化与编排]]，建议把一次用户问题到最终回答定义为一个 Trace，多轮问答通过 Session 关联。
+对于 知识库问答优化与编排，建议把一次用户问题到最终回答定义为一个 Trace，多轮问答通过 Session 关联。
 
 核心 Observation：
 
@@ -320,8 +320,8 @@ Ragas 等外部评测器可以计算 RAG 指标，再通过 SDK/API 将结果写
 
 ## 相关笔记
 
-- **实现工具**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] — Langfuse 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
-- **项目应用**：[[50-Projects-项目/01-MiniCode/幻觉评测与版本控制|MiniCode 幻觉评测与版本控制]] — 可用 Langfuse 承载 Agent 运行轨迹、离线回归和线上质量评分。
-- **对比**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/专家trace要求|专家 Trace 要求]] — 专家 Trace 强调任务沟通质量，Langfuse Trace 强调机器运行证据。
-- **项目应用**：[[50-Projects-项目/03-Knowledge-Base-RAG-知识库RAG/问答优化与编排|知识库问答优化与编排]] — 可观测检索、重排和生成步骤，并用 Score 驱动 RAG 优化闭环。
-- **观测集成**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/AgentScope|AgentScope 2.0]] — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 统一分析 Agent、模型和工具调用。
+- **实现工具**：[Harness Engineering](Harness%20Engineering.md) — Langfuse 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
+- **项目应用**：MiniCode 幻觉评测与版本控制 — 可用 Langfuse 承载 Agent 运行轨迹、离线回归和线上质量评分。
+- **对比**：专家 Trace 要求 — 专家 Trace 强调任务沟通质量，Langfuse Trace 强调机器运行证据。
+- **项目应用**：知识库问答优化与编排 — 可观测检索、重排和生成步骤，并用 Score 驱动 RAG 优化闭环。
+- **观测集成**：[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 统一分析 Agent、模型和工具调用。

@@ -5,7 +5,7 @@ date: 2026-04-20
 
 ## Pretrain 核心模块
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/拼接模型并封装为Hugging Face格式|拼接模型并封装为Hugging Face格式]] 理解；训练数据管线产出的模型需要标准化保存和加载。
+关联阅读：可结合 [拼接模型并封装为Hugging Face格式](../01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%8B%BC%E6%8E%A5%E6%A8%A1%E5%9E%8B%E5%B9%B6%E5%B0%81%E8%A3%85%E4%B8%BAHugging%20Face%E6%A0%BC%E5%BC%8F.md) 理解；训练数据管线产出的模型需要标准化保存和加载。
 
 
 ### `train_epoch` 
@@ -265,7 +265,7 @@ class PretrainDataset(Dataset):
 
 ## 相关笔记
 
-- **工程出口**：[[10-LLM-大语言模型/01-Architecture-模型架构/拼接模型并封装为Hugging Face格式|拼接模型并封装为Hugging Face格式]] — 训练数据管线产出的模型需要标准化保存和加载。
-- **理论**：[[10-LLM-大语言模型/02-Pretraining-预训练/LLM预训练底层机制|LLM预训练底层机制]] — 代码笔记是预训练数据与优化机制的具体实现。
-- **工程基础**：[[10-LLM-大语言模型/04-Engineering-工程实践/PyTorch及相关方法|PyTorch及相关方法]] — Dataset、DataLoader 和张量操作都建立在 PyTorch API 上。
-- **流程衔接**：[[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] — 预训练与 SFT 都需要构造输入、标签和 loss mask。
+- **工程出口**：[拼接模型并封装为Hugging Face格式](../01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%8B%BC%E6%8E%A5%E6%A8%A1%E5%9E%8B%E5%B9%B6%E5%B0%81%E8%A3%85%E4%B8%BAHugging%20Face%E6%A0%BC%E5%BC%8F.md) — 训练数据管线产出的模型需要标准化保存和加载。
+- **理论**：[LLM预训练底层机制](LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — 代码笔记是预训练数据与优化机制的具体实现。
+- **工程基础**：[PyTorch及相关方法](../04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/PyTorch%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95.md) — Dataset、DataLoader 和张量操作都建立在 PyTorch API 上。
+- **流程衔接**：[SFT 监督微调](SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — 预训练与 SFT 都需要构造输入、标签和 loss mask。

@@ -6,9 +6,9 @@ published: true
 title: LLM 推理加速与算子优化学习路线
 categories: infra
 ---
-## [[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/学习规划|学习规划]]
+## [学习规划](%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.md)
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/MoE学习笔记|MoE学习笔记]] 理解；推理优化路线可进一步分析 MoE 的部署成本。
+关联阅读：可结合 [MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) 理解；推理优化路线可进一步分析 MoE 的部署成本。
 
 
 由于大模型推理（Inference）天生受限于“内存带宽墙”（Memory Wall），且自回归（Auto-regressive）生成的特性导致计算效率低下，为了解决这些痛点的三大核心支柱：**底层 GPU 编程、模型量化压缩理论、以及系统级加速框架**。
@@ -47,8 +47,8 @@ AI Infra 的尽头是算子手写与显存优化。不理解 GPU 架构，就无
 
 ## 相关笔记
 
-- **延伸**：[[10-LLM-大语言模型/01-Architecture-模型架构/MoE学习笔记|MoE学习笔记]] — 推理优化路线可进一步分析 MoE 的部署成本。
-- **模型侧**：[[10-LLM-大语言模型/02-Pretraining-预训练/LLM预训练底层机制|LLM预训练底层机制]] — Infra 路线中的 GPU 与算子知识支撑训练系统。
-- **系统视角**：[[10-LLM-大语言模型/05-Review-复习总结/LLM_22|LLM 综合复习]] — Infra 路线把 LLM 原理延伸到性能与部署。
-- **计划**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/学习规划|AI Infra 学习规划]] — 详细路线为分阶段学习规划提供 CUDA、量化和加速主题。
-- **互补**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/路线|vLLM／SGLang 路线]] — 算子与量化路线补足 vLLM／SGLang 路线的底层优化部分。
+- **延伸**：[MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) — 推理优化路线可进一步分析 MoE 的部署成本。
+- **模型侧**：[LLM预训练底层机制](../../llm/02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — Infra 路线中的 GPU 与算子知识支撑训练系统。
+- **系统视角**：[LLM 综合复习](../../llm/05-Review-%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/LLM_22.md) — Infra 路线把 LLM 原理延伸到性能与部署。
+- **计划**：[AI Infra 学习规划](%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.md) — 详细路线为分阶段学习规划提供 CUDA、量化和加速主题。
+- **互补**：[vLLM／SGLang 路线](%E8%B7%AF%E7%BA%BF.md) — 算子与量化路线补足 vLLM／SGLang 路线的底层优化部分。

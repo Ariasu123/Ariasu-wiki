@@ -10,7 +10,7 @@ title: Claude Code 使用心得
 
 # Claude Code 使用心得：常用命令、技巧与速查版
 
-关联阅读：可结合 [[10-LLM-大语言模型/04-Engineering-工程实践/Python环境配置|Python环境配置]] 理解；编码 Agent 使用流程需要稳定的 Python 和命令行环境。
+关联阅读：可结合 [Python环境配置](../../llm/04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.md) 理解；编码 Agent 使用流程需要稳定的 Python 和命令行环境。
 
 
 如果你刚开始接触 Claude Code，最容易卡住的往往不是不会写 Prompt，而是不知道哪些入口最值得先记、长会话该怎么收束、什么时候该先规划再执行。
@@ -191,8 +191,8 @@ title: Claude Code 使用心得
 
 ## 相关笔记
 
-- **应用**：[[10-LLM-大语言模型/04-Engineering-工程实践/Python环境配置|Python环境配置]] — 编码 Agent 使用流程需要稳定的 Python 和命令行环境。
-- **基础使用**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/AI 辅助编程生态工具(Claude Code 篇)|Claude Code 生态工具]] — 使用笔记为生态工具提供实际工作流上下文。
-- **对比**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Codex_Guide|Codex_Guide]] — 两份指南可比较 Claude Code 与 Codex 的命令、上下文和扩展方式。
-- **延伸**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/从 OpenSpec、Superpowers 到 TRELLIS 的工程化演进|OpenSpec、Superpowers 与 TRELLIS]] — 日常命令和插件使用可进一步升级为规范驱动工作流。
-- **参考**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/Claude Code 认证专家操作指南|Claude Code 认证指南]] — 认证指南提供更严格的 Claude Code 操作与 Trace 要求。
+- **应用**：[Python环境配置](../../llm/04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.md) — 编码 Agent 使用流程需要稳定的 Python 和命令行环境。
+- **基础使用**：[Claude Code 生态工具](AI%20%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B%E7%94%9F%E6%80%81%E5%B7%A5%E5%85%B7%28Claude%20Code%20%E7%AF%87%29.md) — 使用笔记为生态工具提供实际工作流上下文。
+- **对比**：[Codex_Guide](Codex_Guide.md) — 两份指南可比较 Claude Code 与 Codex 的命令、上下文和扩展方式。
+- **延伸**：[OpenSpec、Superpowers 与 TRELLIS](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%8E%20OpenSpec%E3%80%81Superpowers%20%E5%88%B0%20TRELLIS%20%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96%E6%BC%94%E8%BF%9B.md) — 日常命令和插件使用可进一步升级为规范驱动工作流。
+- **参考**：Claude Code 认证指南 — 认证指南提供更严格的 Claude Code 操作与 Trace 要求。

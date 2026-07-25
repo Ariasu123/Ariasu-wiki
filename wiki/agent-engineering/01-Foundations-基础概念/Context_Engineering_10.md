@@ -1,6 +1,6 @@
 # Context Engineering 面试经典 10 问
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Agent_16|Agent 核心问题]] 理解；Context Engineering 是 Agent 可靠运行的核心子系统。
+关联阅读：可结合 [Agent 核心问题](Agent_16.md) 理解；Context Engineering 是 Agent 可靠运行的核心子系统。
 
 
 > 适用于 AI Agent、RAG、LLM 应用开发、AI Coding Agent 相关面试。回答重点：Context Engineering 不是单纯写 Prompt，而是管理模型每一轮调用时能看到什么、看到多少、怎么组织、怎么压缩、怎么召回、怎么保证可信和可追溯。
@@ -172,7 +172,7 @@ Agent 的上下文工程本质上是在管理 action-observation 循环产生的
 
 Session 解决“这次任务做到哪了”，Memory 解决“以前类似任务怎么做”。
 
-[[30-Agent-Engineering-Agent工程/04-References-项目参考/ByteRover|ByteRover]] 是这一思路的项目级实现案例：它把经过策展的知识保存为分层 Context Tree，再用全文检索、生命周期信号和逐级升级策略选择应进入当前任务的 Memory Context。
+[ByteRover](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/ByteRover.md) 是这一思路的项目级实现案例：它把经过策展的知识保存为分层 Context Tree，再用全文检索、生命周期信号和逐级升级策略选择应进入当前任务的 Memory Context。
 
 ---
 
@@ -252,9 +252,9 @@ metadata 可以记录来源、时间、文件路径、行号、工具名、退�
 
 ## 相关笔记
 
-- **系统位置**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Agent_16|Agent 核心问题]] — Context Engineering 是 Agent 可靠运行的核心子系统。
-- **源码实现**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/上下文管理与五层压缩|Claude Code 上下文压缩]] — Claude Code 五层压缩是上下文预算治理的具体案例。
-- **边界**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/长期记忆机制|Claude Code 长期记忆]] — 上下文处理当前会话，长期记忆负责跨会话保留稳定信息。
-- **项目应用**：[[50-Projects-项目/01-MiniCode/压缩策略|MiniCode 压缩策略]] — MiniCode 用分层压缩解决 token 预算与信息保真问题。
-- **面试验证**：[[60-Career-求职/01-ByteDance-TikTok-字节TikTok/01-Interviews-面试/复盘|一面复盘]] — 一面复盘集中追问 Prompt 注入、上下文压缩和异常恢复。
-- **工程实现**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/ByteRover|ByteRover]] — 用分层知识、生命周期评分和渐进检索实现跨任务 Memory Context。
+- **系统位置**：[Agent 核心问题](Agent_16.md) — Context Engineering 是 Agent 可靠运行的核心子系统。
+- **源码实现**：[Claude Code 上下文压缩](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BA%94%E5%B1%82%E5%8E%8B%E7%BC%A9.md) — Claude Code 五层压缩是上下文预算治理的具体案例。
+- **边界**：[Claude Code 长期记忆](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6.md) — 上下文处理当前会话，长期记忆负责跨会话保留稳定信息。
+- **项目应用**：MiniCode 压缩策略 — MiniCode 用分层压缩解决 token 预算与信息保真问题。
+- **面试验证**：一面复盘 — 一面复盘集中追问 Prompt 注入、上下文压缩和异常恢复。
+- **工程实现**：[ByteRover](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/ByteRover.md) — 用分层知识、生命周期评分和渐进检索实现跨任务 Memory Context。

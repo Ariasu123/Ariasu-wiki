@@ -4,7 +4,7 @@ date: 2026-04-15
 
 # PyTorch 及其他相关方法
 
-关联阅读：可结合 [[10-LLM-大语言模型/02-Pretraining-预训练/LLM预训练底层机制|LLM预训练底层机制]] 理解；PyTorch 方法在预训练循环中形成完整训练系统。
+关联阅读：可结合 [LLM预训练底层机制](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) 理解；PyTorch 方法在预训练循环中形成完整训练系统。
 
 
 ## 1. PyTorch 的基础架构
@@ -578,8 +578,8 @@ scaler.update()
 
 ## 相关笔记
 
-- **应用**：[[10-LLM-大语言模型/02-Pretraining-预训练/LLM预训练底层机制|LLM预训练底层机制]] — PyTorch 方法在预训练循环中形成完整训练系统。
-- **应用**：[[10-LLM-大语言模型/02-Pretraining-预训练/PretrainDataset和pretrain和utils方法|PretrainDataset和pretrain和utils方法]] — PyTorch 基础在数据管线与训练循环中落地。
-- **环境**：[[10-LLM-大语言模型/04-Engineering-工程实践/Python环境配置|Python环境配置]] — PyTorch 实验依赖可复现的 Python 与包管理环境。
-- **项目应用**：[[50-Projects-项目/02-MiniMind/MiniMind_interview|MiniMind 项目问答]] — MiniMind 的模型、数据和训练循环均由 PyTorch 实现。
-- **对比应用**：[[60-Career-求职/03-Algorithms-算法/Python3_ACM输入输出与手撕模板|Python3_ACM输入输出与手撕模板]] — 张量编程与 ACM 手撕题都依赖扎实的 Python 数据结构和输入处理。
+- **应用**：[LLM预训练底层机制](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — PyTorch 方法在预训练循环中形成完整训练系统。
+- **应用**：[PretrainDataset和pretrain和utils方法](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/PretrainDataset%E5%92%8Cpretrain%E5%92%8Cutils%E6%96%B9%E6%B3%95.md) — PyTorch 基础在数据管线与训练循环中落地。
+- **环境**：[Python环境配置](Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.md) — PyTorch 实验依赖可复现的 Python 与包管理环境。
+- **项目应用**：MiniMind 项目问答 — MiniMind 的模型、数据和训练循环均由 PyTorch 实现。
+- **对比应用**：Python3_ACM输入输出与手撕模板 — 张量编程与 ACM 手撕题都依赖扎实的 Python 数据结构和输入处理。

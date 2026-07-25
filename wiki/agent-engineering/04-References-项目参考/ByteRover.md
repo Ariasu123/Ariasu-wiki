@@ -2,7 +2,7 @@
 
 > 调研快照：2026-07-14。GitHub 仓库约 4.9k Stars，npm 与 GitHub 最新稳定版均为 `v3.16.1`，主要语言为 TypeScript；npm 安装要求 Node.js 20+，官方打包安装器则不要求预装 Node.js。Stars、版本和产品能力会持续变化，本文数字只代表调研当日状态。
 
-ByteRover 是一个面向 Coding Agent 的持久化上下文记忆层，前身名为 Cipher。它把项目知识整理成可查询、可审查、可版本化的 Context Tree，并通过 CLI、Skill、Hook、MCP 或 Rules 接入 Claude Code、Cursor 等不同工具。它可以看作 [[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Context_Engineering_10|Context Engineering]] 中 Memory Context 的一种工程实现：重点不是保存全部聊天记录，而是决定哪些项目知识值得长期保留、如何组织，以及新任务应该召回哪些内容。
+ByteRover 是一个面向 Coding Agent 的持久化上下文记忆层，前身名为 Cipher。它把项目知识整理成可查询、可审查、可版本化的 Context Tree，并通过 CLI、Skill、Hook、MCP 或 Rules 接入 Claude Code、Cursor 等不同工具。它可以看作 [Context Engineering](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Context_Engineering_10.md) 中 Memory Context 的一种工程实现：重点不是保存全部聊天记录，而是决定哪些项目知识值得长期保留、如何组织，以及新任务应该召回哪些内容。
 
 ## 一句话结论
 
@@ -169,7 +169,7 @@ ByteRover 将同一能力适配为四类连接器：
 |MCP|暴露 `brv-query`、`brv-curate` 等工具|接口明确、可由模型主动调用，需要管理工具权限与返回内容|
 |Rules|把使用规则写入 CLAUDE.md 等项目规则文件|简单透明，但会占用常驻上下文|
 
-这组集成是 [[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Tools_16（MCP、Function Calling与通信协议）|MCP、Function Calling 与 Skill]] 分层关系的具体案例：Skill 说明何时以及如何使用记忆，MCP 提供可调用的查询和策展能力，底层仍由宿主处理模型的工具调用。
+这组集成是 [MCP、Function Calling 与 Skill](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) 分层关系的具体案例：Skill 说明何时以及如何使用记忆，MCP 提供可调用的查询和策展能力，底层仍由宿主处理模型的工具调用。
 
 官方还宣称兼容 22 种以上 Coding Agent、提供 20 个模型提供商。这些属于调研当日的产品范围，不代表每个连接器都具备相同的自动策展、权限控制和兼容性质量，落地前应单独验证目标客户端。
 
@@ -254,7 +254,7 @@ README 宣称 Cloud 基础设施通过 SOC 2 Type II 并提供 privacy mode；�
 
 ## 与 Claude Code 原生记忆的区别
 
-[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/长期记忆机制|Claude Code 长期记忆]] 更偏向 Claude Code 自身的项目规则、用户偏好和自动提取记忆；ByteRover 则把项目知识做成独立的层级树，通过搜索和版本工作流供多个 Agent 使用。
+[Claude Code 长期记忆](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6.md) 更偏向 Claude Code 自身的项目规则、用户偏好和自动提取记忆；ByteRover 则把项目知识做成独立的层级树，通过搜索和版本工作流供多个 Agent 使用。
 
 |维度|Claude Code 原生记忆|ByteRover|
 |---|---|---|
@@ -269,7 +269,7 @@ README 宣称 Cloud 基础设施通过 SOC 2 Type II 并提供 privacy mode；�
 
 ## MiniCode 的候选落地方案
 
-以下是针对 MiniCode 的**建议实验设计**，不代表当前项目已经安装或集成 ByteRover。现有 [[50-Projects-项目/01-MiniCode/长短期记忆|MiniCode 长短期记忆]] 仍是项目事实来源，ByteRover 只应作为可替换的外部记忆后端进行对照。
+以下是针对 MiniCode 的**建议实验设计**，不代表当前项目已经安装或集成 ByteRover。现有 MiniCode 长短期记忆 仍是项目事实来源，ByteRover 只应作为可替换的外部记忆后端进行对照。
 
 ### 建议链路
 
@@ -339,7 +339,7 @@ README 宣称 Cloud 基础设施通过 SOC 2 Type II 并提供 privacy mode；�
 
 ## 相关笔记
 
-- **工程实现**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Context_Engineering_10|Context Engineering]] — ByteRover 用分层知识、生命周期评分和渐进检索实现 Memory Context 的选择与注入。
-- **对比**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/长期记忆机制|Claude Code 长期记忆]] — 对比客户端原生 Markdown 记忆与跨 Agent、可检索、可版本化的 Context Tree。
-- **项目候选**：[[50-Projects-项目/01-MiniCode/长短期记忆|MiniCode 长短期记忆]] — 可作为外部记忆后端进行旁路实验，但不能描述为当前已实现能力。
-- **接入机制**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Tools_16（MCP、Function Calling与通信协议）|MCP、Function Calling 与 Skill]] — ByteRover 通过 Skill 传递工作流，通过 MCP 暴露 query 和 curate 工具。
+- **工程实现**：[Context Engineering](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Context_Engineering_10.md) — ByteRover 用分层知识、生命周期评分和渐进检索实现 Memory Context 的选择与注入。
+- **对比**：[Claude Code 长期记忆](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6.md) — 对比客户端原生 Markdown 记忆与跨 Agent、可检索、可版本化的 Context Tree。
+- **项目候选**：MiniCode 长短期记忆 — 可作为外部记忆后端进行旁路实验，但不能描述为当前已实现能力。
+- **接入机制**：[MCP、Function Calling 与 Skill](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) — ByteRover 通过 Skill 传递工作流，通过 MCP 暴露 query 和 curate 工具。

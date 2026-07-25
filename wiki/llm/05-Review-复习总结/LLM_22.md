@@ -1,6 +1,6 @@
 ## 一、总览
 
-关联阅读：可结合 [[10-LLM-大语言模型/03-Post-Training-后训练/DPO (直接偏好优化)|DPO (直接偏好优化)]] 理解；DPO 专题为综合复习提供完整推导。
+关联阅读：可结合 [DPO (直接偏好优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/DPO%20%28%E7%9B%B4%E6%8E%A5%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96%29.md) 理解；DPO 专题为综合复习提供完整推导。
 
 
 这 22 个问题覆盖大模型工程的主干知识：模型定义、Transformer 架构、注意力优化、位置编码、分词器、训练与后训练、推理解码、KV Cache、量化、Prompt 工程、CoT、幻觉、MoE、部署框架、评测和模型选型。
@@ -623,8 +623,8 @@ MoE 是 Mixture of Experts，**核心是把 Transformer 中的 FFN 层替换成�
 
 ## 相关笔记
 
-- **知识来源**：[[10-LLM-大语言模型/03-Post-Training-后训练/DPO (直接偏好优化)|DPO (直接偏好优化)]] — DPO 专题为综合复习提供完整推导。
-- **知识来源**：[[10-LLM-大语言模型/03-Post-Training-后训练/PPO (近端策略优化)|PPO (近端策略优化)]] — PPO 专题补足综合复习中的强化学习细节。
-- **知识来源**：[[10-LLM-大语言模型/03-Post-Training-后训练/GRPO (组相对策略优化)|GRPO (组相对策略优化)]] — GRPO 专题提供综合问答所需的算法细节。
-- **项目复习**：[[50-Projects-项目/02-MiniMind/MiniMind_interview|MiniMind 项目问答]] — 综合 LLM 问题可直接支撑 MiniMind 的面试表达。
-- **延伸**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/LLM 推理加速与算子优化学习路线|推理加速与算子优化路线]] — 模型原理复习之后可进一步理解量化、推理框架和算子优化。
+- **知识来源**：[DPO (直接偏好优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/DPO%20%28%E7%9B%B4%E6%8E%A5%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96%29.md) — DPO 专题为综合复习提供完整推导。
+- **知识来源**：[PPO (近端策略优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/PPO%20%28%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — PPO 专题补足综合复习中的强化学习细节。
+- **知识来源**：[GRPO (组相对策略优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GRPO%20%28%E7%BB%84%E7%9B%B8%E5%AF%B9%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — GRPO 专题提供综合问答所需的算法细节。
+- **项目复习**：MiniMind 项目问答 — 综合 LLM 问题可直接支撑 MiniMind 的面试表达。
+- **延伸**：[推理加速与算子优化路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 模型原理复习之后可进一步理解量化、推理框架和算子优化。

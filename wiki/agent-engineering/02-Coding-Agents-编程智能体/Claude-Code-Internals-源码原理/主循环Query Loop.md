@@ -9,7 +9,7 @@
 
 ### 一、四层调用链
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Tools_16（MCP、Function Calling与通信协议）|Tools、MCP 与 Function Calling]] 理解；主循环以 Tool Calling 协议驱动行动与观察。
+关联阅读：可结合 [Tools、MCP 与 Function Calling](../../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) 理解；主循环以 Tool Calling 协议驱动行动与观察。
 
 
 ```
@@ -116,7 +116,7 @@ Anthropic API 要求**每个 `tool_use` 都对应一个 `tool_result`**。如果
 
 ## 相关笔记
 
-- **接口基础**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Tools_16（MCP、Function Calling与通信协议）|Tools、MCP 与 Function Calling]] — 主循环以 Tool Calling 协议驱动行动与观察。
-- **总览**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/Claude Code架构设计|Claude Code 架构]] — 架构设计说明主循环与模型、工具和状态的关系。
-- **工程原则**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Loop Engineering|Loop Engineering]] — Loop Engineering 关注主循环中的反馈、验证和停止条件。
-- **项目应用**：[[50-Projects-项目/01-MiniCode/MiniCode_architecture|MiniCode 架构]] — MiniCode 的模型—工具—观察循环对应 Claude Code 主循环。
+- **接口基础**：[Tools、MCP 与 Function Calling](../../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) — 主循环以 Tool Calling 协议驱动行动与观察。
+- **总览**：[Claude Code 架构](Claude%20Code%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.md) — 架构设计说明主循环与模型、工具和状态的关系。
+- **工程原则**：[Loop Engineering](../../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Loop%20Engineering.md) — Loop Engineering 关注主循环中的反馈、验证和停止条件。
+- **项目应用**：MiniCode 架构 — MiniCode 的模型—工具—观察循环对应 Claude Code 主循环。

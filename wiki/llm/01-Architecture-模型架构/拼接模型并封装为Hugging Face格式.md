@@ -4,7 +4,7 @@ date: 2026-04-18
 ![](../_assets/Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%8B%BC%E6%8E%A5%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B0%81%E8%A3%85.png)
 # MindModel 与 MindCausalLM
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] 理解；封装步骤依赖对 MiniMind 各模块的整体理解。
+关联阅读：可结合 [MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) 理解；封装步骤依赖对 MiniMind 各模块的整体理解。
 
 
 ## 1. 主线
@@ -178,6 +178,6 @@ date: 2026-04-18
 
 ## 相关笔记
 
-- **前置**：[[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] — 封装步骤依赖对 MiniMind 各模块的整体理解。
-- **流程衔接**：[[10-LLM-大语言模型/02-Pretraining-预训练/PretrainDataset和pretrain和utils方法|PretrainDataset和pretrain和utils方法]] — 模型封装与数据、训练脚本共同构成可复现训练工程。
-- **项目应用**：[[50-Projects-项目/02-MiniMind/MiniMind_interview|MiniMind 项目问答]] — MiniMind 项目交付需要兼容 Hugging Face 的模型格式。
+- **前置**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — 封装步骤依赖对 MiniMind 各模块的整体理解。
+- **流程衔接**：[PretrainDataset和pretrain和utils方法](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/PretrainDataset%E5%92%8Cpretrain%E5%92%8Cutils%E6%96%B9%E6%B3%95.md) — 模型封装与数据、训练脚本共同构成可复现训练工程。
+- **项目应用**：MiniMind 项目问答 — MiniMind 项目交付需要兼容 Hugging Face 的模型格式。

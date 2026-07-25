@@ -4,7 +4,7 @@ date: 2026-04-17
 
 ## 1. 注意力机制：
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] 理解；架构图说明了 GQA 在完整模型中的位置。
+关联阅读：可结合 [MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) 理解；架构图说明了 GQA 在完整模型中的位置。
 
 
 ### 数学公式
@@ -248,6 +248,6 @@ def forward(
 
 ## 相关笔记
 
-- **总览**：[[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] — 架构图说明了 GQA 在完整模型中的位置。
-- **前置**：[[10-LLM-大语言模型/01-Architecture-模型架构/RoPE位置编码与YaRN|RoPE位置编码与YaRN]] — 注意力中的 Query 和 Key 是 RoPE 旋转变换的直接对象。
-- **系统影响**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/路线|vLLM／SGLang 路线]] — GQA 通过减少 KV Head 数影响 KV Cache 和推理显存。
+- **总览**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — 架构图说明了 GQA 在完整模型中的位置。
+- **前置**：[RoPE位置编码与YaRN](RoPE%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E4%B8%8EYaRN.md) — 注意力中的 Query 和 Key 是 RoPE 旋转变换的直接对象。
+- **系统影响**：[vLLM／SGLang 路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md) — GQA 通过减少 KV Head 数影响 KV Cache 和推理显存。

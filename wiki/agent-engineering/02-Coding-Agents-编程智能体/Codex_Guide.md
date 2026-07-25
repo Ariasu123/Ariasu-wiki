@@ -1,6 +1,6 @@
 # Codex 进阶使用方法速查
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/AI 辅助编程生态工具(Claude Code 篇)|Claude Code 生态工具]] 理解；Codex 指南提供另一种编码 Agent 使用基线。
+关联阅读：可结合 [Claude Code 生态工具](AI%20%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B%E7%94%9F%E6%80%81%E5%B7%A5%E5%85%B7%28Claude%20Code%20%E7%AF%87%29.md) 理解；Codex 指南提供另一种编码 Agent 使用基线。
 
 
 ## 1. 核心功能
@@ -51,6 +51,6 @@
 
 ## 相关笔记
 
-- **对比**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/AI 辅助编程生态工具(Claude Code 篇)|Claude Code 生态工具]] — Codex 指南提供另一种编码 Agent 使用基线。
-- **对比**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/CC使用笔记|Claude Code 使用笔记]] — Codex 使用方式可用 Claude Code 实践作为参照。
-- **应用**：[[90-Personal-个人/01-Knowledge-Tools-知识工具/Ob核心功能与MD语法|Obsidian 与 Markdown]] — Codex 使用流程可作用于 Obsidian 知识库。
+- **对比**：[Claude Code 生态工具](AI%20%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B%E7%94%9F%E6%80%81%E5%B7%A5%E5%85%B7%28Claude%20Code%20%E7%AF%87%29.md) — Codex 指南提供另一种编码 Agent 使用基线。
+- **对比**：[Claude Code 使用笔记](CC%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md) — Codex 使用方式可用 Claude Code 实践作为参照。
+- **应用**：Obsidian 与 Markdown — Codex 使用流程可作用于 Obsidian 知识库。

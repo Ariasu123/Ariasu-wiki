@@ -4,7 +4,7 @@ date: 2026-04-15
 ![](../_assets/Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 ### 1. 整体流程
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/Attention 与 GQA|Attention 与 GQA]] 理解；GQA 是 MiniMind Transformer 层的核心注意力模块。
+关联阅读：可结合 [Attention 与 GQA](Attention%20%E4%B8%8E%20GQA.md) 理解；GQA 是 MiniMind Transformer 层的核心注意力模块。
 
 
 这是模型处理信息的全过程：
@@ -117,8 +117,8 @@ MiniMind 使用了高效的 **SwiGLU** 激活函数：
 
 ## 相关笔记
 
-- **组成**：[[10-LLM-大语言模型/01-Architecture-模型架构/Attention 与 GQA|Attention 与 GQA]] — GQA 是 MiniMind Transformer 层的核心注意力模块。
-- **组成**：[[10-LLM-大语言模型/01-Architecture-模型架构/RMSNorm和LayerNorm|RMSNorm和LayerNorm]] — RMSNorm 是模型层和输出层稳定训练的关键组件。
-- **组成**：[[10-LLM-大语言模型/01-Architecture-模型架构/RoPE位置编码与YaRN|RoPE位置编码与YaRN]] — RoPE 为注意力计算注入位置信息。
-- **扩展**：[[10-LLM-大语言模型/01-Architecture-模型架构/MoE学习笔记|MoE学习笔记]] — MoE 是对稠密 FFN 的稀疏专家化扩展。
-- **实现**：[[10-LLM-大语言模型/01-Architecture-模型架构/拼接模型并封装为Hugging Face格式|拼接模型并封装为Hugging Face格式]] — 模型组装后需要封装成可保存和加载的 Hugging Face 形式。
+- **组成**：[Attention 与 GQA](Attention%20%E4%B8%8E%20GQA.md) — GQA 是 MiniMind Transformer 层的核心注意力模块。
+- **组成**：[RMSNorm和LayerNorm](RMSNorm%E5%92%8CLayerNorm.md) — RMSNorm 是模型层和输出层稳定训练的关键组件。
+- **组成**：[RoPE位置编码与YaRN](RoPE%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E4%B8%8EYaRN.md) — RoPE 为注意力计算注入位置信息。
+- **扩展**：[MoE学习笔记](MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) — MoE 是对稠密 FFN 的稀疏专家化扩展。
+- **实现**：[拼接模型并封装为Hugging Face格式](%E6%8B%BC%E6%8E%A5%E6%A8%A1%E5%9E%8B%E5%B9%B6%E5%B0%81%E8%A3%85%E4%B8%BAHugging%20Face%E6%A0%BC%E5%BC%8F.md) — 模型组装后需要封装成可保存和加载的 Hugging Face 形式。

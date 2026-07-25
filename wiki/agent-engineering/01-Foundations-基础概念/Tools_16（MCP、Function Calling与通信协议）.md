@@ -1,7 +1,7 @@
 
 ## 一、总览
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Agent_16|Agent 核心问题]] 理解；Tools 与协议是 Agent 执行闭环的行动接口。
+关联阅读：可结合 [Agent 核心问题](Agent_16.md) 理解；Tools 与协议是 Agent 执行闭环的行动接口。
 
 
 这 16 个问题围绕 LLM 工具调用体系展开：从 Function Calling 的底层机制，到 MCP 的工具生态标准化，再到 Agent Skill、A2A、多种传输协议和 LLM Gateway。
@@ -137,7 +137,7 @@ Host 启动后会通过 Client 连接各个 MCP Server，并发现它们暴露�
 
 MCP 不是 Function Calling 的替代品。Function Calling 是模型发起调用的结构化语言，MCP 是工具接入和复用的生态协议。
 
-[[30-Agent-Engineering-Agent工程/04-References-项目参考/ByteRover|ByteRover]] 提供了具体组合案例：Skill 说明 Agent 何时查询或策展项目记忆，MCP 暴露 `brv-query` 和 `brv-curate` 工具，底层仍由宿主处理模型的 Function Calling。
+[ByteRover](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/ByteRover.md) 提供了具体组合案例：Skill 说明 Agent 何时查询或策展项目记忆，MCP 暴露 `brv-query` 和 `brv-curate` 工具，底层仍由宿主处理模型的 Function Calling。
 
 ---
 
@@ -530,9 +530,9 @@ LLM Gateway 是**架在应用和模型 API 之间的中间层**，统一管理�
 
 ## 相关笔记
 
-- **系统位置**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Agent_16|Agent 核心问题]] — Tools 与协议是 Agent 执行闭环的行动接口。
-- **对比**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/A2A|A2A]] — 工具协议和 A2A 分别解决不同层级的互操作。
-- **对比**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Skill_10|Skill_10]] — 工具协议解释了 Skill 最终调用动作的运行边界。
-- **项目应用**：[[50-Projects-项目/01-MiniCode/Tool、MCP与Skill|MiniCode 工具系统]] — MiniCode 的工具注册、MCP 接入和权限控制落地了协议知识。
-- **运行机制**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/主循环Query Loop|Claude Code Query Loop]] — Query Loop 负责识别 tool_calls、并行执行并写回结果。
-- **应用案例**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/ByteRover|ByteRover]] — 用 Skill 传递记忆工作流，并通过 MCP 暴露查询与策展工具。
+- **系统位置**：[Agent 核心问题](Agent_16.md) — Tools 与协议是 Agent 执行闭环的行动接口。
+- **对比**：[A2A](A2A.md) — 工具协议和 A2A 分别解决不同层级的互操作。
+- **对比**：[Skill_10](Skill_10.md) — 工具协议解释了 Skill 最终调用动作的运行边界。
+- **项目应用**：MiniCode 工具系统 — MiniCode 的工具注册、MCP 接入和权限控制落地了协议知识。
+- **运行机制**：[Claude Code Query Loop](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%BB%E5%BE%AA%E7%8E%AFQuery%20Loop.md) — Query Loop 负责识别 tool_calls、并行执行并写回结果。
+- **应用案例**：[ByteRover](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/ByteRover.md) — 用 Skill 传递记忆工作流，并通过 MCP 暴露查询与策展工具。

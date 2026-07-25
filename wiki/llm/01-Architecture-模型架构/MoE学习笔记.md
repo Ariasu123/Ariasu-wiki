@@ -5,7 +5,7 @@ date: 2026-04-20
 
 # MoE (混合专家模型) 学习笔记
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] 理解；MiniMind 的稠密结构可作为理解 MoE 改造的基线。
+关联阅读：可结合 [MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) 理解；MiniMind 的稠密结构可作为理解 MoE 改造的基线。
 
 
 ## 一、 MoE 核心理论与本质概念
@@ -61,7 +61,7 @@ date: 2026-04-20
 
 1. 统计每个序列中各专家被选中的次数（其中 $b$ 为 batch 索引，$t$ 为序列位置，$j$ 为 top-k 中的第 $j$ 个专家）：
     
-    $$c_{b,e} = \sum_{t=1}^{L} \sum_{j=1}^{k} \mathbf{1}(\text{topk\_idx}_{b,t,j} = e)$$
+    $$c_{b,e} = \sum_{t=1}^{L} \sum_{j=1}^{k} \mathbf{1}(\text{topk-idx}_{b,t,j} = e)$$
     
 2. 归一化为相对负载率（理想均匀负载为 1，若 $\tilde{c}_{b,e} > 1$，则表示专家 $e$ 在该序列中被过度使用）：
     
@@ -281,5 +281,5 @@ class MOEFeedForward(nn.Module):
 
 ## 相关笔记
 
-- **对比**：[[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] — MiniMind 的稠密结构可作为理解 MoE 改造的基线。
-- **系统影响**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/LLM 推理加速与算子优化学习路线|推理加速与算子优化路线]] — MoE 的专家路由和稀疏激活会改变推理调度与算子需求。
+- **对比**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — MiniMind 的稠密结构可作为理解 MoE 改造的基线。
+- **系统影响**：[推理加速与算子优化路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — MoE 的专家路由和稀疏激活会改变推理调度与算子需求。

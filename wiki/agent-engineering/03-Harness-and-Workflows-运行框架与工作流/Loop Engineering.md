@@ -11,7 +11,7 @@
 
 ### 核心组成
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/主循环Query Loop|Claude Code Query Loop]] 理解；Claude Code Query Loop 是循环工程原则的具体实现。
+关联阅读：可结合 [Claude Code Query Loop](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%BB%E5%BE%AA%E7%8E%AFQuery%20Loop.md) 理解；Claude Code Query Loop 是循环工程原则的具体实现。
 
 
 1. **自动化触发**：通过**定时任务或事件启动循环。
@@ -46,6 +46,6 @@
 
 ## 相关笔记
 
-- **源码实例**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/主循环Query Loop|Claude Code Query Loop]] — Claude Code Query Loop 是循环工程原则的具体实现。
-- **组成**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] — 可靠循环需要 Harness 的验证、权限和反馈环境。
-- **案例**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/OpenClaw架构与常见问题|OpenClaw架构与常见问题]] — OpenClaw 的持续执行、工具循环和故障恢复体现循环工程问题。
+- **源码实例**：[Claude Code Query Loop](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%BB%E5%BE%AA%E7%8E%AFQuery%20Loop.md) — Claude Code Query Loop 是循环工程原则的具体实现。
+- **组成**：[Harness Engineering](Harness%20Engineering.md) — 可靠循环需要 Harness 的验证、权限和反馈环境。
+- **案例**：[OpenClaw架构与常见问题](OpenClaw%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md) — OpenClaw 的持续执行、工具循环和故障恢复体现循环工程问题。

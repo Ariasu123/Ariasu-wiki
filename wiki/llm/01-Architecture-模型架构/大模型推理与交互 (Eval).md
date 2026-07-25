@@ -5,7 +5,7 @@ date: 2026-04-23
 
 ## 1. 初始化 Tokenizer 和模型
 
-关联阅读：可结合 [[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] 理解；Eval 用来判断 SFT 后的指令遵循和输出质量。
+关联阅读：可结合 [SFT 监督微调](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) 理解；Eval 用来判断 SFT 后的指令遵循和输出质量。
 
 
 - **Tokenizer（分词器）**：大模型的“字典”。负责把人类的文本切碎，翻译成模型认识的数字 ID。
@@ -97,5 +97,5 @@ date: 2026-04-23
 
 ## 相关笔记
 
-- **验证**：[[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] — Eval 用来判断 SFT 后的指令遵循和输出质量。
-- **项目应用**：[[50-Projects-项目/02-MiniMind/MiniMind_interview|MiniMind 项目问答]] — MiniMind 项目需要用推理脚本和指标验证训练阶段成果。
+- **验证**：[SFT 监督微调](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — Eval 用来判断 SFT 后的指令遵循和输出质量。
+- **项目应用**：MiniMind 项目问答 — MiniMind 项目需要用推理脚本和指标验证训练阶段成果。

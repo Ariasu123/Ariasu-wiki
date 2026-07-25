@@ -4,7 +4,7 @@ date: 2026-04-15
 
 ### 1. 为什么需要归一化？
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] 理解；整体架构给出了归一化层的调用位置。
+关联阅读：可结合 [MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) 理解；整体架构给出了归一化层的调用位置。
 
 
 大模型包含成百上千个 Linear 层。在反向传播计算梯度时，公式所示：
@@ -109,5 +109,5 @@ class RMSNorm(torch.nn.Module):
 
 ## 相关笔记
 
-- **总览**：[[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] — 整体架构给出了归一化层的调用位置。
-- **训练作用**：[[10-LLM-大语言模型/02-Pretraining-预训练/LLM预训练底层机制|LLM预训练底层机制]] — 归一化层直接影响深层网络的数值稳定性。
+- **总览**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — 整体架构给出了归一化层的调用位置。
+- **训练作用**：[LLM预训练底层机制](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — 归一化层直接影响深层网络的数值稳定性。

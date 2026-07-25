@@ -4,7 +4,7 @@ date: 2026-04-15
 
 ## VS Code 插件推荐
 
-关联阅读：可结合 [[10-LLM-大语言模型/04-Engineering-工程实践/PyTorch及相关方法|PyTorch及相关方法]] 理解；环境配置的主要使用者之一是 PyTorch 训练代码。
+关联阅读：可结合 [PyTorch及相关方法](PyTorch%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95.md) 理解；环境配置的主要使用者之一是 PyTorch 训练代码。
 
 
 - `Chinese`：提供 VS Code 中文界面。
@@ -275,7 +275,7 @@ install(show_locals=True, suppress=[click])
 
 ## 相关笔记
 
-- **用途**：[[10-LLM-大语言模型/04-Engineering-工程实践/PyTorch及相关方法|PyTorch及相关方法]] — 环境配置的主要使用者之一是 PyTorch 训练代码。
-- **环境衔接**：[[10-LLM-大语言模型/04-Engineering-工程实践/远程连接AutoDL|远程连接AutoDL]] — 本地包管理配置需要迁移到远程 GPU 环境。
-- **工具协作**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/CC使用笔记|Claude Code 使用笔记]] — Claude Code 的项目配置与诊断依赖清晰的本地开发环境。
-- **基础**：[[60-Career-求职/03-Algorithms-算法/Python3_ACM输入输出与手撕模板|Python3_ACM输入输出与手撕模板]] — Python 环境配置支撑算法练习和面试运行。
+- **用途**：[PyTorch及相关方法](PyTorch%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95.md) — 环境配置的主要使用者之一是 PyTorch 训练代码。
+- **环境衔接**：[远程连接AutoDL](%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5AutoDL.md) — 本地包管理配置需要迁移到远程 GPU 环境。
+- **工具协作**：[Claude Code 使用笔记](../../agent-engineering/02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/CC%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md) — Claude Code 的项目配置与诊断依赖清晰的本地开发环境。
+- **基础**：Python3_ACM输入输出与手撕模板 — Python 环境配置支撑算法练习和面试运行。

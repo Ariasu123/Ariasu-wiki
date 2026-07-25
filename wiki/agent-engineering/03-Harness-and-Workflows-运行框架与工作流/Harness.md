@@ -7,7 +7,7 @@ categories: vibe coding
 
 # 聊聊软件工程的进化：从手工敲代码到 AI 智能体流水线
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] 理解；叙事版提供 Harness Engineering 概念的工程背景。
+关联阅读：可结合 [Harness Engineering](Harness%20Engineering.md) 理解；叙事版提供 Harness Engineering 概念的工程背景。
 
 
 前阵子，OpenAI 和 Anthropic 等顶尖 AI 实验室先后公布了他们的内部工程实践——**让 AI 智能体（Agent）全自动写出了包含上百万行代码的真实产品，而人类一行代码都没写。**
@@ -113,5 +113,5 @@ CI/CD 自动化了“测试和发布”，但**代码依然是人类一行行敲
 
 ## 相关笔记
 
-- **同主题**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] — 叙事版提供 Harness Engineering 概念的工程背景。
-- **演进**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/从 OpenSpec、Superpowers 到 TRELLIS 的工程化演进|OpenSpec、Superpowers 与 TRELLIS]] — 从 PRD、Spec 到 Agent Harness 的演进与 TRELLIS 路径互相印证。
+- **同主题**：[Harness Engineering](Harness%20Engineering.md) — 叙事版提供 Harness Engineering 概念的工程背景。
+- **演进**：[OpenSpec、Superpowers 与 TRELLIS](%E4%BB%8E%20OpenSpec%E3%80%81Superpowers%20%E5%88%B0%20TRELLIS%20%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96%E6%BC%94%E8%BF%9B.md) — 从 PRD、Spec 到 Agent Harness 的演进与 TRELLIS 路径互相印证。

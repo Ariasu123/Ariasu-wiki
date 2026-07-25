@@ -4,7 +4,7 @@ date: 2026-04-21
 
 # AutoDL 远程连接与环境初始化
 
-关联阅读：可结合 [[10-LLM-大语言模型/04-Engineering-工程实践/Python环境配置|Python环境配置]] 理解；AutoDL 连接后仍需复现 Python 依赖与运行环境。
+关联阅读：可结合 [Python环境配置](Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.md) 理解；AutoDL 连接后仍需复现 Python 依赖与运行环境。
 
 
 > [!summary]
@@ -84,5 +84,5 @@ uv pip install --reinstall torch --index-url https://download.pytorch.org/whl/cu
 
 ## 相关笔记
 
-- **应用**：[[10-LLM-大语言模型/04-Engineering-工程实践/Python环境配置|Python环境配置]] — AutoDL 连接后仍需复现 Python 依赖与运行环境。
-- **基础设施**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/路线|vLLM／SGLang 路线]] — AutoDL 提供学习 vLLM、SGLang 和 GPU 推理所需的远程资源。
+- **应用**：[Python环境配置](Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.md) — AutoDL 连接后仍需复现 Python 依赖与运行环境。
+- **基础设施**：[vLLM／SGLang 路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md) — AutoDL 提供学习 vLLM、SGLang 和 GPU 推理所需的远程资源。

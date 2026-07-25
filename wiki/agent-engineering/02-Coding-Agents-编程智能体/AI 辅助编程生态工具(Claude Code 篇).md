@@ -12,7 +12,7 @@ categories: vibe coding
 
 # 🛠️ AI 辅助编程生态工具完全指南
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/CC使用笔记|Claude Code 使用笔记]] 理解；生态工具清单补充 Claude Code 日常命令、插件和配置实践。
+关联阅读：可结合 [Claude Code 使用笔记](CC%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md) 理解；生态工具清单补充 Claude Code 日常命令、插件和配置实践。
 
 
 > **💡 写在前面的话：**
@@ -93,6 +93,6 @@ categories: vibe coding
 
 ## 相关笔记
 
-- **使用互补**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/CC使用笔记|Claude Code 使用笔记]] — 生态工具清单补充 Claude Code 日常命令、插件和配置实践。
-- **对比**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Codex_Guide|Codex_Guide]] — Claude Code 周边工具可与 Codex 的原生功能和命令体系比较。
-- **工作流**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/从 OpenSpec、Superpowers 到 TRELLIS 的工程化演进|OpenSpec、Superpowers 与 TRELLIS]] — 生态工具只有进入规范、任务和验证流程后才形成稳定生产力。
+- **使用互补**：[Claude Code 使用笔记](CC%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md) — 生态工具清单补充 Claude Code 日常命令、插件和配置实践。
+- **对比**：[Codex_Guide](Codex_Guide.md) — Claude Code 周边工具可与 Codex 的原生功能和命令体系比较。
+- **工作流**：[OpenSpec、Superpowers 与 TRELLIS](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%8E%20OpenSpec%E3%80%81Superpowers%20%E5%88%B0%20TRELLIS%20%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96%E6%BC%94%E8%BF%9B.md) — 生态工具只有进入规范、任务和验证流程后才形成稳定生产力。

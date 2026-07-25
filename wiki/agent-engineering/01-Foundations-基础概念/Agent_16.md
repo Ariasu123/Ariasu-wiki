@@ -1,7 +1,7 @@
 
 ## 一、总览
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Context_Engineering_10|Context Engineering]] 理解；上下文工程决定 Agent 每轮能看到和保留什么信息。
+关联阅读：可结合 [Context Engineering](Context_Engineering_10.md) 理解；上下文工程决定 Agent 每轮能看到和保留什么信息。
 
 
 这 16 个问题围绕 AI Agent 的核心能力展开：Agent 不只是“大模型 + 工具”，而是一个能围绕目标自主规划、调用工具、读取反馈、维护记忆并持续迭代的系统。
@@ -288,7 +288,7 @@ Prompt Caching 不是记忆压缩。它是计算层优化，用来减少重复�
 - 通用框架可能不贴合业务流程，定制成本高。
 - 务实策略：核心逻辑手写，边缘工具能力复用框架。
 
-[[30-Agent-Engineering-Agent工程/04-References-项目参考/AgentScope|AgentScope 2.0]] 是这一取舍的具体案例：它能复用 ReAct、事件流、权限、Workspace 和服务化骨架，但项目仍要承担框架版本、状态迁移和业务定制成本。
+[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) 是这一取舍的具体案例：它能复用 ReAct、事件流、权限、Workspace 和服务化骨架，但项目仍要承担框架版本、状态迁移和业务定制成本。
 ### 面试提醒
 
 不要一味否定框架。更成熟的回答是：POC 用框架提速，生产核心链路倾向手写，周边能力适当借用框架。
@@ -386,9 +386,9 @@ Prompt Caching 不是记忆压缩。它是计算层优化，用来减少重复�
 
 ## 相关笔记
 
-- **组成**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Context_Engineering_10|Context Engineering]] — 上下文工程决定 Agent 每轮能看到和保留什么信息。
-- **组成**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Tools_16（MCP、Function Calling与通信协议）|Tools、MCP 与 Function Calling]] — 工具调用让 Agent 从生成文本扩展为执行外部动作。
-- **组成**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/Skill_10|Skill_10]] — Skill 把可复用流程和领域知识封装为可路由能力。
-- **扩展**：[[30-Agent-Engineering-Agent工程/01-Foundations-基础概念/A2A|A2A]] — A2A 把单 Agent 执行扩展为跨 Agent 协作。
-- **工程化**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] — Harness 为 Agent 提供约束、反馈、验证和持续运行环境。
-- **框架实例**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/AgentScope|AgentScope 2.0]] — 将 Agent 的推理、工具、状态、权限和多智能体协作实现为 Python 框架。
+- **组成**：[Context Engineering](Context_Engineering_10.md) — 上下文工程决定 Agent 每轮能看到和保留什么信息。
+- **组成**：[Tools、MCP 与 Function Calling](Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) — 工具调用让 Agent 从生成文本扩展为执行外部动作。
+- **组成**：[Skill_10](Skill_10.md) — Skill 把可复用流程和领域知识封装为可路由能力。
+- **扩展**：[A2A](A2A.md) — A2A 把单 Agent 执行扩展为跨 Agent 协作。
+- **工程化**：[Harness Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) — Harness 为 Agent 提供约束、反馈、验证和持续运行环境。
+- **框架实例**：[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 将 Agent 的推理、工具、状态、权限和多智能体协作实现为 Python 框架。

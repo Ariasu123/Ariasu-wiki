@@ -26,7 +26,7 @@ aliases:
 
 ## 问题的起点：AI 会写代码，不等于 AI 能稳定交付
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/AI 辅助编程生态工具(Claude Code 篇)|Claude Code 生态工具]] 理解；OpenSpec 与 TRELLIS 为工具组合提供工程流程。
+关联阅读：可结合 [Claude Code 生态工具](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/AI%20%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B%E7%94%9F%E6%80%81%E5%B7%A5%E5%85%B7%28Claude%20Code%20%E7%AF%87%29.md) 理解；OpenSpec 与 TRELLIS 为工具组合提供工程流程。
 
 
 如果只把 AI 当成“更快的代码生成器”，软件开发会很快陷入一种奇怪的悖论：写代码的门槛降低了，但项目失控的速度也更快了。
@@ -212,8 +212,8 @@ OpenSpec 的贡献，是让我们重新重视规范和工件；Superpowers 的�
 
 ## 相关笔记
 
-- **工具层**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/AI 辅助编程生态工具(Claude Code 篇)|Claude Code 生态工具]] — OpenSpec 与 TRELLIS 为工具组合提供工程流程。
-- **实践入口**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/CC使用笔记|Claude Code 使用笔记]] — 工程化工作流建立在熟练使用编码 Agent 的基础上。
-- **理论**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness Engineering|Harness Engineering]] — OpenSpec 到 TRELLIS 展示 Harness 的演进路径。
-- **具体路径**：[[30-Agent-Engineering-Agent工程/03-Harness-and-Workflows-运行框架与工作流/Harness|Harness]] — OpenSpec 与 TRELLIS 细化了 Harness 叙事中的工程阶段。
-- **规范**：[[30-Agent-Engineering-Agent工程/04-References-项目参考/Claude Code 认证专家操作指南|Claude Code 认证指南]] — 认证操作要求可用规范驱动、可验证的工作流来落实。
+- **工具层**：[Claude Code 生态工具](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/AI%20%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B%E7%94%9F%E6%80%81%E5%B7%A5%E5%85%B7%28Claude%20Code%20%E7%AF%87%29.md) — OpenSpec 与 TRELLIS 为工具组合提供工程流程。
+- **实践入口**：[Claude Code 使用笔记](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/CC%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md) — 工程化工作流建立在熟练使用编码 Agent 的基础上。
+- **理论**：[Harness Engineering](Harness%20Engineering.md) — OpenSpec 到 TRELLIS 展示 Harness 的演进路径。
+- **具体路径**：[Harness](Harness.md) — OpenSpec 与 TRELLIS 细化了 Harness 叙事中的工程阶段。
+- **规范**：Claude Code 认证指南 — 认证操作要求可用规范驱动、可验证的工作流来落实。

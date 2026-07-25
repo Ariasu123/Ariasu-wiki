@@ -11,7 +11,7 @@ date: 2026-04-16
 
 ### 1. 为什么要有 RoPE？（痛点）
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] 理解；架构笔记提供位置编码所在的模型上下文。
+关联阅读：可结合 [MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) 理解；架构笔记提供位置编码所在的模型上下文。
 
 
 在 Transformer 中，如果不加位置编码，模型看“我爱吃蝉”和“吃我爱蝉”是一样的。
@@ -45,7 +45,7 @@ $$f(x, m) = x \cdot e^{im\theta}$$
 
 当你计算 $q$ 和 $k$ 的点积（即注意力）时：
 
-$$Score \propto \text{Re}[q_m \cdot k_n^*] = \text{Re}[(q e^{im\theta}) \cdot (k e^{in\theta})^*] = \text{Re}[q \cdot k^* \cdot e^{i(m-n)\theta}]$$
+$$Score \propto \text{Re}[q_{m} \cdot k_{n}^{*}] = \text{Re}[(q e^{im\theta}) \cdot (k e^{in\theta})^{*}] = \text{Re}[q \cdot k^{*} \cdot e^{i(m-n)\theta}]$$
 
 注意力最终与 $(m-n)\theta$有关。
 
@@ -73,7 +73,7 @@ RoPE 利用复数乘法 $(a + bi) \cdot e^{i\theta}$ 来实现向量旋转。其
 #### 3. 最终组合公式
 
 代码通过一次性矩阵运算还原复数旋转：
-$$q_{embed} = (q \cdot \cos) + (\text{rotate\_half}(q) \cdot \sin)$$
+$$q_{embed} = (q \cdot \cos) + (\text{rotate-half}(q) \cdot \sin)$$
 ---
 
 为了覆盖不同频率的信息，每个维度的旋转速度 $\theta$ 是不一样的：
@@ -225,7 +225,7 @@ $$f'(i) = f(i) \cdot \left( 1 - \gamma + \frac{\gamma}{s} \right)$$
 - **当 $\gamma=1$（低频区）**：频率变为 $1/s$。这意味着旋转速度变慢了 $s$ 倍，原本要在 8192 位转完的角度，现在要在 32768 位才转完。
 ### 3. 关键绝招：注意力重缩放 (Attention Scaling)
 
-$$\text{cos}' = \cos \cdot \text{attn\_factor}$$
+$$\text{cos}' = \cos \cdot \text{attn-factor}$$
 
 **推导逻辑：**
 
@@ -333,6 +333,6 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
 
 ## 相关笔记
 
-- **总览**：[[10-LLM-大语言模型/01-Architecture-模型架构/MiniMind架构图解析|MiniMind架构图解析]] — 架构笔记提供位置编码所在的模型上下文。
-- **应用**：[[10-LLM-大语言模型/01-Architecture-模型架构/Attention 与 GQA|Attention 与 GQA]] — RoPE 的实际作用体现在 Attention 分数计算中。
-- **系统影响**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/路线|vLLM／SGLang 路线]] — 长上下文外推会提高 KV Cache 和调度压力。
+- **总览**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — 架构笔记提供位置编码所在的模型上下文。
+- **应用**：[Attention 与 GQA](Attention%20%E4%B8%8E%20GQA.md) — RoPE 的实际作用体现在 Attention 分数计算中。
+- **系统影响**：[vLLM／SGLang 路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md) — 长上下文外推会提高 KV Cache 和调度压力。

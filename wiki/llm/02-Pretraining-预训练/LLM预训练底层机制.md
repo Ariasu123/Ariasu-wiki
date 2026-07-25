@@ -8,7 +8,7 @@ date: 2026-04-21
 
 ## 模块一：数据处理与加载引擎 (Data Pipeline)
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/RMSNorm和LayerNorm|RMSNorm和LayerNorm]] 理解；预训练优化需要理解 RMSNorm 的稳定梯度作用。
+关联阅读：可结合 [RMSNorm和LayerNorm](../01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/RMSNorm%E5%92%8CLayerNorm.md) 理解；预训练优化需要理解 RMSNorm 的稳定梯度作用。
 
 
 此模块负责将非结构化的原始语料转换为满足 GPU 静态计算图要求的标准化张量，并在内存受限的情况下实现高吞吐量的数据喂养。
@@ -92,8 +92,8 @@ $$\eta_t = \eta_{min} + \frac{1}{2}(\eta_{max} - \eta_{min}) \left(1 + \cos\left
 
 ## 相关笔记
 
-- **结构基础**：[[10-LLM-大语言模型/01-Architecture-模型架构/RMSNorm和LayerNorm|RMSNorm和LayerNorm]] — 预训练优化需要理解 RMSNorm 的稳定梯度作用。
-- **实现**：[[10-LLM-大语言模型/02-Pretraining-预训练/PretrainDataset和pretrain和utils方法|PretrainDataset和pretrain和utils方法]] — 底层训练机制在 Dataset、训练循环和 Utils 中落地。
-- **阶段关系**：[[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] — SFT 在预训练获得的语言建模能力上进行指令微调。
-- **工程基础**：[[10-LLM-大语言模型/04-Engineering-工程实践/PyTorch及相关方法|PyTorch及相关方法]] — 训练引擎依赖 PyTorch 的张量、梯度和 DataLoader 机制。
-- **系统联系**：[[20-AI-Infra-AI基础设施/01-Roadmaps-学习路线/LLM 推理加速与算子优化学习路线|推理加速与算子优化路线]] — 分布式训练、混合精度和硬件优化与 AI Infra 共用底层能力。
+- **结构基础**：[RMSNorm和LayerNorm](../01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/RMSNorm%E5%92%8CLayerNorm.md) — 预训练优化需要理解 RMSNorm 的稳定梯度作用。
+- **实现**：[PretrainDataset和pretrain和utils方法](PretrainDataset%E5%92%8Cpretrain%E5%92%8Cutils%E6%96%B9%E6%B3%95.md) — 底层训练机制在 Dataset、训练循环和 Utils 中落地。
+- **阶段关系**：[SFT 监督微调](SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — SFT 在预训练获得的语言建模能力上进行指令微调。
+- **工程基础**：[PyTorch及相关方法](../04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/PyTorch%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95.md) — 训练引擎依赖 PyTorch 的张量、梯度和 DataLoader 机制。
+- **系统联系**：[推理加速与算子优化路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 分布式训练、混合精度和硬件优化与 AI Infra 共用底层能力。

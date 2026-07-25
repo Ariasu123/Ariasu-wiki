@@ -4,7 +4,7 @@ date: 2026-04-28
 ![](../_assets/Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/DPO%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 # DPO（直接偏好优化）
 
-关联阅读：可结合 [[10-LLM-大语言模型/02-Pretraining-预训练/LoRA（Low-Rank Adaptation，低秩微调）|LoRA（Low-Rank Adaptation，低秩微调）]] 理解；DPO 的策略模型可采用 LoRA 进行参数高效更新。
+关联阅读：可结合 [LoRA（Low-Rank Adaptation，低秩微调）](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LoRA%EF%BC%88Low-Rank%20Adaptation%EF%BC%8C%E4%BD%8E%E7%A7%A9%E5%BE%AE%E8%B0%83%EF%BC%89.md) 理解；DPO 的策略模型可采用 LoRA 进行参数高效更新。
 
 
 > [!abstract]
@@ -267,8 +267,8 @@ $$
 
 ## 相关笔记
 
-- **工程选择**：[[10-LLM-大语言模型/02-Pretraining-预训练/LoRA（Low-Rank Adaptation，低秩微调）|LoRA（Low-Rank Adaptation，低秩微调）]] — DPO 的策略模型可采用 LoRA 进行参数高效更新。
-- **前置**：[[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] — DPO 需要一个已有指令能力的参考起点。
-- **对比**：[[10-LLM-大语言模型/03-Post-Training-后训练/PPO (近端策略优化)|PPO (近端策略优化)]] — DPO 直接优化偏好对，而 PPO 通过奖励和策略更新训练。
-- **对比**：[[10-LLM-大语言模型/03-Post-Training-后训练/GRPO (组相对策略优化)|GRPO (组相对策略优化)]] — DPO 使用成对偏好，GRPO 使用组内相对奖励进行策略优化。
-- **复习**：[[10-LLM-大语言模型/05-Review-复习总结/LLM_22|LLM 综合复习]] — 综合题库可用于检验 DPO 的损失、参考模型和适用场景。
+- **工程选择**：[LoRA（Low-Rank Adaptation，低秩微调）](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LoRA%EF%BC%88Low-Rank%20Adaptation%EF%BC%8C%E4%BD%8E%E7%A7%A9%E5%BE%AE%E8%B0%83%EF%BC%89.md) — DPO 的策略模型可采用 LoRA 进行参数高效更新。
+- **前置**：[SFT 监督微调](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — DPO 需要一个已有指令能力的参考起点。
+- **对比**：[PPO (近端策略优化)](PPO%20%28%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — DPO 直接优化偏好对，而 PPO 通过奖励和策略更新训练。
+- **对比**：[GRPO (组相对策略优化)](GRPO%20%28%E7%BB%84%E7%9B%B8%E5%AF%B9%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — DPO 使用成对偏好，GRPO 使用组内相对奖励进行策略优化。
+- **复习**：[LLM 综合复习](../05-Review-%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/LLM_22.md) — 综合题库可用于检验 DPO 的损失、参考模型和适用场景。

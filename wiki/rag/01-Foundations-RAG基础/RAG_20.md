@@ -1,7 +1,7 @@
 
 ## 一、总览
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/代码检索总结|Claude Code 代码检索]] 理解；通用 RAG 原理可用于分析代码仓库检索。
+关联阅读：可结合 [Claude Code 代码检索](../../agent-engineering/02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) 理解；通用 RAG 原理可用于分析代码仓库检索。
 
 
 RAG 的核心是 Retrieval-Augmented Generation，也就是“检索增强生成”。它不是让模型把所有知识都记进参数里，而是在生成答案前先从外部知识库检索相关内容，再把检索结果作为上下文交给大模型回答。
@@ -607,9 +607,9 @@ unstructured 更适合做 RAG 文档入库前的通用解析。它会把 PDF、W
 
 ## 相关笔记
 
-- **对比应用**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/代码检索总结|Claude Code 代码检索]] — 通用 RAG 原理可用于分析代码仓库检索。
-- **理论与实现**：[[50-Projects-项目/03-Knowledge-Base-RAG-知识库RAG/RAG|RAG 项目实现]] — 综合 RAG 原理可用于检查项目的切分、召回、重排和评测。
-- **数据入口**：[[50-Projects-项目/03-Knowledge-Base-RAG-知识库RAG/数据清洗与PDF处理|数据清洗与PDF处理]] — 数据清洗、OCR 和 PDF 结构化决定知识库输入质量。
-- **生成优化**：[[50-Projects-项目/03-Knowledge-Base-RAG-知识库RAG/问答优化与编排|问答优化与编排]] — 问答编排覆盖查询改写、检索路由、重排和生成控制。
-- **扩展**：[[50-Projects-项目/03-Knowledge-Base-RAG-知识库RAG/图谱RAG|图谱 RAG]] — 图谱 RAG 用结构化关系补充向量检索。
-- **面试应用**：[[60-Career-求职/01-ByteDance-TikTok-字节TikTok/02-Preparation-准备/项目问答_原|项目问答原稿]] — 项目问答原稿需要用通用 RAG 原理校验技术口径。
+- **对比应用**：[Claude Code 代码检索](../../agent-engineering/02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) — 通用 RAG 原理可用于分析代码仓库检索。
+- **理论与实现**：RAG 项目实现 — 综合 RAG 原理可用于检查项目的切分、召回、重排和评测。
+- **数据入口**：数据清洗与PDF处理 — 数据清洗、OCR 和 PDF 结构化决定知识库输入质量。
+- **生成优化**：问答优化与编排 — 问答编排覆盖查询改写、检索路由、重排和生成控制。
+- **扩展**：图谱 RAG — 图谱 RAG 用结构化关系补充向量检索。
+- **面试应用**：项目问答原稿 — 项目问答原稿需要用通用 RAG 原理校验技术口径。

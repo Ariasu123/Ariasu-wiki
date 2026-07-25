@@ -4,7 +4,7 @@ date: 2026-04-27
 ![](../_assets/Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LoRA.png)
 ### 1. 核心思想：大模型的“本征维度”假说
 
-关联阅读：可结合 [[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] 理解；LoRA 常用于降低 SFT 的可训练参数量和显存成本。
+关联阅读：可结合 [SFT 监督微调](SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) 理解；LoRA 常用于降低 SFT 的可训练参数量和显存成本。
 
 
 在理解 LoRA 之前，我们要先明白为什么它可以起作用。
@@ -88,6 +88,6 @@ $$h = W_0 x + \frac{\alpha}{r} B A x$$
 
 ## 相关笔记
 
-- **实现**：[[10-LLM-大语言模型/02-Pretraining-预训练/SFT 监督微调|SFT 监督微调]] — LoRA 常用于降低 SFT 的可训练参数量和显存成本。
-- **项目应用**：[[50-Projects-项目/02-MiniMind/MiniMind_interview|MiniMind 项目问答]] — MiniMind 项目将 LoRA 作为参数高效微调能力之一。
-- **延伸**：[[10-LLM-大语言模型/03-Post-Training-后训练/DPO (直接偏好优化)|DPO (直接偏好优化)]] — 偏好优化阶段也可通过 LoRA 降低训练资源成本。
+- **实现**：[SFT 监督微调](SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — LoRA 常用于降低 SFT 的可训练参数量和显存成本。
+- **项目应用**：MiniMind 项目问答 — MiniMind 项目将 LoRA 作为参数高效微调能力之一。
+- **延伸**：[DPO (直接偏好优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/DPO%20%28%E7%9B%B4%E6%8E%A5%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96%29.md) — 偏好优化阶段也可通过 LoRA 降低训练资源成本。

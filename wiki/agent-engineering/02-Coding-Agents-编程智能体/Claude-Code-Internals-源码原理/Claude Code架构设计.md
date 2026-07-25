@@ -1,7 +1,7 @@
 
 ### 1. 四层架构
 
-关联阅读：可结合 [[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/主循环Query Loop|Claude Code Query Loop]] 理解；Query Loop 是 Claude Code 总体架构的运行主干。
+关联阅读：可结合 [Claude Code Query Loop](%E4%B8%BB%E5%BE%AA%E7%8E%AFQuery%20Loop.md) 理解；Query Loop 是 Claude Code 总体架构的运行主干。
 
 
 - **引擎层**：组织上下文、调用模型、分发工具、控制循环结束。
@@ -87,9 +87,9 @@ Claude Code 采用五级渐进压缩：
 
 ## 相关笔记
 
-- **组成**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/主循环Query Loop|Claude Code Query Loop]] — Query Loop 是 Claude Code 总体架构的运行主干。
-- **组成**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/上下文管理与五层压缩|Claude Code 上下文压缩]] — 上下文压缩是架构中的预算与会话治理模块。
-- **组成**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/代码检索总结|Claude Code 代码检索]] — 代码检索是编码 Agent 获取仓库证据的关键能力。
-- **组成**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/多Agent机制|Claude Code 多 Agent]] — 多 Agent 模块扩展了单循环的任务分解与并行执行。
-- **组成**：[[30-Agent-Engineering-Agent工程/02-Coding-Agents-编程智能体/Claude-Code-Internals-源码原理/长期记忆机制|Claude Code 长期记忆]] — 长期记忆负责把稳定信息带入后续会话。
-- **迁移参考**：[[50-Projects-项目/01-MiniCode/MiniCode_architecture|MiniCode 架构]] — MiniCode 借鉴编码 Agent 的模型调用、工具循环与状态治理。
+- **组成**：[Claude Code Query Loop](%E4%B8%BB%E5%BE%AA%E7%8E%AFQuery%20Loop.md) — Query Loop 是 Claude Code 总体架构的运行主干。
+- **组成**：[Claude Code 上下文压缩](%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BA%94%E5%B1%82%E5%8E%8B%E7%BC%A9.md) — 上下文压缩是架构中的预算与会话治理模块。
+- **组成**：[Claude Code 代码检索](%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) — 代码检索是编码 Agent 获取仓库证据的关键能力。
+- **组成**：[Claude Code 多 Agent](%E5%A4%9AAgent%E6%9C%BA%E5%88%B6.md) — 多 Agent 模块扩展了单循环的任务分解与并行执行。
+- **组成**：[Claude Code 长期记忆](%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6.md) — 长期记忆负责把稳定信息带入后续会话。
+- **迁移参考**：MiniCode 架构 — MiniCode 借鉴编码 Agent 的模型调用、工具循环与状态治理。

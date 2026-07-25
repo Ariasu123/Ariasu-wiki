@@ -5,7 +5,7 @@ date: 2026-04-27
 ![](../_assets/Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B.png)
 ## 一、 SFT 的核心定位与理论基础
 
-关联阅读：可结合 [[10-LLM-大语言模型/01-Architecture-模型架构/大模型推理与交互 (Eval)|大模型推理与交互 (Eval)]] 理解；SFT 产出的模型需要通过推理与评测验证。
+关联阅读：可结合 [大模型推理与交互 (Eval)](../01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E4%B8%8E%E4%BA%A4%E4%BA%92%20%28Eval%29.md) 理解；SFT 产出的模型需要通过推理与评测验证。
 
 
 ### 1. SFT 在大模型生命周期中的位置
@@ -100,10 +100,10 @@ SFT 依然基于自回归生成机制，但与预训练最大的区别在于：*
 
 ## 相关笔记
 
-- **上游**：[[10-LLM-大语言模型/01-Architecture-模型架构/大模型推理与交互 (Eval)|大模型推理与交互 (Eval)]] — SFT 产出的模型需要通过推理与评测验证。
-- **前置**：[[10-LLM-大语言模型/02-Pretraining-预训练/LLM预训练底层机制|LLM预训练底层机制]] — 监督微调默认模型已经完成通用预训练。
-- **应用**：[[10-LLM-大语言模型/02-Pretraining-预训练/LoRA（Low-Rank Adaptation，低秩微调）|LoRA（Low-Rank Adaptation，低秩微调）]] — SFT 可选择 LoRA 作为参数高效训练方式。
-- **对比**：[[10-LLM-大语言模型/02-Pretraining-预训练/PretrainDataset和pretrain和utils方法|PretrainDataset和pretrain和utils方法]] — SFT 数据管线在预训练样本处理上增加对话与掩码逻辑。
-- **阶段关系**：[[10-LLM-大语言模型/03-Post-Training-后训练/DPO (直接偏好优化)|DPO (直接偏好优化)]] — DPO 通常从经过 SFT 的策略模型开始偏好优化。
-- **阶段关系**：[[10-LLM-大语言模型/03-Post-Training-后训练/GRPO (组相对策略优化)|GRPO (组相对策略优化)]] — GRPO 在 SFT 模型基础上进一步优化可验证奖励。
-- **项目应用**：[[50-Projects-项目/02-MiniMind/MiniMind_interview|MiniMind 项目问答]] — SFT 是 MiniMind 完整训练链路中的指令微调阶段。
+- **上游**：[大模型推理与交互 (Eval)](../01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E4%B8%8E%E4%BA%A4%E4%BA%92%20%28Eval%29.md) — SFT 产出的模型需要通过推理与评测验证。
+- **前置**：[LLM预训练底层机制](LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — 监督微调默认模型已经完成通用预训练。
+- **应用**：[LoRA（Low-Rank Adaptation，低秩微调）](LoRA%EF%BC%88Low-Rank%20Adaptation%EF%BC%8C%E4%BD%8E%E7%A7%A9%E5%BE%AE%E8%B0%83%EF%BC%89.md) — SFT 可选择 LoRA 作为参数高效训练方式。
+- **对比**：[PretrainDataset和pretrain和utils方法](PretrainDataset%E5%92%8Cpretrain%E5%92%8Cutils%E6%96%B9%E6%B3%95.md) — SFT 数据管线在预训练样本处理上增加对话与掩码逻辑。
+- **阶段关系**：[DPO (直接偏好优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/DPO%20%28%E7%9B%B4%E6%8E%A5%E5%81%8F%E5%A5%BD%E4%BC%98%E5%8C%96%29.md) — DPO 通常从经过 SFT 的策略模型开始偏好优化。
+- **阶段关系**：[GRPO (组相对策略优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GRPO%20%28%E7%BB%84%E7%9B%B8%E5%AF%B9%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — GRPO 在 SFT 模型基础上进一步优化可验证奖励。
+- **项目应用**：MiniMind 项目问答 — SFT 是 MiniMind 完整训练链路中的指令微调阶段。
