@@ -19,7 +19,7 @@ date: 2026-04-20
 传统的 FFN 层通常使用 SiLU 等激活函数对特征维度进行门控筛选，而在 MoE 架构中，引入了一套全新的门控筛选机制——**Router（路由器）**，用于对不同的专家进行筛选。
 
 - **计算逻辑：** 对于每个到来的 Token，系统会拿出其前一层的隐藏状态（`hidden_state`）与 gate 的权重进行点积计算。点积越大，表示该 Token 越“偏爱”某个专家。
-    
+
 - **Top-K 筛选：** 根据点积得分，模型会为每个 Token 选出得分最高的 `Top_k` 个专家进行权重处理和特征提取。
 
 ---
@@ -60,21 +60,21 @@ date: 2026-04-20
 **数学推导与计算步骤：**
 
 1. 统计每个序列中各专家被选中的次数（其中 $b$ 为 batch 索引，$t$ 为序列位置，$j$ 为 top-k 中的第 $j$ 个专家）：
-    
-    $$c_{b,e} = \sum_{t=1}^{L} \sum_{j=1}^{k} \mathbf{1}(\text{topk-idx}_{b,t,j} = e)$$
-    
+
+$$c_{b,e} = \sum_{t=1}^{L} \sum_{j=1}^{k} \mathbf{1}(\text{topk-idx}_{b,t,j} = e)$$
+
 2. 归一化为相对负载率（理想均匀负载为 1，若 $\tilde{c}_{b,e} > 1$，则表示专家 $e$ 在该序列中被过度使用）：
-    
-    $$\tilde{c}_{b,e} = \frac{c_{b,e}}{L \cdot k / E}$$
-    
+
+$$\tilde{c}_{b,e} = \frac{c_{b,e}}{L \cdot k / E}$$
+
 3. 计算该序列中专家 $e$ 的平均打分（$s$ 为 Router 给出的 softmax 概率得分）：
-    
-    $$\bar{s}_{b,e} = \frac{1}{L} \sum_{t=1}^{L} s_{(b,t),e}$$
-    
+
+$$\bar{s}_{b,e} = \frac{1}{L} \sum_{t=1}^{L} s_{(b,t),e}$$
+
 4. 计算序列级辅助损失（$\alpha$ 为损失权重系数）：
-    
-    $$\mathcal{L}_{\text{aux}}^{\text{seq}} = \alpha \cdot \frac{1}{B} \sum_{b=1}^{B} \sum_{e=1}^{E} \tilde{c}_{b,e} \cdot \bar{s}_{b,e}$$
-    
+
+$$\mathcal{L}_{\text{aux}}^{\text{seq}} = \alpha \cdot \frac{1}{B} \sum_{b=1}^{B} \sum_{e=1}^{E} \tilde{c}_{b,e} \cdot \bar{s}_{b,e}$$
+
 
 > **直观解释：** 如果某个专家在某个序列中被高频选中（导致 $\tilde{c}_{b,e} > 1$），且其平均得分 $\bar{s}_{b,e}$ 也高，两者的乘积就会变大，导致整体损失上升。通过梯度反向传播，模型会抑制该专家的打分，促使其被少选；反之，使用不足但分数高的专家会被鼓励多用。
 
@@ -85,21 +85,21 @@ date: 2026-04-20
 **数学推导与计算步骤：**
 
 1. 计算专家 $e$ 的全局平均选择率（其中 $N$ 为当前 batch 的 token 总数，$m_{i,e}$ 来自展平后的 top-k 索引的 one-hot 编码）：
-    
-    $$f_e = \frac{1}{N \cdot k} \sum_{i=1}^{N \cdot k} m_{i,e}$$
-    
+
+$$f_e = \frac{1}{N \cdot k} \sum_{i=1}^{N \cdot k} m_{i,e}$$
+
 2. 标准化为“相对负载因子”（绝对均衡时 $f_e = 1/E$，乘以 $E$ 后均衡态的 $\hat{f}_e$ 即为 1）：
-    
-    $$\hat{f}_e = f_e \cdot E$$
-    
+
+$$\hat{f}_e = f_e \cdot E$$
+
 3. 计算专家 $e$ 的全局平均打分：
-    
-    $$p_e = \frac{1}{N} \sum_{i=1}^{N} s_{i,e}$$
-    
+
+$$p_e = \frac{1}{N} \sum_{i=1}^{N} s_{i,e}$$
+
 4. 计算批级辅助损失：
-    
-    $$\mathcal{L}_{\text{aux}}^{\text{batch}} = \alpha \cdot \sum_{e=1}^{E} \hat{f}_e \cdot p_e$$
-    
+
+$$\mathcal{L}_{\text{aux}}^{\text{batch}} = \alpha \cdot \sum_{e=1}^{E} \hat{f}_e \cdot p_e$$
+
 
 > **直观解释：** 损失项 $\hat{f}_e \cdot p_e$ 构成了直接的惩罚机制。对于高负载的专家（$\hat{f}_e > 1$），系统要求其具有较低的平均得分 $p_e$ 以降低 Loss；而低负载的专家应有较高的分数。门控网络会以此调整打分分布，从而在全局 Batch 层面实现精妙的负载均衡。
 
@@ -110,11 +110,11 @@ date: 2026-04-20
 MoE 架构的发展是一部不断追求“规模与效率解耦”的历史：
 
 - **萌芽阶段 (1991年)：** 提出竞争式损失函数，迫使专家网络产生专业化分工。
-    
+
 - **RNN与早期Transformer (2017-2021年)：** Google 引入稀疏门控与 Top-k 机制。随后的 Switch Transformer 进一步采用极简的 Top-1 路由，将参数推至 1.6 万亿，确立了“参数量作为独立缩放轴”的理念。
-    
+
 - **当前主流趋势：** 由早期如 Mixtral 8x7B 的“大参数、少专家”架构，逐渐演进为如 DeepSeek-V3 的“小参数、多专家”架构，通过更细粒度的专家分工实现极致的推理成本控制与高性能。
-    
+
 
 ---
 
