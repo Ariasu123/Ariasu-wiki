@@ -34,10 +34,23 @@ status: draft
 
 ### 2.1 MLP 块的切分
 
-MLP 块是一个 `GEMM → GeLU → GEMM` 结构，第一个 GEMM 是 $Y = \text{GeLU}(XA)$：
+MLP 块是一个 `GEMM → GeLU → GEMM` 结构，第一个 GEMM 是：
 
-- **按行切分 $A$**（$A = [A_1, A_2]^\top$）会使每卡只算出一部分和，需要**在 GeLU 之前**做一次求和同步。由于 GeLU 是非线性函数，$\text{GeLU}(X_1A_1 + X_2A_2) \neq \text{GeLU}(X_1A_1) + \text{GeLU}(X_2A_2)$，无法先算后合——引入一个同步点。
-- **按列切分 $A$**（$A = [A_1, A_2]$）则每卡独立算出 $[Y_1, Y_2] = [\text{GeLU}(XA_1), \text{GeLU}(XA_2)]$，**GeLU 可独立应用，消除一个同步点**。
+$$Y = \text{GeLU}(XA)$$
+
+对权重矩阵 $A$ 有两种切分方式，选择取决于**非线性层的位置**：
+
+**按行切分**（$A = [A_{1}, A_{2}]^{\top}$）会使每卡只算出一部分和，需要在 **GeLU 之前** 做一次求和同步。由于 GeLU 是非线性函数：
+
+$$\text{GeLU}(X_{1}A_{1} + X_{2}A_{2}) \neq \text{GeLU}(X_{1}A_{1}) + \text{GeLU}(X_{2}A_{2})$$
+
+无法先算后合——引入一个同步点。
+
+**按列切分**（$A = [A_{1}, A_{2}]$）则每卡独立算出输出列切片：
+
+$$[Y_{1}, Y_{2}] = [\text{GeLU}(XA_{1}), \text{GeLU}(XA_{2})]$$
+
+**GeLU 可独立应用，消除一个同步点**。
 
 因此第一个 GEMM 采用**列并行（column parallel）**，第二个 GEMM 采用**行并行（row parallel）**，直接消费 GeLU 输出；第二个 GEMM 的输出再在 GPU 间做一次 all-reduce，进入 dropout/残差。两个 GEMM 融合为一组，前向只需一次 all-reduce。
 
