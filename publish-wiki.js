@@ -43,9 +43,10 @@ function collectMarkdown(dir) {
   return files;
 }
 
-/** 把绝对路径转成相对仓库根的 POSIX 路径 */
+/** 把绝对路径转成相对仓库根的 POSIX 路径，并对每一段做 URL 编码（空格→%20、中文/全角括号→百分号编码、半角括号→%28/%29） */
 function toRepoPath(abs) {
-  return path.relative(__dirname, abs).split(path.sep).join('/');
+  const rel = path.relative(__dirname, abs).split(path.sep);
+  return rel.map((s) => encodeURIComponent(s).replace(/\(/g, '%28').replace(/\)/g, '%29')).join('/');
 }
 
 function buildIndex() {
