@@ -36,6 +36,8 @@
 - [AI Infra 领域概览](wiki/ai-infra/02-Foundations-基础概念/AI Infra 领域概览.md)
 - [张量并行（模型并行）](wiki/ai-infra/03-Training-训练基础设施/张量并行（模型并行）.md)
 - [Megatron-LM 论文精读](wiki/ai-infra/03-Training-训练基础设施/Megatron-LM 论文精读.md)
+- [KV Cache 内存管理（PagedAttention）](wiki/ai-infra/04-Inference-推理基础设施/KV Cache 内存管理（PagedAttention）.md)
+- [vLLM 论文精读](wiki/ai-infra/04-Inference-推理基础设施/vLLM 论文精读.md)
 
 ## IC 集成电路
 
