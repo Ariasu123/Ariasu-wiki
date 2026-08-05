@@ -37,6 +37,11 @@
 - [Megatron-LM 论文精读](wiki/ai-infra/03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Megatron-LM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md)
 - [张量并行（模型并行）](wiki/ai-infra/03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%EF%BC%89.md)
 
+## IC 集成电路
+
+- [HORIZON RTL 论文精读](wiki/IC/HORIZON%20RTL%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md)
+- [仓库级代码演化](wiki/IC/%E4%BB%93%E5%BA%93%E7%BA%A7%E4%BB%A3%E7%A0%81%E6%BC%94%E5%8C%96.md)
+
 ## LLM 大语言模型
 
 - [前向传播方法](wiki/llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/Attention%20%E4%B8%8E%20GQA.md)

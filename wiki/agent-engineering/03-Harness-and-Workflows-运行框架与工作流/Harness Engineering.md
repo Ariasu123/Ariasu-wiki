@@ -208,3 +208,4 @@ Harness 主要包含六部分：
 - **实现工具**：[Langfuse](Langfuse.md) — 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
 - **框架实现**：[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 将 Context、Tool、Permission、State、Workspace 和 Middleware 组成生产型 Agent Harness。
 - **方法论**：第一性原则 — 从 Agent 的真实失效事实与硬约束出发，决定需要建设哪些 Harness 层。
+- **实例**：[HORIZON RTL 论文精读](../../IC/HORIZON%20RTL%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — 硬件设计领域的 Harness 工程实例：Markdown harness 编译为 project pack（评估器 + 验收谓词门控）、独立 review、状态外化到 git worktree。

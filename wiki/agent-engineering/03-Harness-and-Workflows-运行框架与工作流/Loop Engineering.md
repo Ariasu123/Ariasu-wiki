@@ -49,3 +49,4 @@
 - **源码实例**：[Claude Code Query Loop](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%BB%E5%BE%AA%E7%8E%AFQuery%20Loop.md) — Claude Code Query Loop 是循环工程原则的具体实现。
 - **组成**：[Harness Engineering](Harness%20Engineering.md) — 可靠循环需要 Harness 的验证、权限和反馈环境。
 - **案例**：[OpenClaw架构与常见问题](OpenClaw%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md) — OpenClaw 的持续执行、工具循环和故障恢复体现循环工程问题。
+- **实例**：[HORIZON RTL 论文精读](../../IC/HORIZON%20RTL%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — 免手动"编辑→评估→commit/reject"循环 + git worktree 隔离 + 仓库历史即持久化记忆。
