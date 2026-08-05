@@ -4,9 +4,18 @@
 
 ## 目录结构
 
-- `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`rag/`）
-- `index.md` — 全站内容目录（由发布脚本自动生成，不要手改）
+- `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`IC/`、`rag/`）
+- `index.md` — 全站内容目录（由 `node publish-wiki.js` 自动生成，不要手改）
 - `log.md` — 操作日志，每次操作必须追加
+
+## 信源获取（firecrawl，可选）
+
+ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI 并配置 skill，即 `firecrawl` 命令可用）：
+
+- **网页链接**：`firecrawl scrape <url> -o .firecrawl/<name>.md`
+- **本地文件**（PDF、DOCX、XLSX 等）：`firecrawl parse <file> -o .firecrawl/<name>.md`
+
+解析产物统一落 `.firecrawl/`（已 gitignore，不入库），通读后按 ingest 流程提炼入库。
 
 ## 三个核心操作
 
@@ -16,7 +25,7 @@
 2. 检查相关现有页面（先查 `index.md`，必要时全文搜索）。
 3. 提炼关键点，创建新页面或更新已有页面——不是摘要，而是把线性资料拆解成网状知识结构：概念、人物、工具、方法各自成页，互相链接。
 4. 建立交叉引用；发现与已有内容矛盾时，在页面中显式标记冲突，不要静默覆盖。
-5. 更新 `index.md`，追加 `log.md`。
+5. 运行 `node publish-wiki.js` 重新生成 `index.md`，追加 `log.md`。
 
 ### query（查询）
 
