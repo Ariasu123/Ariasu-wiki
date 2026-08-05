@@ -1,10 +1,3 @@
----
-title: AI Infra 领域概览
-tags: [ai-infra, 分布式训练, 推理优化]
-created: 2026-07-25
-updated: 2026-08-05
-status: draft
----
 
 > 信源：锦恢《AI Infra 软核教程（一）为什么我们需要 AI Infra》，[知乎原文](https://zhuanlan.zhihu.com/p/2063938554061967779)（2026-07-24）。本页为该文的网状知识提炼，非全文转载。
 

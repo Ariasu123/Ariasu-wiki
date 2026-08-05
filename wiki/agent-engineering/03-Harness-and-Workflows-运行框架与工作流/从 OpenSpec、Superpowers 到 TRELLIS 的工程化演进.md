@@ -1,15 +1,3 @@
----
-date: 2026-04-02
-tags:
-  - 生产力工具
-  - 效率
-  - 工具指南
-published: true
-title: 从 OpenSpec、Superpowers 到 TRELLIS：AI 编码工作流的工程化演进
-categories:
-  - vibe coding
-aliases:
----
 
 
 在 AI 编码助手越来越强的今天，**“让模型写出代码”已经不是最难的问题，真正难的是让它在复杂项目里持续、稳定、低成本地写对代码。**

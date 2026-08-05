@@ -1,6 +1,3 @@
----
-date: 2026-04-27
----
 ![](../_assets/Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LoRA.png)
 ### 1. 核心思想：大模型的“本征维度”假说
 

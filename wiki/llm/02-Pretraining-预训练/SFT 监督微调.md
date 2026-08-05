@@ -1,6 +1,3 @@
----
-date: 2026-04-27
----
 
 ![](../_assets/Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/SFT%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B.png)
 ## 一、 SFT 的核心定位与理论基础

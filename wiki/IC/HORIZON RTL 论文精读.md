@@ -1,10 +1,3 @@
----
-title: HORIZON RTL 论文精读
-tags: [horizon, rtl, 硬件设计, agent, ic]
-created: 2026-08-05
-updated: 2026-08-05
-status: draft
----
 
 > 信源：HORIZON：Agentic Hardware Design as Repository-Level Code Evolution，Cunxi Yu 等（NVIDIA Research），2026，arXiv:2606.28279。本页为该论文的网状知识提炼，非全文转载。
 

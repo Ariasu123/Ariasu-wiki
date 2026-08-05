@@ -1,9 +1,3 @@
----
-date: 2026-03-28
-published: true
-title: 手工敲代码到 AI 智能体流水线（Harness Engineering）
-categories: vibe coding
----
 
 # 聊聊软件工程的进化：从手工敲代码到 AI 智能体流水线
 

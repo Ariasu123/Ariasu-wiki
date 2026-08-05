@@ -1,6 +1,3 @@
----
-date: 2026-04-20
----
 ![](../_assets/Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0.png)
 
 # MoE (混合专家模型) 学习笔记

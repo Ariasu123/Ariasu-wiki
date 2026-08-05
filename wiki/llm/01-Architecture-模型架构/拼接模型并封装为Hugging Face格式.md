@@ -1,6 +1,3 @@
----
-date: 2026-04-18
----
 ![](../_assets/Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%8B%BC%E6%8E%A5%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B0%81%E8%A3%85.png)
 # MindModel 与 MindCausalLM
 

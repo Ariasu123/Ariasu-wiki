@@ -1,10 +1,3 @@
----
-title: Megatron-LM 论文精读
-tags: [megatron-lm, 张量并行, 模型并行, 分布式训练, ai-infra]
-created: 2026-08-05
-updated: 2026-08-05
-status: draft
----
 
 > 信源：Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism，Mohammad Shoeybi 等（NVIDIA），NeurIPS 2019，[arXiv:1909.08053](https://arxiv.org/abs/1909.08053)，[开源代码](https://github.com/NVIDIA/Megatron-LM)。本页为该论文的网状知识提炼，非全文转载。
 

@@ -1,6 +1,3 @@
----
-date: 2026-04-28
----
 
 ![](../_assets/Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GAE%E5%92%8CActor-Critic%E6%9E%B6%E6%9E%84.png)
 ## 一、先看整体闭环

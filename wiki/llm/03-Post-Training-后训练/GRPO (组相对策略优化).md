@@ -1,6 +1,3 @@
----
-date: 2026-04-28
----
 ![](../_assets/Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GRPO%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 ## 一、 为什么需要 GRPO？（核心动机）
 

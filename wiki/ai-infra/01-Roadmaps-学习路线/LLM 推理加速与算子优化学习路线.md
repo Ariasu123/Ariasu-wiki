@@ -1,11 +1,3 @@
----
-date: 2026-03-15
-tags:
-  - CPP/LLM/CUDA/GPU
-published: true
-title: LLM 推理加速与算子优化学习路线
-categories: infra
----
 ## [学习规划](%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.md)
 
 关联阅读：可结合 [MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) 理解；推理优化路线可进一步分析 MoE 的部署成本。

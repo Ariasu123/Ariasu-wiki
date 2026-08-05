@@ -1,13 +1,3 @@
----
-title: Hermes Agent 项目功能与通用使用场景分析
-source: https://www.youtube.com/watch?v=IHan9Pje_z4
-author:
-  - "henrylin的量化策略工坊"
-published: 2026-04-09
-created: 2026-05-24
-tags:
-  - clippings
----
 关联阅读：可结合 [Skill_10](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Skill_10.md) 理解；Hermes 平台是 Skill 生态化使用的实例。
 
 ![](https://www.youtube.com/watch?v=IHan9Pje_z4)

@@ -1,6 +1,3 @@
----
-date: 2026-04-21
----
 ![](../_assets/Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/%E9%A2%84%E8%AE%AD%E7%BB%83.png)
 在大语言模型（如 Llama, Qwen）的预训练阶段，其核心范式是通过海量无监督文本执行自回归的下一词预测（Next-Token Prediction）任务。从工程实现视角来看，整个训练流水线可高度抽象为两大部分：数据处理与加载引擎（Data Pipeline） 以及 模型优化与训练框架（Training Engine）
 

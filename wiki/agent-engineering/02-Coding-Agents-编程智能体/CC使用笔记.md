@@ -1,12 +1,3 @@
----
-date: 2026-03-20
-tags:
-  - ClaudeCode
-published: true
-categories:
-  - vibe coding
-title: Claude Code 使用心得
----
 
 # Claude Code 使用心得：常用命令、技巧与速查版
 

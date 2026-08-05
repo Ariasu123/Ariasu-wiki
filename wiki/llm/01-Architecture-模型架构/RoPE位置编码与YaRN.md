@@ -1,6 +1,3 @@
----
-date: 2026-04-16
----
 ![](../_assets/Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/Rope%E5%92%8CYaRN.png)
 
 **RoPE (Rotary Positional Embedding，旋转位置编码)** 是目前大模型（如 Llama, Qwen, MiniMind）的标配。
