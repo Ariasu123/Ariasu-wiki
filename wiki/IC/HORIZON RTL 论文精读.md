@@ -25,13 +25,13 @@ Markdown harness → bootstrap agent → project pack → 免手动 agent loop �
 ```
 
 - **输入**：一份结构化 Markdown harness，含高层意图、仓库上下文、预期产物、评估标准、领域知识（领域感知的 harness 能暴露难以从文件推断的不变量、工具约定和失败模式）。
-- **bootstrap agent** 用工具循环 $G_\phi$ 把 harness $m$ 编译成 project pack：
+- **bootstrap agent** 用工具循环 $G_{\phi}$ 把 harness $m$ 编译成 project pack：
 
 $$
-p = G_\phi(m) = (\pi_{\mathrm{agent}},\; E_p,\; A_p,\; \Gamma_p,\; \Omega_p)
+p = G_{\phi}(m) = (\pi_{\mathrm{agent}},\; E_{p},\; A_{p},\; \Gamma_{p},\; \Omega_{p})
 $$
 
-其中 $\pi_{\mathrm{agent}}$ 是 agent 策略提示与工具契约，$E_p$ 是可执行评估器，$A_p$ 是接受谓词（acceptance predicate），$\Gamma_p$ 是版本控制与产物策略，$\Omega_p$ 是领域技能与仓库指令。对 RTL，$E_p$ 可包含编译、仿真、覆盖率提取、断言/testbench 检查；对其他领域，同一插槽可换为单元测试、定理证明器、性能分析器、安全扫描器、综合工具或人工评审门。
+其中 $\pi_{\mathrm{agent}}$ 是 agent 策略提示与工具契约，$E_{p}$ 是可执行评估器，$A_{p}$ 是接受谓词（acceptance predicate），$\Gamma_{p}$ 是版本控制与产物策略，$\Omega_{p}$ 是领域技能与仓库指令。对 RTL，$E_{p}$ 可包含编译、仿真、覆盖率提取、断言/testbench 检查；对其他领域，同一插槽可换为单元测试、定理证明器、性能分析器、安全扫描器、综合工具或人工评审门。
 
 - **agent loop**：此后完全免手动。每轮循环：生成/编辑候选产物 → 运行评估器 → 打分 → 通过则 commit，否则记录失败日志。
 
@@ -50,29 +50,29 @@ Git 不是"附带记账"，而是设计的核心：
 - **state** 是仓库的一个版本快照：
 
 $$
-s_t = (\mathrm{tree}(w_t),\; p,\; z_t,\; \ell_{\le t},\; \mu_t)
+s_{t} = (\mathrm{tree}(w_{t}),\; p,\; z_{t},\; \ell_{\le t},\; \mu_{t})
 $$
 
 - **option** 是两个检查点之间的一次时间延伸 episode（多次编辑、工具调用与部分修复）。
 - **接受谓词**决定轨迹是否前进：
 
 $$
-s_{t+1} = \begin{cases} \mathrm{Commit}(w_t \oplus \Delta_t,\; y_t,\; \Gamma_p) & A_p(y_t) = 1 \\ \mathrm{RejectLog}(s_t,\; \Delta_t,\; y_t) & A_p(y_t) = 0 \end{cases}
+s_{t+1} = \begin{cases} \mathrm{Commit}(w_{t} \oplus \Delta_{t},\; y_{t},\; \Gamma_{p}) & A_{p}(y_{t}) = 1 \\ \mathrm{RejectLog}(s_{t},\; \Delta_{t},\; y_{t}) & A_{p}(y_{t}) = 0 \end{cases}
 $$
 
 - **reward** 可为标量或向量：
 
 $$
-r_t = [\Delta \mathrm{pass},\; \Delta \mathrm{coverage},\; \Delta \mathrm{QoR},\; -\mathrm{tokens},\; -\mathrm{time}]
+r_{t} = [\Delta \mathrm{pass},\; \Delta \mathrm{coverage},\; \Delta \mathrm{QoR},\; -\mathrm{tokens},\; -\mathrm{time}]
 $$
 
 （本工作报告 $\Delta \mathrm{pass}$、$\Delta \mathrm{coverage}$、$-\mathrm{tokens}$ 三个分量，合成质量 $\Delta \mathrm{QoR}$ 留待未来。）
 
-- **trace** $\tau = \{(s_t, a_t, r_t, s_{t+1}, y_t)\}_{t=0}^{D-1}$，深度 $D$ 由预算/收敛/停止规则决定，可用于策略分析、奖励建模、课程构建或**离线 agent-RL 训练**——但本工作的 agent backbone 全程固定，不做在线训练。
+- **trace** $\tau = \{(s_{t}, a_{t}, r_{t}, s_{t+1}, y_{t})\}_{t=0}^{D-1}$，深度 $D$ 由预算/收敛/停止规则决定，可用于策略分析、奖励建模、课程构建或**离线 agent-RL 训练**——但本工作的 agent backbone 全程固定，不做在线训练。
 
 ## 五、Agent Loop 与 Trace Buffer
 
-- 外层每个转移包含一个长度 $K_t$ 的内部轨迹：agent 读当前状态、规划目标、编辑 worktree、调用工具、解释失败、修复或提交。内部轨迹**不假设马尔可夫**，每步长度可变。
+- 外层每个转移包含一个长度 $K_{t}$ 的内部轨迹：agent 读当前状态、规划目标、编辑 worktree、调用工具、解释失败、修复或提交。内部轨迹**不假设马尔可夫**，每步长度可变。
 - trace buffer 完全基于原生 git：staged 编辑用 `git diff --cached` 检查；每个被接受尝试成为一个 commit，其消息与 `git notes` 携带评估结论与 reward；完整版本历史用 `git log` 恢复；提交前还有**独立 review 步骤**对候选做 diff 审查。
 
 ## 六、记忆与成本：持久 Session + Prompt Cache

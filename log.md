@@ -8,3 +8,4 @@
 - [2026-08-05] ingest: Megatron-LM 论文精读, 张量并行（模型并行） — 从 Megatron-LM 论文（arXiv:1909.08053，本地 PDF 经 firecrawl parse）提炼层内模型并行切分策略与 f/g 通信算子、BERT LayerNorm 重排发现，补充 AI Infra 概览的训练侧交叉引用
 - [2026-08-05] ingest: HORIZON RTL 论文精读, 仓库级代码演化 — 从 HORIZON 论文（arXiv:2606.28279，NVIDIA，本地 PDF 经 firecrawl parse）提炼仓库级代码演化范式与免手动 agent loop，新建 IC 主题目录，建立与 Harness/Loop Engineering 的交叉引用
 - [2026-08-05] fix: Megatron-LM 论文精读 — 2.1 节公式重构：复杂公式从行内改块级（顶格）、下标/上标加花括号（A_{1}、^{\top}），修复 GitHub 渲染异常
+- [2026-08-05] fix: HORIZON RTL 论文精读, 张量并行（模型并行） — 公式下标统一加花括号（E_{p}、G_{\phi}、A_{1} 等），修复 GitHub 渲染异常
