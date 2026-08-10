@@ -1,6 +1,6 @@
 ## Harness Engineering 总结
 
-关联阅读：可结合 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) 理解；Harness Engineering 面向的是 Agent 系统的可靠交付。
+关联阅读：可结合 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) 理解；Harness Engineering 面向的是 Agent 系统的可靠交付。企业级落地案例见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B%EF%BC%88%E5%8D%83%E9%97%AE%20AI%20%E5%B9%B3%E5%8F%B0%EF%BC%89.md)。
 
 
 Harness Engineering 是围绕大模型搭建一套可靠运行环境，让 Agent 在长链路任务中能够稳定执行、及时纠偏、失败恢复。

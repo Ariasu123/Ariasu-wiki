@@ -1,7 +1,7 @@
 
 # 聊聊软件工程的进化：从手工敲代码到 AI 智能体流水线
 
-关联阅读：可结合 [Harness Engineering](Harness%20Engineering.md) 理解；叙事版提供 Harness Engineering 概念的工程背景。
+关联阅读：可结合 [Harness Engineering](Harness%20Engineering.md) 理解；叙事版提供 Harness Engineering 概念的工程背景。企业级落地案例见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B%EF%BC%88%E5%8D%83%E9%97%AE%20AI%20%E5%B9%B3%E5%8F%B0%EF%BC%89.md)。
 
 
 前阵子，OpenAI 和 Anthropic 等顶尖 AI 实验室先后公布了他们的内部工程实践——**让 AI 智能体（Agent）全自动写出了包含上百万行代码的真实产品，而人类一行代码都没写。**

@@ -1,6 +1,6 @@
 # Context Engineering 面试经典 10 问
 
-关联阅读：可结合 [Agent 核心问题](Agent_16.md) 理解；Context Engineering 是 Agent 可靠运行的核心子系统。
+关联阅读：可结合 [Agent 核心问题](Agent_16.md) 理解；Context Engineering 是 Agent 可靠运行的核心子系统。工业界分层防御实践见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B%EF%BC%88%E5%8D%83%E9%97%AE%20AI%20%E5%B9%B3%E5%8F%B0%EF%BC%89.md) 的四层上下文防线。
 
 
 > 适用于 AI Agent、RAG、LLM 应用开发、AI Coding Agent 相关面试。回答重点：Context Engineering 不是单纯写 Prompt，而是管理模型每一轮调用时能看到什么、看到多少、怎么组织、怎么压缩、怎么召回、怎么保证可信和可追溯。
