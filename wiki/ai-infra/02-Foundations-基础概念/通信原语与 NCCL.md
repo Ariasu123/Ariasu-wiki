@@ -204,11 +204,11 @@ export NCCL_ALGO=Ring
 
 ### α-β 模型（Hockney 模型）
 
-通信分析的标准模型。定义：$p$ = rank 数，$n$ = 单 rank 单次传输数据量，$\alpha$ = 发起一次通信的固定延迟，$\beta$ = 传输 1 Byte 所需时间。一次通信开销：
+通信分析的标准模型。定义： $p$ = rank 数， $n$ = 单 rank 单次传输数据量， $\alpha$ = 发起一次通信的固定延迟， $\beta$ = 传输 1 Byte 所需时间。一次通信开销：
 
 $$T = S(p) \cdot \alpha + F(p) \cdot n \cdot \beta$$
 
-其中 $S(p)$ 描述 **Latency**，$F(p) \cdot n$ 描述 **Bandwidth**。分析目标就是搞清每个算法的 Latency 与 Bandwidth 关于 $p, n$ 的复杂度。下文统一用 DP 梯度同步为例：记 $g_{ij}$ 为第 $i$ 个 rank 上第 $j$ 层网络参数的梯度（共 4 层）。
+其中 $S(p)$ 描述 **Latency**， $F(p) \cdot n$ 描述 **Bandwidth**。分析目标就是搞清每个算法的 Latency 与 Bandwidth 关于 $p, n$ 的复杂度。下文统一用 DP 梯度同步为例：记 $g_{ij}$ 为第 $i$ 个 rank 上第 $j$ 层网络参数的梯度（共 4 层）。
 
 ## 七、NCCL 通信算法
 
@@ -222,7 +222,7 @@ $$T = S(p) \cdot \alpha + F(p) \cdot n \cdot \beta$$
 
 ### 基准：暴力中心化通信
 
-先 gather 全部数据到 rank0，算完均值再 broadcast 回去。rank0 下行带宽是瓶颈，$p-1$ 份数据经它接收：
+先 gather 全部数据到 rank0，算完均值再 broadcast 回去。rank0 下行带宽是瓶颈， $p-1$ 份数据经它接收：
 
 $$T_{\text{gather}} = \alpha + (p - 1) \cdot n \cdot \beta$$
 
@@ -238,8 +238,8 @@ $$\mathrm{Latency} = \mathcal{\Theta}(1), \quad \mathrm{Bandwidth} = \mathcal{\T
 
 所有卡首尾相连成环，只能沿环方向与后继通信。Ring 实现 AllReduce 分为两步：
 
-1. **ReduceScatter**（$p-1$ 轮）：每个 rank 拿到某一层梯度的和；
-2. **AllGather**（$p-1$ 轮）：全部层的梯度和扩散到所有 rank。
+1. **ReduceScatter**（ $p-1$ 轮）：每个 rank 拿到某一层梯度的和；
+2. **AllGather**（ $p-1$ 轮）：全部层的梯度和扩散到所有 rank。
 
 数据被分为 $p$ 份，每次传 $n/p$；各节点完全对称，均向后继发送 $2(p-1)$ 次：
 

@@ -67,7 +67,9 @@ ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI
 3. `\text{}` / `\mathrm{}` 内不要出现下划线（`\_` 会被 GitHub 反转义后报错），用连字符代替，如 `\text{rotate-half}`。
 4. 公式内不裸写 Markdown 特殊字符：`*`（斜体/粗体）、`_`（斜体）、`#`（标题）、`[`/`]`（链接语法）等必须用 `{}` 包裹或用 `\%`、`\#` 等转义。
 5. **禁用 `\operatorname`**：GitHub MathJax 直接报 "macros are not allowed" 并让整块公式显示为源码。一律用 `\mathrm{}` 代替，如 `\mathrm{clip}`。
-6. 写完公式后自查：`grep -nE '\$[^$]*[A-Za-z0-9]_[A-Za-z0-9]' <file>` 应无输出（裸下标）；`^\字母` 上标同样禁止；块级 `$$` 必须行首。
+6. **行内公式前是中文/全角标点时必须加空格**：`：$x$`、`（$x$）`、`中文$x$` 都不会被 GitHub 识别为公式（原样显示 `$`），写成 `： $x$`、`（ $x$）`。行内公式后面跟中文不受影响。
+7. **重音命令+下标的行内写法**：行内公式里 `\hat{f}_{e}`、`\bar{s}_{b,e}` 这类 `}_{` 结构会触发 Markdown 斜体规则吃掉公式（`_{...}..._` 被配成一对 `<em>`）。行内写法把重音命令的花括号去掉——`\hat f_{e}`、`\bar s_{b,e}`（下标花括号保留），或直接改用块级 `$$`。
+8. 写完公式后自查：`grep -nE '\$[^$]*[A-Za-z0-9]_[A-Za-z0-9]' <file>` 应无输出（裸下标）；`^\字母` 上标同样禁止；块级 `$$` 必须行首。可用 GitHub markdown API（`POST https://api.github.com/markdown`，`mode: gfm`）实测渲染结果。
 
 ## Callout 规范（GitHub 兼容）
 

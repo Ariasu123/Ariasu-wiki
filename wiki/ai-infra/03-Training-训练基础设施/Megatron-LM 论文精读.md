@@ -33,13 +33,13 @@ $$Y = \text{GeLU}(XA)$$
 
 对权重矩阵 $A$ 有两种切分方式，选择取决于**非线性层的位置**：
 
-**按行切分**（$A = [A_{1}, A_{2}]^{\top}$）会使每卡只算出一部分和，需要在 **GeLU 之前** 做一次求和同步。由于 GeLU 是非线性函数：
+**按行切分**（ $A = [A_{1}, A_{2}]^{\top}$）会使每卡只算出一部分和，需要在 **GeLU 之前** 做一次求和同步。由于 GeLU 是非线性函数：
 
 $$\text{GeLU}(X_{1}A_{1} + X_{2}A_{2}) \neq \text{GeLU}(X_{1}A_{1}) + \text{GeLU}(X_{2}A_{2})$$
 
 无法先算后合——引入一个同步点。
 
-**按列切分**（$A = [A_{1}, A_{2}]$）则每卡独立算出输出列切片：
+**按列切分**（ $A = [A_{1}, A_{2}]$）则每卡独立算出输出列切片：
 
 $$[Y_{1}, Y_{2}] = [\text{GeLU}(XA_{1}), \text{GeLU}(XA_{2})]$$
 
@@ -73,7 +73,7 @@ class f(torch.autograd.Function):
 
 输出 embedding 尺寸为 hidden-size × vocab-size（词表常达数万，GPT-2 为 50,257），值得并行：
 
-- 输入 embedding 按**词表维度**列切分，每卡持有一部分表，嵌入后需要一次 all-reduce（$g$ 算子）。
+- 输入 embedding 按**词表维度**列切分，每卡持有一部分表，嵌入后需要一次 all-reduce（ $g$ 算子）。
 - 输出 embedding（与输入共享权重）算出各卡局部 logits 后，朴素做法是 all-gather 全部 logits，通信量为 $b \times s \times v$（batch × 序列长 × 词表），过大。
 - **优化：把并行 logits 与交叉熵 loss 融合**，各卡先算局部交叉熵再 all-reduce 标量 loss，通信量降到 $b \times s$。这是论文强调的显著通信缩减。
 

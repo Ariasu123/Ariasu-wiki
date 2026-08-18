@@ -26,7 +26,7 @@
     
 - **损失掩码 (Loss Masking)**：克隆输入张量 `input_ids` 作为监督信号 `labels`。关键操作是将标签中对应 Padding 的位置赋值为 `-100`。该设定会触发 PyTorch 交叉熵损失函数中的 `ignore_index` 机制，确保填充区域不产生梯度，避免对模型优化方向造成扰动。
     
-- **注意力掩码 (Attention Mask)**：生成一个二值化的长整型（LongTensor）掩码矩阵。在自注意力（Self-Attention）计算时，该掩码通过叠加负无穷（$-\infty$）偏置项，对填充区域的注意力权重进行 Masking 处理，防止序列产生无效的交叉注意力。
+- **注意力掩码 (Attention Mask)**：生成一个二值化的长整型（LongTensor）掩码矩阵。在自注意力（Self-Attention）计算时，该掩码通过叠加负无穷（ $-\infty$）偏置项，对填充区域的注意力权重进行 Masking 处理，防止序列产生无效的交叉注意力。
 
 ### 3. 调度层：PyTorch `DataLoader` 的批次生成
 
