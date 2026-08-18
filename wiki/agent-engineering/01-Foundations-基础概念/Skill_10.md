@@ -369,5 +369,4 @@ MCP 提供：
 - **系统位置**：[Agent 核心问题](Agent_16.md) — Skill 是 Agent 能力组织与渐进加载机制。
 - **边界**：[Tools、MCP 与 Function Calling](Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) — Skill 负责能力说明与流程，Tool 负责实际执行接口。
 - **项目应用**：MiniCode 工具系统 — MiniCode 将 Skill 路由和 Tool／MCP 执行组合成能力系统。
-- **案例**：[Hermes Agent 项目功能与通用使用场景分析](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Hermes%20Agent%20%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E4%B8%8E%E9%80%9A%E7%94%A8%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90.md) — Hermes 用 Skills、MCP 和插件扩展通用 Agent 能力。
 - **概念落点**：业务会议 — 业务流程展示 Skill 如何承载行业规则。

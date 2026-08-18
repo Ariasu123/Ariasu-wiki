@@ -273,6 +273,4 @@ install(show_locals=True, suppress=[click])
 ## 相关笔记
 
 - **用途**：[PyTorch及相关方法](PyTorch%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95.md) — 环境配置的主要使用者之一是 PyTorch 训练代码。
-- **环境衔接**：[远程连接AutoDL](%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5AutoDL.md) — 本地包管理配置需要迁移到远程 GPU 环境。
-- **工具协作**：[Claude Code 使用笔记](../../agent-engineering/02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/CC%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md) — Claude Code 的项目配置与诊断依赖清晰的本地开发环境。
 - **基础**：Python3_ACM输入输出与手撕模板 — Python 环境配置支撑算法练习和面试运行。

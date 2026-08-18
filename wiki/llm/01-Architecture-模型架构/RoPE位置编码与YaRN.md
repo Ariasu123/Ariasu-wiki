@@ -332,4 +332,3 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
 
 - **总览**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — 架构笔记提供位置编码所在的模型上下文。
 - **应用**：[Attention 与 GQA](Attention%20%E4%B8%8E%20GQA.md) — RoPE 的实际作用体现在 Attention 分数计算中。
-- **系统影响**：[vLLM／SGLang 路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md) — 长上下文外推会提高 KV Cache 和调度压力。

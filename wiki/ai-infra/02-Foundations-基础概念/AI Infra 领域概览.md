@@ -54,7 +54,7 @@ $$8 \times 180\mathrm{GB} = 1440\mathrm{GB} = 1.44\mathrm{TB} < 4\mathrm{TB}$$
 
 由自回归特性引出的优化三板斧：
 
-- **KV Cache**：相邻两步生成的前缀完全相同，缓存历史 K/V 避免重复计算。详见 [主题一：推理全流程串讲（概览篇）](../../llm/04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/%E4%B8%BB%E9%A2%98%E4%B8%80%EF%BC%9A%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md)（含 Prefill/Decode 差异化处理、PagedAttention），分页式内存管理详见 [KV Cache 内存管理（PagedAttention）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md)。
+- **KV Cache**：相邻两步生成的前缀完全相同，缓存历史 K/V 避免重复计算。详见 [推理全流程串讲（概览篇）](推理全流程串讲（概览篇）.md)（含 Prefill/Decode 差异化处理、PagedAttention），分页式内存管理详见 [KV Cache 内存管理（PagedAttention）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md)。
 - **Draft Model（草稿模型/投机采样）**：一次生成多个 token 再校验，打破逐 token 串行。
 - **量化压缩、算子融合**：压榨单个 transformer 模块的性能。详见 [LLM 推理加速与算子优化学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)。
 
@@ -67,8 +67,6 @@ $$8 \times 180\mathrm{GB} = 1440\mathrm{GB} = 1.44\mathrm{TB} < 4\mathrm{TB}$$
 - **读优秀开源项目**：Megatron-LM、DeepSpeed、SGLang、vLLM。**先读官方文档建立认知，再读源码**，快速减少 Unknown Unknown。
 - 多机多卡环境多数人只能在公司/实验室获得，因此先建立原理认知，再在真实场景中用系统认知 + AI 工具解决问题。
 
-相关学习路径见 [vLLM / SGLang 学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md) 与 [学习规划](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.md)。
-
 ## 六、原系列 roadmap（锦恢的软核教程规划）
 
 1. 第一篇（本文）：领域概况
@@ -79,15 +77,15 @@ $$8 \times 180\mathrm{GB} = 1440\mathrm{GB} = 1.44\mathrm{TB} < 4\mathrm{TB}$$
 
 ## 相关笔记
 
+- **集群硬件**：[GPU 集群基本结构与多机组网拓扑](GPU%20%E9%9B%86%E7%BE%A4%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%B8%8E%E5%A4%9A%E6%9C%BA%E7%BB%84%E7%BD%91%E6%8B%93%E6%89%91.md) — 同系列第二篇：PCIe/NVLink/NVSwitch 单机互联、IB 卡与 Rail/Clos 多机组网拓扑。
+- **通信抽象**：[通信原语与 NCCL](%E9%80%9A%E4%BF%A1%E5%8E%9F%E8%AF%AD%E4%B8%8E%20NCCL.md) — 同系列第三篇：P2P/集合通信原语、PyTorch 前端、NCCL 后端与 Ring/Tree 等通信算法。
 - **训练并行**：[Megatron-LM 论文精读](../03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Megatron-LM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — 训练 infra 代表框架的论文级解析：层内模型并行、8.3B 训练、BERT LayerNorm 重排。
 - **张量并行**：[张量并行（模型并行）](../03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%EF%BC%89.md) — 文中提到的 TP 并行范式的通用切分策略与通信开销分析。
-- **推理详解**：[主题一：推理全流程串讲（概览篇）](../../llm/04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/%E4%B8%BB%E9%A2%98%E4%B8%80%EF%BC%9A%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md) — KV Cache、EOS、Prefill/Decode 的机制级展开。
-- **推理框架**：[vLLM / SGLang 学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E8%B7%AF%E7%BA%BF.md) — 推理 infra 两大主流框架的上手路径。
+- **推理详解**：[推理全流程串讲（概览篇）](推理全流程串讲（概览篇）.md) — KV Cache、EOS、Prefill/Decode 的机制级展开。
 - **推理优化**：[LLM 推理加速与算子优化学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 量化、算子融合、CUDA 编程。
-- **学习路径**：[学习规划](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.md) — 8 周分阶段的 infra 学习执行计划。
 - **MoE 关联**：[MoE 学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) — EP（专家并行）与 DeepEP 通信库的应用背景。
 - **KV Cache 结构基础**：[Attention 与 GQA](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/Attention%20%E4%B8%8E%20GQA.md) — GQA 直接决定 KV Cache 的显存占用。
 - **推理引擎**：[vLLM 论文精读](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/vLLM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — PagedAttention、块级内存管理与 2-4× 吞吐提升。
 - **KV 内存**：[KV Cache 内存管理（PagedAttention）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md) — 分页思想、block table 与 copy-on-write 共享。
-- **Agent 评估平台**：[Langfuse](../../agent-engineering/03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Langfuse.md) — 文中提到的 Agent Infra 组件之一。
+- **Agent 评估平台**：[Langfuse](../../agent-engineering/04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Langfuse.md) — 文中提到的 Agent Infra 组件之一。
 - **Agent 框架**：[AgentScope](../../agent-engineering/04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 文中提到的 Agent 框架代表。

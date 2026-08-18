@@ -230,7 +230,7 @@ Leader 通过 TeamCreate、AgentCreate、AgentInvite、TeamSay 和 TeamDelete �
 
 TracingMiddleware 会为 Agent Reply、Model Call 和 Tool Execution 创建层级化 OpenTelemetry Span，并记录 Session、reply、模型、token、消息、工具参数、结果、HITL 和外部执行状态。
 
-这意味着 AgentScope 可以接入 [Langfuse](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Langfuse.md)：为 OpenTelemetry 配置指向 Langfuse OTLP Endpoint 的 Exporter，再在 Agent 上启用 TracingMiddleware。它不是 AgentScope 内置的一键 Langfuse Connector，Exporter、鉴权、Span 映射和脱敏仍需显式配置。
+这意味着 AgentScope 可以接入 [Langfuse](Langfuse.md)：为 OpenTelemetry 配置指向 Langfuse OTLP Endpoint 的 Exporter，再在 Agent 上启用 TracingMiddleware。它不是 AgentScope 内置的一键 Langfuse Connector，Exporter、鉴权、Span 映射和脱敏仍需显式配置。
 
 模型输入输出、工具参数和结果可能含源码、个人信息和密钥。开启 TracingMiddleware 前应检查采集字段，并在 Exporter 或 Middleware 层做过滤、采样和脱敏。
 
@@ -290,7 +290,7 @@ asyncio.run(main())
 | 扩展方式 | Python 抽象、Middleware、Tool、MCP、Skill | Skill、MCP、插件和消息入口 | 自研 Runtime、Tool、Plugin、MCP |
 | 适合 | 构建自有 Agent 产品与服务 | 快速使用个人通用 Agent | 学习、定制和演进 Coding Agent |
 
-[Hermes Agent](Hermes%20Agent%20%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E4%B8%8E%E9%80%9A%E7%94%A8%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90.md) 更像已经装配好的 Agent Operating Layer；AgentScope 更像构建这类产品的框架和服务骨架。两者都不是单纯聊天 UI，但抽象层级和目标用户不同。
+Hermes Agent 更像已经装配好的 Agent Operating Layer；AgentScope 更像构建这类产品的框架和服务骨架。两者都不是单纯聊天 UI，但抽象层级和目标用户不同。
 
 ## 优势
 
@@ -354,6 +354,5 @@ asyncio.run(main())
 
 - **理论基础**：[Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) — AgentScope 将 ReAct、工具、状态、记忆和多 Agent 协作落实为框架抽象。
 - **框架实现**：[Harness Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) — Permission、Workspace、Context、State 和 Middleware 构成具体 Harness。
-- **对比**：[Hermes Agent](Hermes%20Agent%20%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E4%B8%8E%E9%80%9A%E7%94%A8%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90.md) — AgentScope 是构建 Agent 产品的框架，Hermes 更接近开箱运行的通用 Agent 平台。
 - **项目对照**：MiniCode 多智能体 — 可比较 Leader/Worker、Session、权限收窄和消息总线设计。
-- **观测集成**：[Langfuse](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Langfuse.md) — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 做 Trace、评测和版本分析。
+- **观测集成**：[Langfuse](Langfuse.md) — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 做 Trace、评测和版本分析。

@@ -1,4 +1,3 @@
-## Harness Engineering 总结
 
 关联阅读：可结合 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) 理解；Harness Engineering 面向的是 Agent 系统的可靠交付。企业级落地案例见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B%EF%BC%88%E5%8D%83%E9%97%AE%20AI%20%E5%B9%B3%E5%8F%B0%EF%BC%89.md)。
 
@@ -144,7 +143,7 @@ Harness 主要包含六部分：
 
 可观测性让调试从“猜哪里错了”变成“直接查看执行轨迹”。
 
-如果需要把这些要求落实为统一平台，可以使用 [Langfuse](Langfuse.md) 组织嵌套 Trace、成本与延迟指标、质量 Score 和数据集实验。
+如果需要把这些要求落实为统一平台，可以使用 [Langfuse](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Langfuse.md) 组织嵌套 Trace、成本与延迟指标、质量 Score 和数据集实验。
 
 ### 6. 约束校验与失败恢复
 
@@ -201,11 +200,9 @@ Harness 主要包含六部分：
 ## 相关笔记
 
 - **理论基础**：[Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) — Harness Engineering 面向的是 Agent 系统的可靠交付。
-- **同主题**：[Harness](Harness.md) — 一篇聚焦面试定义与组件，一篇用演进叙事解释 Harness 价值。
 - **组成**：[Loop Engineering](Loop%20Engineering.md) — Harness 提供外部约束，Loop Engineering 优化内部执行循环。
 - **工程化**：[OpenSpec、Superpowers 与 TRELLIS](%E4%BB%8E%20OpenSpec%E3%80%81Superpowers%20%E5%88%B0%20TRELLIS%20%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96%E6%BC%94%E8%BF%9B.md) — 规范驱动与脚手架把 Harness 原则固化到交付流程。
 - **项目应用**：MiniCode 架构 — MiniCode 的权限、预算、审计和验证属于 Harness 层能力。
-- **实现工具**：[Langfuse](Langfuse.md) — 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
+- **实现工具**：[Langfuse](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Langfuse.md) — 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
 - **框架实现**：[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 将 Context、Tool、Permission、State、Workspace 和 Middleware 组成生产型 Agent Harness。
 - **方法论**：第一性原则 — 从 Agent 的真实失效事实与硬约束出发，决定需要建设哪些 Harness 层。
-- **实例**：[HORIZON RTL 论文精读](../../IC/HORIZON%20RTL%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — 硬件设计领域的 Harness 工程实例：Markdown harness 编译为 project pack（评估器 + 验收谓词门控）、独立 review、状态外化到 git worktree。

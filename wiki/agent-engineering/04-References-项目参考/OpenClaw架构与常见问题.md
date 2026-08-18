@@ -1,7 +1,7 @@
 
 ## 1. 什么是 OpenClaw？
 
-关联阅读：可结合 [Loop Engineering](Loop%20Engineering.md) 理解；Loop Engineering 可用于分析 OpenClaw 的运行可靠性。OpenClaw 作为执行集群层（L1）接入组织级认知系统的架构见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B%EF%BC%88%E5%8D%83%E9%97%AE%20AI%20%E5%B9%B3%E5%8F%B0%EF%BC%89.md)。
+关联阅读：可结合 [Loop Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Loop%20Engineering.md) 理解；Loop Engineering 可用于分析 OpenClaw 的运行可靠性。OpenClaw 作为执行集群层（L1）接入组织级认知系统的架构见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B%EF%BC%88%E5%8D%83%E9%97%AE%20AI%20%E5%B9%B3%E5%8F%B0%EF%BC%89.md)。
 
 
 OpenClaw 是一个运行在个人电脑或服务器上的自主 AI Agent，可以长期在线并操作真实设备完成任务。
@@ -138,5 +138,4 @@ OpenClaw 采用“文件即 Agent”的设计，核心工作空间主要包含�
 
 ## 相关笔记
 
-- **理论**：[Loop Engineering](Loop%20Engineering.md) — Loop Engineering 可用于分析 OpenClaw 的运行可靠性。
-- **平台对比**：[Hermes Agent 项目功能与通用使用场景分析](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Hermes%20Agent%20%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E4%B8%8E%E9%80%9A%E7%94%A8%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90.md) — 两者都定位为可持续运行、可扩展的通用 Agent 平台。
+- **理论**：[Loop Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Loop%20Engineering.md) — Loop Engineering 可用于分析 OpenClaw 的运行可靠性。

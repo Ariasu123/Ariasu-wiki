@@ -22,7 +22,6 @@ const SECTION_NAMES = {
   'ai-infra': 'AI 基础设施',
   'IC': 'IC 集成电路',
   'llm': 'LLM 大语言模型',
-  'rag': 'RAG 与知识库',
 };
 
 /** 递归收集目录下所有 .md 文件（跳过 _ 开头目录与隐藏文件） */

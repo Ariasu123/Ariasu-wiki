@@ -2,7 +2,7 @@
 
 > 调研快照：2026-07-14。GitHub 约 31.1k Stars，最新 OSS Release 为 v3.213.0。Stars 和版本会持续变化，本文中的数字只代表调研当日状态。
 
-Langfuse 是一个开源 AI Engineering 平台。它不只是展示日志，而是把 LLM 应用的运行轨迹、成本与延迟、质量评分、数据集实验和 Prompt 版本串成持续改进闭环。它可以作为 [Harness Engineering](Harness%20Engineering.md) 中“评估与观测”能力的一种工程实现。
+Langfuse 是一个开源 AI Engineering 平台。它不只是展示日志，而是把 LLM 应用的运行轨迹、成本与延迟、质量评分、数据集实验和 Prompt 版本串成持续改进闭环。它可以作为 [Harness Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) 中“评估与观测”能力的一种工程实现。
 
 ## 一句话结论
 
@@ -320,8 +320,8 @@ Ragas 等外部评测器可以计算 RAG 指标，再通过 SDK/API 将结果写
 
 ## 相关笔记
 
-- **实现工具**：[Harness Engineering](Harness%20Engineering.md) — Langfuse 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
+- **实现工具**：[Harness Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) — Langfuse 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
 - **项目应用**：MiniCode 幻觉评测与版本控制 — 可用 Langfuse 承载 Agent 运行轨迹、离线回归和线上质量评分。
 - **对比**：专家 Trace 要求 — 专家 Trace 强调任务沟通质量，Langfuse Trace 强调机器运行证据。
 - **项目应用**：知识库问答优化与编排 — 可观测检索、重排和生成步骤，并用 Score 驱动 RAG 优化闭环。
-- **观测集成**：[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 统一分析 Agent、模型和工具调用。
+- **观测集成**：[AgentScope 2.0](AgentScope.md) — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 统一分析 Agent、模型和工具调用。

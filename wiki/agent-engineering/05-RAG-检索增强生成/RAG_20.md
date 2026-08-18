@@ -1,7 +1,7 @@
 
 ## 一、总览
 
-关联阅读：可结合 [Claude Code 代码检索](../../agent-engineering/02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) 理解；通用 RAG 原理可用于分析代码仓库检索。
+关联阅读：可结合 [Claude Code 代码检索](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) 理解；通用 RAG 原理可用于分析代码仓库检索。
 
 
 RAG 的核心是 Retrieval-Augmented Generation，也就是“检索增强生成”。它不是让模型把所有知识都记进参数里，而是在生成答案前先从外部知识库检索相关内容，再把检索结果作为上下文交给大模型回答。
@@ -118,7 +118,7 @@ RAG 和微调不是互相替代关系。微调是改模型参数，适合改变�
 - **父子切割**：小 chunk 用于精准检索，大 chunk 用于返回上下文，**存储存两份
 	- 存储量更大，因为要存父 chunk 和子 chunk。
 	- 通过 parent_id 关联
-![](../_assets/Pasted%20image%2020260610151630.png)
+![](../_assets/RAG-%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90/Pasted%20image%2020260610151630.png)
 ### 面试提醒
 
 回答 Chunking 时要同时讲“为什么不能整篇存”“怎么切”“粒度怎么选”。高质量场景可以主动提父子切割。
@@ -516,15 +516,15 @@ MRR
 #### 第二层：生成层评估
 **RAGAs** 框架
 测试数据：
-![](../_assets/Pasted%20image%2020260611154020.png)
+![](../_assets/RAG-%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90/Pasted%20image%2020260611154020.png)
 RAGAs 的核心思路是：
 > 用 LLM 当裁判，自动评估 RAG 输出质量。
 
 四个指标：Faithfulness忠实度，Answer Relevancy答案相关性，Context Recall上下文召回率，Context Precision上下文精确率
 #### 第三层 线上指标
-![](../_assets/Pasted%20image%2020260611154213.png)
+![](../_assets/RAG-%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90/Pasted%20image%2020260611154213.png)
 
-![](../_assets/Pasted%20image%2020260611154254.png)
+![](../_assets/RAG-%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90/Pasted%20image%2020260611154254.png)
 
 ### 面试提醒
 
@@ -607,7 +607,7 @@ unstructured 更适合做 RAG 文档入库前的通用解析。它会把 PDF、W
 
 ## 相关笔记
 
-- **对比应用**：[Claude Code 代码检索](../../agent-engineering/02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) — 通用 RAG 原理可用于分析代码仓库检索。
+- **对比应用**：[Claude Code 代码检索](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E6%80%BB%E7%BB%93.md) — 通用 RAG 原理可用于分析代码仓库检索。
 - **理论与实现**：RAG 项目实现 — 综合 RAG 原理可用于检查项目的切分、召回、重排和评测。
 - **数据入口**：数据清洗与PDF处理 — 数据清洗、OCR 和 PDF 结构化决定知识库输入质量。
 - **生成优化**：问答优化与编排 — 问答编排覆盖查询改写、检索路由、重排和生成控制。

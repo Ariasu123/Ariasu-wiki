@@ -1,8 +1,8 @@
-# 从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）
+
 
 > 信源：微信公众号「千问AI平台」，作者储旭（槿柏），2026-07-19。[原文链接](https://mp.weixin.qq.com/s/xH4cyBJJJlG9cfcmSU5ztA)。内容是阿里千问 AI 平台构建企业级 Agent 平台的完整技术复盘：从大模型的四个结构性约束出发，经历 Prompt 工程 → Context 工程 → Harness 工程三个阶段，最终演化为五层架构的 Agent OS。每一层的出现都是因为前一层遇到了天花板。
 
-关联阅读：[Harness Engineering](Harness%20Engineering.md)、[Harness](Harness.md)、[Context Engineering 10 问](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Context_Engineering_10.md)、[OpenClaw架构与常见问题](OpenClaw%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md)、[Claude Code 上下文管理与五层压缩](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BA%94%E5%B1%82%E5%8E%8B%E7%BC%A9.md)。
+关联阅读：[Harness Engineering](Harness%20Engineering.md)、[Context Engineering 10 问](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Context_Engineering_10.md)、[OpenClaw架构与常见问题](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/OpenClaw%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md)、[Claude Code 上下文管理与五层压缩](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BA%94%E5%B1%82%E5%8E%8B%E7%BC%A9.md)。
 
 ![四阶段演进主线](../_assets/qwen-agent-os-evolution-timeline.png)
 

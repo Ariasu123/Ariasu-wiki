@@ -4,7 +4,7 @@
 
 ## 目录结构
 
-- `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`IC/`、`rag/`）
+- `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`IC/`）
 - `index.md` — 全站内容目录（由 `node publish-wiki.js` 自动生成，不要手改）
 - `log.md` — 操作日志，每次操作必须追加
 
