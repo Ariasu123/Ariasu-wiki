@@ -23,7 +23,9 @@
 
 SFT 依然基于自回归生成机制，但与预训练最大的区别在于：**SFT 通常只对“模型回复（Assistant Response）”部分计算损失（Loss），而忽略“系统提示（System）”和“用户指令（User）”部分。**
 
-其交叉熵损失函数（Cross-Entropy Loss）表示为（其中 X 为输入指令，Y 为目标回复的 Token 序列）：$$\mathcal{L}_{\text{SFT}} = -\sum_{i=1}^{n} \log P(y_i \mid X, y_{<i}; \theta)$$
+其交叉熵损失函数（Cross-Entropy Loss）表示为（其中 X 为输入指令，Y 为目标回复的 Token 序列）：
+
+$$\mathcal{L}_{\text{SFT}} = -\sum_{i=1}^{n} \log P(y_{i} \mid X, y_{<i}; \theta)$$
 
 ---
 
