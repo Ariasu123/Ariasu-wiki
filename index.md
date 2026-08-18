@@ -33,7 +33,7 @@
 - [GPU 集群基本结构与多机组网拓扑](wiki/ai-infra/02-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/GPU%20%E9%9B%86%E7%BE%A4%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%B8%8E%E5%A4%9A%E6%9C%BA%E7%BB%84%E7%BD%91%E6%8B%93%E6%89%91.md)
 - [张量并行（模型并行）](wiki/ai-infra/03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%EF%BC%89.md)
 - [Megatron-LM 论文精读](wiki/ai-infra/03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Megatron-LM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md)
-- [主题一：推理全流程串讲（概览篇）](wiki/ai-infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E4%B8%BB%E9%A2%98%E4%B8%80%EF%BC%9A%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md)
+- [推理全流程串讲（概览篇）](wiki/ai-infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md)
 - [KV Cache 内存管理（PagedAttention）](wiki/ai-infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md)
 - [vLLM 论文精读](wiki/ai-infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/vLLM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md)
 

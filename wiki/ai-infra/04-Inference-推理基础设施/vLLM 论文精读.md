@@ -88,5 +88,5 @@ vLLM 已成为 LLM 推理基础设施的事实标准(开源项目 vLLM-project/v
 
 - **核心概念**：[KV Cache 内存管理（PagedAttention）](KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md) — 分页思想、block table、copy-on-write 的通用分析。
 - **领域定位**：[AI Infra 领域概览](../02-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/AI%20Infra%20%E9%A2%86%E5%9F%9F%E6%A6%82%E8%A7%88.md) — vLLM 作为推理 infra 代表框架、KV Cache 优化三板斧。
-- **推理机制**：[推理全流程串讲（概览篇）](推理全流程串讲（概览篇）.md) — Prefill/Decode、KV Cache 的机制级展开。
+- **推理机制**：[推理全流程串讲（概览篇）](%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md) — Prefill/Decode、KV Cache 的机制级展开。
 - **分布式关联**：[张量并行（模型并行）](../03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%EF%BC%89.md) 与 [Megatron-LM 论文精读](../03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Megatron-LM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — vLLM 分布式执行采用的张量并行策略。

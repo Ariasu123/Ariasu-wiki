@@ -54,7 +54,7 @@ $$8 \times 180\mathrm{GB} = 1440\mathrm{GB} = 1.44\mathrm{TB} < 4\mathrm{TB}$$
 
 由自回归特性引出的优化三板斧：
 
-- **KV Cache**：相邻两步生成的前缀完全相同，缓存历史 K/V 避免重复计算。详见 [推理全流程串讲（概览篇）](推理全流程串讲（概览篇）.md)（含 Prefill/Decode 差异化处理、PagedAttention），分页式内存管理详见 [KV Cache 内存管理（PagedAttention）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md)。
+- **KV Cache**：相邻两步生成的前缀完全相同，缓存历史 K/V 避免重复计算。详见 [推理全流程串讲（概览篇）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md)（含 Prefill/Decode 差异化处理、PagedAttention），分页式内存管理详见 [KV Cache 内存管理（PagedAttention）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md)。
 - **Draft Model（草稿模型/投机采样）**：一次生成多个 token 再校验，打破逐 token 串行。
 - **量化压缩、算子融合**：压榨单个 transformer 模块的性能。详见 [LLM 推理加速与算子优化学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)。
 
@@ -81,7 +81,7 @@ $$8 \times 180\mathrm{GB} = 1440\mathrm{GB} = 1.44\mathrm{TB} < 4\mathrm{TB}$$
 - **通信抽象**：[通信原语与 NCCL](%E9%80%9A%E4%BF%A1%E5%8E%9F%E8%AF%AD%E4%B8%8E%20NCCL.md) — 同系列第三篇：P2P/集合通信原语、PyTorch 前端、NCCL 后端与 Ring/Tree 等通信算法。
 - **训练并行**：[Megatron-LM 论文精读](../03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Megatron-LM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — 训练 infra 代表框架的论文级解析：层内模型并行、8.3B 训练、BERT LayerNorm 重排。
 - **张量并行**：[张量并行（模型并行）](../03-Training-%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%EF%BC%89.md) — 文中提到的 TP 并行范式的通用切分策略与通信开销分析。
-- **推理详解**：[推理全流程串讲（概览篇）](推理全流程串讲（概览篇）.md) — KV Cache、EOS、Prefill/Decode 的机制级展开。
+- **推理详解**：[推理全流程串讲（概览篇）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E4%B8%B2%E8%AE%B2%EF%BC%88%E6%A6%82%E8%A7%88%E7%AF%87%EF%BC%89.md) — KV Cache、EOS、Prefill/Decode 的机制级展开。
 - **推理优化**：[LLM 推理加速与算子优化学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 量化、算子融合、CUDA 编程。
 - **MoE 关联**：[MoE 学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) — EP（专家并行）与 DeepEP 通信库的应用背景。
 - **KV Cache 结构基础**：[Attention 与 GQA](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/Attention%20%E4%B8%8E%20GQA.md) — GQA 直接决定 KV Cache 的显存占用。
