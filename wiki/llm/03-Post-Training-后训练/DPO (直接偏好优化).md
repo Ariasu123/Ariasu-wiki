@@ -4,7 +4,7 @@
 关联阅读：可结合 [LoRA（Low-Rank Adaptation，低秩微调）](../02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LoRA%EF%BC%88Low-Rank%20Adaptation%EF%BC%8C%E4%BD%8E%E7%A7%A9%E5%BE%AE%E8%B0%83%EF%BC%89.md) 理解；DPO 的策略模型可采用 LoRA 进行参数高效更新。
 
 
-> [!abstract]
+> [!note]
 > DPO 的核心思路是：**不再训练 Reward Model，也不做在线强化学习 rollout，而是直接利用“当前策略相对参考模型更偏好哪条回答”来学习人类偏好。**
 >
 > 它把 RLHF 中原本复杂的奖励建模问题，改写成一个更轻量的离线偏好优化问题。

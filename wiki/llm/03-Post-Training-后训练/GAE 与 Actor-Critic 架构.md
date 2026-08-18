@@ -81,7 +81,7 @@ $$
 \mathcal{L}_{Actor}(\theta) = - \mathbb{E} \left[
 \min \left(
 \frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})} A_{t}^{GAE},
-\operatorname{clip}\left(\frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}, 1-\epsilon, 1+\epsilon\right) A_{t}^{GAE}
+\mathrm{clip}\left(\frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}, 1-\epsilon, 1+\epsilon\right) A_{t}^{GAE}
 \right)
 \right]
 $$

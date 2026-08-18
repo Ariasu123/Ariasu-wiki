@@ -66,7 +66,12 @@ ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI
 2. **复杂公式一律用块级 `$$...$$`**：独占一行、行首顶格、不在列表项或表格单元格内。行内 `$...$` 只放单个简单符号（`$A$`、`$f$`、`$b$`），不放带下标/分数/矩阵/长表达式的公式。
 3. `\text{}` / `\mathrm{}` 内不要出现下划线（`\_` 会被 GitHub 反转义后报错），用连字符代替，如 `\text{rotate-half}`。
 4. 公式内不裸写 Markdown 特殊字符：`*`（斜体/粗体）、`_`（斜体）、`#`（标题）、`[`/`]`（链接语法）等必须用 `{}` 包裹或用 `\%`、`\#` 等转义。
-5. 写完公式后自查：`grep -nE '\$[^$]*[A-Za-z0-9]_[A-Za-z0-9]' <file>` 应无输出（裸下标）；`^\字母` 上标同样禁止；块级 `$$` 必须行首。
+5. **禁用 `\operatorname`**：GitHub MathJax 直接报 "macros are not allowed" 并让整块公式显示为源码。一律用 `\mathrm{}` 代替，如 `\mathrm{clip}`。
+6. 写完公式后自查：`grep -nE '\$[^$]*[A-Za-z0-9]_[A-Za-z0-9]' <file>` 应无输出（裸下标）；`^\字母` 上标同样禁止；块级 `$$` 必须行首。
+
+## Callout 规范（GitHub 兼容）
+
+GitHub 只支持五种 callout：`[!NOTE]`、`[!TIP]`、`[!IMPORTANT]`、`[!WARNING]`、`[!CAUTION]`。Obsidian 的 `[!abstract]`、`[!info]`、`[!example]` 等在 GitHub 上会原样显示为文本，入库时一律映射为五种之一（如 abstract/info → note）。
 
 ## 日志格式
 
