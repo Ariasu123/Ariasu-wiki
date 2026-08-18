@@ -59,7 +59,7 @@ DPO 的关键洞察是：**语言模型自身的相对生成概率，就可以�
 可以把它记成一个隐式偏好分数：
 
 $$
-s_\theta(x, y) = \log \pi_\theta(y|x) - \log \pi_{ref}(y|x)
+s_{\theta}(x, y) = \log \pi_{\theta}(y|x) - \log \pi_{ref}(y|x)
 $$
 
 这个分数越大，表示：
@@ -73,19 +73,19 @@ $$
 
 DPO 的训练数据不是单条答案，而是成对偏好样本：
 
-- `chosen / winner`：人类更偏好的回答 $y_w$
-- `rejected / loser`：人类不偏好的回答 $y_l$
+- `chosen / winner`：人类更偏好的回答 $y_{w}$
+- `rejected / loser`：人类不偏好的回答 $y_{l}$
 
 于是训练目标就变成一句话：
 
-> 在相同 Prompt $x$ 下，让模型对 $y_w$ 的偏好强于对 $y_l$ 的偏好。
+> 在相同 Prompt $x$ 下，让模型对 $y_{w}$ 的偏好强于对 $y_{l}$ 的偏好。
 
 ## 三、DPO 损失函数怎么理解
 
 DPO 的核心损失函数是：
 
 $$
-\mathcal{L}_{DPO} = - \mathbb{E} \left[ \log \sigma \left( \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right]
+\mathcal{L}_{DPO} = - \mathbb{E} \left[ \log \sigma \left( \beta \log \frac{\pi_{\theta}(y_{w}|x)}{\pi_{ref}(y_{w}|x)} - \beta \log \frac{\pi_{\theta}(y_{l}|x)}{\pi_{ref}(y_{l}|x)} \right) \right]
 $$
 
 ### 1. 先看括号里的核心量
@@ -116,8 +116,8 @@ $$
 
 从梯度的角度看，它在做三件事：
 
-- **Push up winner**：提高好回答 $y_w$ 的概率
-- **Push down loser**：压低坏回答 $y_l$ 的概率
+- **Push up winner**：提高好回答 $y_{w}$ 的概率
+- **Push down loser**：压低坏回答 $y_{l}$ 的概率
 - **错得越离谱，罚得越重**：偏好排序错得越严重，梯度惩罚越大
 
 ## 四、工业级训练流水线
@@ -142,8 +142,8 @@ $$
 
 对同一批次样本：
 
-- 用 **冻结的 Reference 模型** 计算 $y_w$ 与 $y_l$ 的基准对数概率
-- 用 **训练中的 Policy 模型** 计算 $y_w$ 与 $y_l$ 的当前对数概率
+- 用 **冻结的 Reference 模型** 计算 $y_{w}$ 与 $y_{l}$ 的基准对数概率
+- 用 **训练中的 Policy 模型** 计算 $y_{w}$ 与 $y_{l}$ 的当前对数概率
 
 ### 3. 计算损失并反向传播
 
@@ -242,7 +242,7 @@ DPO 获取一句回答总对数概率的流程通常是：
 可以写成：
 
 $$
-\log p(y|x) = \sum_i \bigl(\text{LogProb}_i \times \text{Mask}_i\bigr)
+\log p(y|x) = \sum_{i} \bigl(\text{LogProb}_{i} \times \text{Mask}_{i}\bigr)
 $$
 
 这意味着：

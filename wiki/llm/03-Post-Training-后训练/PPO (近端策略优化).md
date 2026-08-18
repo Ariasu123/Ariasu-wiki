@@ -103,7 +103,7 @@ $$
 - 先计算当前策略与旧策略的概率比值：
 
 $$
-r(\theta) = \frac{\pi_{\theta}(a|s)}{\pi_{\theta_k}(a|s)}
+r(\theta) = \frac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)}
 $$
 
 - 再通过 `torch.clamp` 把它限制在 $[1-\epsilon, 1+\epsilon]$。
@@ -125,7 +125,7 @@ $$
 PPO 最终反向传播的总损失通常写成：
 
 $$
-\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{policy}} + c_1 \mathcal{L}_{\text{value}} + c_2 \mathcal{L}_{\text{KL}}
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{policy}} + c_{1} \mathcal{L}_{\text{value}} + c_{2} \mathcal{L}_{\text{KL}}
 $$
 
 ### 1. 策略损失 $\mathcal{L}_{\text{policy}}$
@@ -155,11 +155,11 @@ $$
 - **$s$ 或 $x$**：状态（State）。在 NLP 中通常是 Prompt 加上当前时刻之前已生成的 Token。
 - **$a$ 或 $o$**：动作（Action / Output）。可以理解为当前生成的 Token 或整段回答。
 - **$\pi_{\theta}(a|s)$**：当前策略（New Policy）。
-- **$\pi_{\theta_k}(a|s)$ / $\pi_{old}$**：旧策略（Old Policy）。
+- **$\pi_{\theta_{k}}(a|s)$ / $\pi_{old}$**：旧策略（Old Policy）。
 - **$r(\theta)$**：重要性采样比率
 
 $$
-r(\theta) = \frac{\pi_{\theta}(a|s)}{\pi_{\theta_k}(a|s)}
+r(\theta) = \frac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)}
 $$
 
 #### 它解决什么问题
@@ -177,7 +177,7 @@ $$
 #### 关键数学量
 
 - **$\epsilon$**：裁剪阈值，常见取值是 0.1 或 0.2。
-- **$A_t$**：优势函数（Advantage）。
+- **$A_{t}$**：优势函数（Advantage）。
 - **$clip(r(\theta), 1-\epsilon, 1+\epsilon)$**：把比率限制在稳定区间内。
 
 #### 直觉理解
@@ -203,7 +203,7 @@ $$
 
 1. **K1**：$-\log r$
    - 无偏，但方差大，而且可能出现负值，训练波动更明显。
-2. **K2**：$\frac{1}{2}(\log r)^2$
+2. **K2**：$\frac{1}{2}(\log r)^{2}$
    - 恒为正，数值更稳定，但它是有偏估计。
 3. **K3**：$r - 1 - \log r$
    - 无偏、恒大于 0，且方差更低。

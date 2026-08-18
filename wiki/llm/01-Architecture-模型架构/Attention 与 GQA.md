@@ -6,12 +6,12 @@
 
 ### 数学公式
 
-$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^{T}}{\sqrt{d_{k}}}\right)V$$
 
 - **$Q$ (Query)**: “我要找什么？”（当前词的查询向量）。
 - **$K$ (Key)**: “我有什么标签？”（所有词的索引向量）。
 - **$V$ (Value)**: “我包含什么信息？”（所有词的内容向量）。
-- **$\sqrt{d_k}$**: 缩放因子，防止点积结果过大导致梯度消失。
+- **$\sqrt{d_{k}}$**: 缩放因子，防止点积结果过大导致梯度消失。
 - **$\text{softmax}$**: 将得分转换为概率（权重），总和为 1。
 
 ---

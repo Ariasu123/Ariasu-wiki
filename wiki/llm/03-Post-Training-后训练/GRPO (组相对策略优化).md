@@ -15,36 +15,36 @@ GRPO 将 PPO 中的“和自我历史预测对比”改成了“和同侪（分�
 
 ### Step 1: 组采样 (Group Rollout)
 
-对于同一个用户问题 $q$，GRPO 从旧策略模型 $\pi_{\theta_{old}}$ 中采样出一系列的输出（即一个组，大小设为 $G$），记作 $\{o_1, o_2, \dots, o_G\}$ 。
+对于同一个用户问题 $q$，GRPO 从旧策略模型 $\pi_{\theta_{old}}$ 中采样出一系列的输出（即一个组，大小设为 $G$），记作 $\{o_{1}, o_{2}, \dots, o_{G}\}$ 。
 
 - （注：原论文中通常设置 $G=64$，通过生成大量的不同回答，极大地增加了模型探索到正确答案的概率 ）。
 
 ### Step 2: 组内相对优势计算 (Group Relative Advantage)
 
-将这 $G$ 个输出送入奖励模型（Reward Model）或规则引擎中进行评分，得到一组对应的奖励值 $\{r_1, r_2, \dots, r_G\}$ 。 随后，**GRPO 直接使用统计学中的 Z-Score 标准化来计算优势**：
+将这 $G$ 个输出送入奖励模型（Reward Model）或规则引擎中进行评分，得到一组对应的奖励值 $\{r_{1}, r_{2}, \dots, r_{G}\}$ 。 随后，**GRPO 直接使用统计学中的 Z-Score 标准化来计算优势**：
 
-$$A_i = \frac{r_i - \text{mean}(\{r_1, r_2, \dots, r_G\})}{\text{std}(\{r_1, r_2, \dots, r_G\})}$$
+$$A_{i} = \frac{r_{i} - \text{mean}(\{r_{1}, r_{2}, \dots, r_{G}\})}{\text{std}(\{r_{1}, r_{2}, \dots, r_{G}\})}$$
 
-- **直觉理解：** 这道题的“预期得分”就是这 $G$ 个分身的**平均分**。如果你的得分高于平均分（$A_i > 0$），你的生成概率就会被强化；低于平均分（$A_i < 0$）就会被抑制。
+- **直觉理解：** 这道题的“预期得分”就是这 $G$ 个分身的**平均分**。如果你的得分高于平均分（$A_{i} > 0$），你的生成概率就会被强化；低于平均分（$A_{i} < 0$）就会被抑制。
 
 ### Step 3: Token 级别的优势分配 (ORM vs PRM)
 
-算出了整句话的优势 $A_i$ 后，如何分配给句子里的每一个 Token？
+算出了整句话的优势 $A_{i}$ 后，如何分配给句子里的每一个 Token？
 
-- **ORM (结果监督)：** 最基础的做法。将这个整体的优势值，无差别地赋值给该输出 $o_i$ 中的每一个 Token 。
+- **ORM (结果监督)：** 最基础的做法。将这个整体的优势值，无差别地赋值给该输出 $o_{i}$ 中的每一个 Token 。
     
 - **PRM (过程监督)：** 为每个推理步骤（Token）分别计算奖励。当前 Token 的优势等于当前步骤的优势加上后续步骤优势的期望之和 。
 ## 三、 GRPO 的目标函数
 
 GRPO 的最终优化目标是最大化以下函数：
 
-$$\mathcal{J}_{GRPO}(\theta) = \mathbb{E} \left[ \frac{1}{G} \sum_{i=1}^{G} \left( \min \left( \frac{\pi_{\theta}(o_i|q)}{\pi_{\theta_{old}}(o_i|q)} A_i, \text{clip} \left( \frac{\pi_{\theta}(o_i|q)}{\pi_{\theta_{old}}(o_i|q)}, 1-\epsilon, 1+\epsilon \right) A_i \right) - \beta \mathbb{D}_{KL}(\pi_{\theta} \parallel \pi_{ref}) \right) \right]$$
+$$\mathcal{J}_{GRPO}(\theta) = \mathbb{E} \left[ \frac{1}{G} \sum_{i=1}^{G} \left( \min \left( \frac{\pi_{\theta}(o_{i}|q)}{\pi_{\theta_{old}}(o_{i}|q)} A_{i}, \text{clip} \left( \frac{\pi_{\theta}(o_{i}|q)}{\pi_{\theta_{old}}(o_{i}|q)}, 1-\epsilon, 1+\epsilon \right) A_{i} \right) - \beta \mathbb{D}_{KL}(\pi_{\theta} \parallel \pi_{ref}) \right) \right]$$
 
 这里面包含了强化学习稳健训练的两大护法：
 
 ### 1. Clip 截断机制 (PPO 的遗产)
 
-- 公式中的 $\frac{\pi_{\theta}(o_i|q)}{\pi_{\theta_{old}}(o_i|q)}$ 表示新旧模型输出概率的比值 。
+- 公式中的 $\frac{\pi_{\theta}(o_{i}|q)}{\pi_{\theta_{old}}(o_{i}|q)}$ 表示新旧模型输出概率的比值 。
     
 - `clip` 函数强行将其限制在 $[1-\epsilon, 1+\epsilon]$ 之间，用于限制策略的更新速度，避免原始模型能力的灾难性丧失 。
     
@@ -53,7 +53,7 @@ $$\mathcal{J}_{GRPO}(\theta) = \mathbb{E} \left[ \frac{1}{G} \sum_{i=1}^{G} \lef
 
 为了强制新策略不偏离参考策略 $\pi_{ref}$（防止输出乱码或触发安全风险），GRPO 在 Token 级别引入了 KL 散度惩罚。 它使用的是无偏且方差极低的 **K3 估计量**（公式展开如下）：
 
-$$\mathbb{D}_{KL}(\pi_{\theta} \parallel \pi_{ref}) = \frac{\pi_{ref}(o_i|q)}{\pi_{\theta}(o_i|q)} - \log \frac{\pi_{ref}(o_i|q)}{\pi_{\theta}(o_i|q)} - 1$$
+$$\mathbb{D}_{KL}(\pi_{\theta} \parallel \pi_{ref}) = \frac{\pi_{ref}(o_{i}|q)}{\pi_{\theta}(o_{i}|q)} - \log \frac{\pi_{ref}(o_{i}|q)}{\pi_{\theta}(o_{i}|q)} - 1$$
 
 - （数学推导：设 $r = \frac{\pi_{ref}}{\pi_{\theta}}$，则上式为 $r - \log r - 1$。它不仅是 KL 散度的严格无偏估计，而且通过数学特性保证了该惩罚项恒大于 0，使得训练极度平稳 。）
     

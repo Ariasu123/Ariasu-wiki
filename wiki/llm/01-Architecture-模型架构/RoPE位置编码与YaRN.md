@@ -28,7 +28,7 @@ RoPE 的做法是：**根据词所在的位置 $m$，把这个指针旋转一个
 
 ### 3. 核心数学推导
 
-RoPE 想要实现一个目标：当模型计算两个词 $q_m$（位置 $m$）和 $k_n$（位置 $n$）的注意力分数时，结果只和它们的**相对距离 $m-n$** 有关。
+RoPE 想要实现一个目标：当模型计算两个词 $q_{m}$（位置 $m$）和 $k_{n}$（位置 $n$）的注意力分数时，结果只和它们的**相对距离 $m-n$** 有关。
 
 #### 复数表示
 
@@ -56,7 +56,7 @@ $$Score \propto \text{Re}[q_{m} \cdot k_{n}^{*}] = \text{Re}[(q e^{im\theta}) \c
 
 对于一个高维向量，RoPE 会把它两两成对，每两个维度组成一个二维平面进行旋转：
 
-$$\begin{pmatrix} q_0 \\ q_1 \end{pmatrix} \rightarrow \begin{pmatrix} \cos m\theta & -\sin m\theta \\ \sin m\theta & \cos m\theta \end{pmatrix} \begin{pmatrix} q_0 \\ q_1 \end{pmatrix}$$
+$$\begin{pmatrix} q_{0} \\ q_{1} \end{pmatrix} \rightarrow \begin{pmatrix} \cos m\theta & -\sin m\theta \\ \sin m\theta & \cos m\theta \end{pmatrix} \begin{pmatrix} q_{0} \\ q_{1} \end{pmatrix}$$
 #### 1. 数学本质：复数旋转的等价变换
 
 RoPE 利用复数乘法 $(a + bi) \cdot e^{i\theta}$ 来实现向量旋转。其展开结果为：
@@ -74,19 +74,19 @@ $$q_{embed} = (q \cdot \cos) + (\text{rotate-half}(q) \cdot \sin)$$
 ---
 
 为了覆盖不同频率的信息，每个维度的旋转速度 $\theta$ 是不一样的：
-$$\theta_i = \text{base}^{-2i/d}$$
+$$\theta_{i} = \text{base}^{-2i/d}$$
 
 #### 1. 数学定义：从频率到波长
 
-在 RoPE 公式中，第 $i$ 组维度的旋转频率是 $\theta_i$。
+在 RoPE 公式中，第 $i$ 组维度的旋转频率是 $\theta_{i}$。
 
 数学上，旋转一圈（$2\pi$ 弧度）所需的距离 $L$ 就是波长：
 
-$$L_i = \frac{2\pi}{\theta_i}$$
+$$L_{i} = \frac{2\pi}{\theta_{i}}$$
 
-由于 $\theta_i = \text{base}^{-2i/d}$，代入后得到波长公式：
+由于 $\theta_{i} = \text{base}^{-2i/d}$，代入后得到波长公式：
 
-$$L_i = 2\pi \cdot \text{base}^{\frac{2i}{d}}$$
+$$L_{i} = 2\pi \cdot \text{base}^{\frac{2i}{d}}$$
 
 ---
 
@@ -113,13 +113,13 @@ YaRN 论文之所以引入波长，是因为它发现：**如果波长相对于�
 
 假设模型是在 $L_{\text{train}} = 2048$ 的长度下训练的：
 
-- **情况 A：波长 $L_i < L_{\text{train}}$（高频区）**
+- **情况 A：波长 $L_{i} < L_{\text{train}}$（高频区）**
     
     - 比如波长只有 50。在 2048 的训练长度内，这个指针已经足足转了 40 多圈了。
     - 模型已经见过这个指针转到任何角度的样子。所以当你扩展到 32768 时，这个维度的旋转角度依然在模型见过的“老圈子”里打转。
     - **YaRN 处理：** 别动它（$ramp = 0$），保持原速。
         
-- **情况 B：波长 $L_i > L_{\text{train}}$（低频区）**
+- **情况 B：波长 $L_{i} > L_{\text{train}}$（低频区）**
     
     - 比如波长是 10000。在 2048 的长度内，指针只转了 1/5 圈。
     - 模型只见过这 1/5 圈的角度。如果你不改频率，直接读到 8000 位，指针会转到 4/5 圈的位置。
@@ -129,7 +129,7 @@ YaRN 论文之所以引入波长，是因为它发现：**如果波长相对于�
 - **含义**：**Model Dimension**（模型的总维度）
 ##### 2. $i$ 代表什么？（当前位置）
 - **含义**：**Dimension Index**（维度索引/下标）。
-- **解释**：由于 RoPE 是把高维向量“两两成对”进行旋转的（就像图中 $q_0, q_1$ 组成一对），$i$ 的取值范围是从 $0$ 到 $d/2 - 1$。
+- **解释**：由于 RoPE 是把高维向量“两两成对”进行旋转的（就像图中 $q_{0}, q_{1}$ 组成一对），$i$ 的取值范围是从 $0$ 到 $d/2 - 1$。
 - 当 $i=0$ 时，计算的是向量最开始的那两个维度。
 - 当 $i$ 变大时，计算的是向量靠后的那些维度。
 ---
@@ -170,11 +170,11 @@ YaRN 的数学理论核心是**分频治之**。它意识到：RoPE 中不同维
 
 首先，我们已知 RoPE 的波长公式（即旋转一圈所需的距离）：
 
-$$L_i = 2\pi \cdot \text{base}^{\frac{2i}{d}}$$
+$$L_{i} = 2\pi \cdot \text{base}^{\frac{2i}{d}}$$
 
 论文中定义的波长比例 $b$（即在训练长度 $L$ 内转了多少圈）：
 
-$$b = \frac{L}{L_i}$$
+$$b = \frac{L}{L_{i}}$$
 
 ---
 
@@ -184,7 +184,7 @@ $$b = \frac{L}{L_i}$$
 
 #### 第一步：代入波长公式
 
-将 $L_i$ 的表达式代入 $b$ 的定义中：
+将 $L_{i}$ 的表达式代入 $b$ 的定义中：
 
 $$b = \frac{L}{2\pi \cdot \text{base}^{\frac{2i}{d}}}$$
 
@@ -200,7 +200,7 @@ $$\text{base}^{\frac{2i}{d}} = \frac{L}{b \cdot 2\pi}$$
 
 $$\ln\left(\text{base}^{\frac{2i}{d}}\right) = \ln\left(\frac{L}{b \cdot 2\pi}\right)$$
 
-利用对数性质 $\ln(x^n) = n \ln(x)$：
+利用对数性质 $\ln(x^{n}) = n \ln(x)$：
 
 $$\frac{2i}{d} \cdot \ln(\text{base}) = \ln\left(\frac{L}{b \cdot 2\pi}\right)$$
 

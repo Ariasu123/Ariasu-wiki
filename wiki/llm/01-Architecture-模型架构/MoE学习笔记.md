@@ -83,22 +83,22 @@ $$\mathcal{L}_{\text{aux}}^{\text{seq}} = \alpha \cdot \frac{1}{B} \sum_{b=1}^{B
 
 1. 计算专家 $e$ 的全局平均选择率（其中 $N$ 为当前 batch 的 token 总数，$m_{i,e}$ 来自展平后的 top-k 索引的 one-hot 编码）：
 
-$$f_e = \frac{1}{N \cdot k} \sum_{i=1}^{N \cdot k} m_{i,e}$$
+$$f_{e} = \frac{1}{N \cdot k} \sum_{i=1}^{N \cdot k} m_{i,e}$$
 
-2. 标准化为“相对负载因子”（绝对均衡时 $f_e = 1/E$，乘以 $E$ 后均衡态的 $\hat{f}_e$ 即为 1）：
+2. 标准化为“相对负载因子”（绝对均衡时 $f_{e} = 1/E$，乘以 $E$ 后均衡态的 $\hat{f}_{e}$ 即为 1）：
 
-$$\hat{f}_e = f_e \cdot E$$
+$$\hat{f}_{e} = f_{e} \cdot E$$
 
 3. 计算专家 $e$ 的全局平均打分：
 
-$$p_e = \frac{1}{N} \sum_{i=1}^{N} s_{i,e}$$
+$$p_{e} = \frac{1}{N} \sum_{i=1}^{N} s_{i,e}$$
 
 4. 计算批级辅助损失：
 
-$$\mathcal{L}_{\text{aux}}^{\text{batch}} = \alpha \cdot \sum_{e=1}^{E} \hat{f}_e \cdot p_e$$
+$$\mathcal{L}_{\text{aux}}^{\text{batch}} = \alpha \cdot \sum_{e=1}^{E} \hat{f}_{e} \cdot p_{e}$$
 
 
-> **直观解释：** 损失项 $\hat{f}_e \cdot p_e$ 构成了直接的惩罚机制。对于高负载的专家（$\hat{f}_e > 1$），系统要求其具有较低的平均得分 $p_e$ 以降低 Loss；而低负载的专家应有较高的分数。门控网络会以此调整打分分布，从而在全局 Batch 层面实现精妙的负载均衡。
+> **直观解释：** 损失项 $\hat{f}_{e} \cdot p_{e}$ 构成了直接的惩罚机制。对于高负载的专家（$\hat{f}_{e} > 1$），系统要求其具有较低的平均得分 $p_{e}$ 以降低 Loss；而低负载的专家应有较高的分数。门控网络会以此调整打分分布，从而在全局 Batch 层面实现精妙的负载均衡。
 
 ---
 
