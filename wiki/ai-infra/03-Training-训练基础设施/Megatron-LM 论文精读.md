@@ -115,7 +115,7 @@ class f(torch.autograd.Function):
 
 ### 4.3 BERT 系列（双向编码式）与 LayerNorm 重排
 
-**重要架构发现**：BERT 类模型在超过 BERT-Large（336M）后性能退化。论文通过**重排 LayerNorm 与残差连接的顺序**（将 LayerNorm 移到子层之前，即 Pre-LN 风格）消除了训练不稳定、降低了训练 loss——这是**首次报道该改动能支撑训练更大 BERT**。此发现与 [RMSNorm和LayerNorm](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/RMSNorm%E5%92%8CLayerNorm.md) 中"归一化稳定梯度"的机制互补：不仅"怎么归一化"重要，**"归一化放在哪"**同样关键。
+**重要架构发现**：BERT 类模型在超过 BERT-Large（336M）后性能退化。论文通过**重排 LayerNorm 与残差连接的顺序**（将 LayerNorm 移到子层之前，即 Pre-LN 风格）消除了训练不稳定、降低了训练 loss——这是**首次报道该改动能支撑训练更大 BERT**。此发现与 [RMSNorm和LayerNorm](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/RMSNorm%20%E4%B8%8E%20LayerNorm.md) 中"归一化稳定梯度"的机制互补：不仅"怎么归一化"重要，**"归一化放在哪"**同样关键。
 
 - 336M（≈BERT-Large）、1.3B、3.9B 三档，held-out 验证困惑度 1.58 → 1.30 → 1.16 单调下降。
 - 下游任务（MNLI、QQP、SQuAD、RACE）全部随规模提升；3.9B 在 RACE 测试集达 90.9%（当时 SOTA 89.4%），单模型与 5 路 ensemble 均为 SOTA。
@@ -136,6 +136,6 @@ class f(torch.autograd.Function):
 
 - **核心概念**：[张量并行（模型并行）](%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C%EF%BC%89.md) — column/row parallel 切分、f/g 算子、通信开销的通用分析。
 - **领域定位**：[AI Infra 领域概览](../02-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/AI%20Infra%20%E9%A2%86%E5%9F%9F%E6%A6%82%E8%A7%88.md) — Megatron-LM 作为训练 infra 代表框架、显存墙与并行算法总览。
-- **归一化机制**：[RMSNorm和LayerNorm](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/RMSNorm%E5%92%8CLayerNorm.md) — 归一化的梯度稳定原理，与 Pre-LN 位置发现互补。
-- **训练管线**：[LLM预训练底层机制](../../llm/02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — 预训练的数据管线与训练引擎视角。
-- **MoE 关联**：[MoE 学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) — 专家并行（EP）与张量并行的分工关系。
+- **归一化机制**：[RMSNorm和LayerNorm](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/RMSNorm%20%E4%B8%8E%20LayerNorm.md) — 归一化的梯度稳定原理，与 Pre-LN 位置发现互补。
+- **训练管线**：[LLM预训练底层机制](../../llm/02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%20%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — 预训练的数据管线与训练引擎视角。
+- **MoE 关联**：[MoE 学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%B7%B7%E5%90%88%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%9E%8B%EF%BC%88MoE%EF%BC%89.md) — 专家并行（EP）与张量并行的分工关系。

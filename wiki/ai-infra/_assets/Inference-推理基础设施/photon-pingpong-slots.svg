@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 250" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  <rect width="740" height="250" fill="#ffffff"/>
+
+  <text x="20" y="26" font-size="14" font-weight="700" fill="#111827">Two slots take turns carrying decode steps, so the GPU never idles between them</text>
+
+  <!-- overlap highlight: while Slot B runs forward t+1, Slot A is being committed and set up again -->
+  <rect x="294" y="50" width="140" height="106" fill="#fde68a" opacity="0.20"/>
+
+  <text x="18" y="78" font-size="12" font-weight="600" fill="#374151">Slot A</text>
+  <text x="18" y="138" font-size="12" font-weight="600" fill="#374151">Slot B</text>
+
+  <!-- Slot A lane (y=56 h=36): steps t and t+2 -->
+  <g text-anchor="middle">
+    <rect x="120" y="56" width="34" height="36" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="137" y="78" font-size="8.5" fill="#1e3a8a">launch</text>
+    <rect x="154" y="56" width="140" height="36" rx="3" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="224" y="79" font-size="10" fill="#14532d">forward t</text>
+    <rect x="294" y="56" width="38" height="36" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="313" y="78" font-size="8.5" fill="#1e3a8a">commit</text>
+
+    <rect x="400" y="56" width="34" height="36" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="417" y="78" font-size="8.5" fill="#1e3a8a">launch</text>
+    <rect x="434" y="56" width="140" height="36" rx="3" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="504" y="79" font-size="10" fill="#14532d">forward t+2</text>
+    <rect x="574" y="56" width="38" height="36" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="593" y="78" font-size="8.5" fill="#1e3a8a">commit</text>
+  </g>
+
+  <!-- Slot B lane (y=116 h=36): step t+1 -->
+  <g text-anchor="middle">
+    <rect x="260" y="116" width="34" height="36" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="277" y="138" font-size="8.5" fill="#1e3a8a">launch</text>
+    <rect x="294" y="116" width="140" height="36" rx="3" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="364" y="139" font-size="10" fill="#14532d">forward t+1</text>
+    <rect x="434" y="116" width="38" height="36" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="453" y="138" font-size="8.5" fill="#1e3a8a">commit</text>
+  </g>
+
+  <!-- time axis -->
+  <line x1="120" y1="178" x2="620" y2="178" stroke="#d1d5db" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="628" y="182" font-size="9.5" fill="#9ca3af">time</text>
+
+  <!-- captions -->
+  <text x="20" y="210" font-size="10.5" fill="#374151">Each slot holds one step from launch (CPU sets it up), through the GPU forward, to commit (CPU reads the result).</text>
+  <text x="20" y="230" font-size="10.5" fill="#374151">The slots stagger, so the green forwards run back to back. While Slot B runs its forward, Slot A is being committed and set up for its next step.</text>
+</svg>

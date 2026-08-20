@@ -58,11 +58,24 @@ function buildIndex() {
 
   for (const top of tops) {
     const title = SECTION_NAMES[top] || top;
-    lines.push('', `## ${title}`, '');
-    const files = collectMarkdown(path.join(WIKI_ROOT, top));
+    lines.push('', `## ${title}`);
+    const topDir = path.join(WIKI_ROOT, top);
+    const files = collectMarkdown(topDir);
+    // 按相对子目录分组（保持目录编号顺序），顶层散文件排在最前
+    const groups = new Map();
     for (const f of files) {
-      const name = path.basename(f, '.md');
-      lines.push(`- [${name}](${toRepoPath(f)})`);
+      const relDir = path.relative(topDir, path.dirname(f)).split(path.sep).join(' / ');
+      const key = relDir || '';
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(f);
+    }
+    for (const [dir, groupFiles] of groups) {
+      if (dir) lines.push('', `### ${dir}`, '');
+      else lines.push('');
+      for (const f of groupFiles) {
+        const name = path.basename(f, '.md');
+        lines.push(`- [${name}](${toRepoPath(f)})`);
+      }
     }
   }
 

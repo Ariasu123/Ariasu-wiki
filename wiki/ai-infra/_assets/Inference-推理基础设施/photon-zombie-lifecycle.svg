@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 282" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="740" height="282" fill="#ffffff"/>
+  <text x="20" y="28" font-size="15" font-weight="700" fill="#111827">Zombies: finalize early, release late</text>
+  <text x="20" y="48" font-size="11.5" fill="#6b7280">Step t+1 is launched before step t commits, so a sequence that ends at t is already running inside it.</text>
+
+  <!-- lane labels -->
+  <text x="18" y="100" font-size="12" font-weight="600" fill="#374151">Slot A</text>
+  <text x="18" y="156" font-size="12" font-weight="600" fill="#374151">Slot B</text>
+
+  <!-- Slot A: forward t + commit t (EOS) -->
+  <g text-anchor="middle">
+    <rect x="110" y="78" width="170" height="38" rx="3" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="195" y="101" font-size="10.5" fill="#14532d">forward t · has S</text>
+    <rect x="280" y="78" width="72" height="38" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="316" y="93" font-size="9.5" fill="#1e3a8a">commit t</text>
+    <text x="316" y="107" font-size="9" font-weight="600" fill="#b91c1c">S hits EOS</text>
+  </g>
+
+  <!-- Slot B: forward t+1 + commit t+1 (skip) -->
+  <g text-anchor="middle">
+    <rect x="280" y="134" width="170" height="38" rx="3" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="365" y="157" font-size="10.5" fill="#14532d">forward t+1 · still has S</text>
+    <rect x="450" y="134" width="72" height="38" rx="3" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="486" y="149" font-size="9.5" fill="#1e3a8a">commit t+1</text>
+    <text x="486" y="163" font-size="9" fill="#1e40af">S skipped</text>
+  </g>
+
+  <!-- zombie window bracket: finalized (commit t) to released (commit t+1) -->
+  <line x1="316" y1="190" x2="486" y2="190" stroke="#b45309" stroke-width="1.2"/>
+  <line x1="316" y1="186" x2="316" y2="194" stroke="#b45309" stroke-width="1.2"/>
+  <line x1="486" y1="186" x2="486" y2="194" stroke="#b45309" stroke-width="1.2"/>
+  <text x="401" y="206" font-size="10.5" font-weight="600" fill="#b45309" text-anchor="middle">zombie window — finalized, awaiting release</text>
+
+  <!-- captions -->
+  <text x="20" y="232" font-size="10.5" fill="#374151">At commit t, S hits EOS: it's finalized and emitted, but not released — step t+1 still references it (<tspan font-family="ui-monospace, monospace">inflight_refs = 1</tspan>).</text>
+  <text x="20" y="250" font-size="10.5" fill="#374151">At commit t+1, S is already finalized, so that commit is skipped. <tspan font-family="ui-monospace, monospace">inflight_refs</tspan> hits 0, and its KV + LoRA slot are freed.</text>
+  <text x="20" y="274" font-size="10" fill="#6b7280">Committing in FIFO order keeps "is this sequence already finalized?" correct — no explicit mid-flight cancellation.</text>
+</svg>

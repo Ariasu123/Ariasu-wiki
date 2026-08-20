@@ -5,7 +5,7 @@
 ## 目录结构
 
 - `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`IC/`）
-- `index.md` — 全站内容目录（由 `node publish-wiki.js` 自动生成，不要手改）
+- `index.md` — 全站内容目录，按一级主题 + 二级子目录分组（由 `node publish-wiki.js` 自动生成，不要手改）
 - `log.md` — 操作日志，每次操作必须追加
 
 ## 信源获取（firecrawl，可选）
@@ -49,6 +49,13 @@ ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI
 - **页面不需要 YAML frontmatter**（title/tags/created/updated/status 一律不写），直接从正文开始。
 - 标题即文件名，简洁、准确、可检索。
 - 页面的创建与更新时间由 `log.md` 的操作记录承担，不再写进页面。
+
+## 命名规范
+
+- **页面以知识主题命名，不以信源命名**：名称里不含具体文章标题、会议、比赛、产品版本或公司名（如「MLSys 2026 FlashInfer 比赛」「Photon」「Hy3 preview」均属信源，应抽象为主题名）；例外是技术名词/系统本身即主题（vLLM、PagedAttention、Megatron-LM、Claude Code）。
+- 中文为主、术语保留英文；中英文之间加空格；括号统一**全角**（如 `DPO（直接偏好优化）`）。
+- 禁止讲次编号后缀（`_16`、`_10`）和「学习笔记」一类无信息量后缀。
+- 图片同样语义化命名（小写连字符，如 `numa-dual-socket-8gpu.png`），禁止 `Pasted image ...`、哈希名。
 
 ## 链接规范
 

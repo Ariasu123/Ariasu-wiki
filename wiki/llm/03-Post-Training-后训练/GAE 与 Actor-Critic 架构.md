@@ -2,7 +2,7 @@
 ![](../_assets/Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GAE%E5%92%8CActor-Critic%E6%9E%B6%E6%9E%84.png)
 ## 一、先看整体闭环
 
-关联阅读：可结合 [PPO (近端策略优化)](PPO%20%28%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) 理解；PPO 的优势估计通常依赖 GAE 和 Actor-Critic 框架。
+关联阅读：可结合 [PPO (近端策略优化)](PPO%EF%BC%88%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%EF%BC%89.md) 理解；PPO 的优势估计通常依赖 GAE 和 Actor-Critic 框架。
 
 
 在 PPO 框架下，这三者的协作流程可以先粗看成一条链：
@@ -117,5 +117,5 @@ $$
 
 ## 相关笔记
 
-- **前置**：[PPO (近端策略优化)](PPO%20%28%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — PPO 的优势估计通常依赖 GAE 和 Actor-Critic 框架。
-- **对比**：[GRPO (组相对策略优化)](GRPO%20%28%E7%BB%84%E7%9B%B8%E5%AF%B9%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%29.md) — GRPO 通过组相对优势弱化对独立 Critic 的依赖。
+- **前置**：[PPO (近端策略优化)](PPO%EF%BC%88%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%EF%BC%89.md) — PPO 的优势估计通常依赖 GAE 和 Actor-Critic 框架。
+- **对比**：[GRPO (组相对策略优化)](GRPO%EF%BC%88%E7%BB%84%E7%9B%B8%E5%AF%B9%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%EF%BC%89.md) — GRPO 通过组相对优势弱化对独立 Critic 的依赖。

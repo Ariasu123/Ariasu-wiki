@@ -1,6 +1,6 @@
 ## 学习规划
 
-关联阅读：可结合 [MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) 理解；推理优化路线可进一步分析 MoE 的部署成本。
+关联阅读：可结合 [MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%B7%B7%E5%90%88%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%9E%8B%EF%BC%88MoE%EF%BC%89.md) 理解；推理优化路线可进一步分析 MoE 的部署成本。
 
 
 由于大模型推理（Inference）天生受限于“内存带宽墙”（Memory Wall），且自回归（Auto-regressive）生成的特性导致计算效率低下，为了解决这些痛点的三大核心支柱：**底层 GPU 编程、模型量化压缩理论、以及系统级加速框架**。
@@ -39,6 +39,9 @@ AI Infra 的尽头是算子手写与显存优化。不理解 GPU 架构，就无
 
 ## 相关笔记
 
-- **延伸**：[MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md) — 推理优化路线可进一步分析 MoE 的部署成本。
-- **模型侧**：[LLM预训练底层机制](../../llm/02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — Infra 路线中的 GPU 与算子知识支撑训练系统。
-- **系统视角**：[LLM 综合复习](../../llm/05-Review-%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/LLM_22.md) — Infra 路线把 LLM 原理延伸到性能与部署。
+- **延伸**：[MoE学习笔记](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/%E6%B7%B7%E5%90%88%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%9E%8B%EF%BC%88MoE%EF%BC%89.md) — 推理优化路线可进一步分析 MoE 的部署成本。
+- **实践案例**：[Hy3 preview Hopper 推理优化实践](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E6%8E%A8%E7%90%86%E6%80%A7%E8%83%BD%E5%85%A8%E6%A0%88%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%EF%BC%88Hopper%20%E6%A1%88%E4%BE%8B%EF%BC%89.md) — 腾讯混元在 Hopper 卡上从算子到系统的全栈推理优化，覆盖本路线多数主题的工业界落地。
+- **新范式**：[Agent 驱动 GPU Kernel 生成（MLSys 2026 FlashInfer 比赛）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Agent%20%E9%A9%B1%E5%8A%A8%E7%9A%84%20GPU%20Kernel%20%E7%94%9F%E6%88%90%E4%B8%8E%E4%BC%98%E5%8C%96.md) — 用代码智能体自动生成与优化 kernel：Harness 闭环 + 演化搜索。
+- **外部资料**：[LLM Infra 推理学习资料清单](LLM%20Infra%20%E6%8E%A8%E7%90%86%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%B8%85%E5%8D%95.md) — 业界工程师整理的八模块资料合集（CUDA/kernel、vLLM/SGLang、性能分析、RL、课程与实验室）。
+- **模型侧**：[LLM预训练底层机制](../../llm/02-Pretraining-%E9%A2%84%E8%AE%AD%E7%BB%83/LLM%20%E9%A2%84%E8%AE%AD%E7%BB%83%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6.md) — Infra 路线中的 GPU 与算子知识支撑训练系统。
+- **系统视角**：[LLM 综合复习](../../llm/05-Review-%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/LLM%20%E7%BB%BC%E5%90%88%E5%A4%8D%E4%B9%A0%2022%20%E9%97%AE.md) — Infra 路线把 LLM 原理延伸到性能与部署。

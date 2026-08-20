@@ -11,10 +11,6 @@
 一台大模型训练服务器的主要组成：**CPU、系统内存、GPU、PCIe 总线、网卡、本地存储**，逻辑结构与普通 PC 相同。
 
 ![](../_assets/Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/gpu-server-structure.webp)
-
-- GPU 通过有效位宽 **x16（16 条 lane）** 的 PCIe 插槽与主板连接，被识别为一个 PCIe 设备；GPU 上与主板连接的部分俗称"金手指"。
-- 专业 GPU 服务器常见 **8 卡插槽**，供电、散热、用料均为工业级。
-
 ### 为什么主流是单机 8 卡
 
 - **供电**：满载 8 卡 B300 功率约 14.5 kW（≈10 台吹风机同时工作），已接近单机供电极限。
@@ -33,6 +29,8 @@
 
 - NUMA 节点内：CPU 与 PCIe 设备（GPU、内存）相互访问一致。
 - 跨 NUMA：需走 CPU 厂商专用的 CPU2CPU 协议——Intel 为 **UPI**（Xeon 6 的 UPI 2.0 单链路最高 24 GT/s），AMD 为 **Infinity Fabric**。跨 NUMA 通信**延迟更高、有效带宽更低**。
+
+![NUMA 双路八卡服务器架构](../_assets/Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/numa-dual-socket-8gpu.png)
 
 ### PCIe 直连的瓶颈
 
@@ -58,6 +56,8 @@ GPU 0 ── PCIe Switch ── GPU 1
 ```
 
 带宽提升至 **48–58 GB/s**（接近翻倍），但仍不足以喂饱训练——在作者的简化估算（48 层 decoder-only、TP=8、hidden size 8192、序列长 4096、BF16、每层 4 次 ring all-reduce）下，通信时间占比仍约 42%–65%。且 Switch 到 CPU Root 的上行链路总带宽有限，多卡满载时会产生竞争。
+
+![PCIe P2P 路径与 PCIe Switch 拓扑对比](../_assets/Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/pcie-p2p-switch-topology.png)
 
 ### 查询本机拓扑：`nvidia-smi topo -m`
 
@@ -92,6 +92,8 @@ PCIe 5.0 x16 的理论极限就是 63 GB/s，不换代就无法突破。NVIDIA �
 为什么只允许两两连接？若 GPU0—GPU1、GPU1—GPU2 各用一桥，GPU0 到 GPU2 需经 GPU1 中转，通信延迟不一致、拓扑不对称，Bridge 插槽顺序难分配，NCCL 算法也难以施行。对称拓扑是集合通信高效的前提。
 
 8 张 A100 PCIe 两两互联后的三类通信路径：
+
+![8×A100 PCIe + NVLink Bridge 两两互联拓扑](../_assets/Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/a100-pcie-nvlink-bridge-pairs.png)
 
 ![](../_assets/Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/a100-pcie-nvlink-topology.webp)
 

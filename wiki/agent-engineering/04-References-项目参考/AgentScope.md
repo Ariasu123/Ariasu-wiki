@@ -2,7 +2,7 @@
 
 > 调研快照：2026-07-14。GitHub 约 27.9k Stars，最新稳定 Release 为 v2.0.4，Python 要求 3.11+，许可证为 Apache-2.0。官方 latest 文档当日指向 2.0.5dev，因此本文会区分“稳定版已有能力”和“main/latest 文档中的开发中能力”。
 
-AgentScope 是阿里巴巴通义实验室 SysML 团队开源的 Python Agent 框架。它把 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) 中的 ReAct、工具、上下文、状态、权限、人机协作和多 Agent 通信落实为可组合的运行时，并提供 FastAPI Agent Service 将单个 Agent 扩展成多租户、多会话服务。
+AgentScope 是阿里巴巴通义实验室 SysML 团队开源的 Python Agent 框架。它把 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) 中的 ReAct、工具、上下文、状态、权限、人机协作和多 Agent 通信落实为可组合的运行时，并提供 FastAPI Agent Service 将单个 Agent 扩展成多租户、多会话服务。
 
 ## 一句话结论
 
@@ -352,7 +352,7 @@ Hermes Agent 更像已经装配好的 Agent Operating Layer；AgentScope 更像�
 
 ## 相关笔记
 
-- **理论基础**：[Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent_16.md) — AgentScope 将 ReAct、工具、状态、记忆和多 Agent 协作落实为框架抽象。
+- **理论基础**：[Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) — AgentScope 将 ReAct、工具、状态、记忆和多 Agent 协作落实为框架抽象。
 - **框架实现**：[Harness Engineering](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) — Permission、Workspace、Context、State 和 Middleware 构成具体 Harness。
 - **项目对照**：MiniCode 多智能体 — 可比较 Leader/Worker、Session、权限收窄和消息总线设计。
 - **观测集成**：[Langfuse](Langfuse.md) — AgentScope 的 OpenTelemetry Span 可导出到 Langfuse 做 Trace、评测和版本分析。

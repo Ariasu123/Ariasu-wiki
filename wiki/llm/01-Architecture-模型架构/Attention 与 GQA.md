@@ -1,7 +1,7 @@
 
 ## 1. 注意力机制：
 
-关联阅读：可结合 [MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) 理解；架构图说明了 GQA 在完整模型中的位置。
+关联阅读：可结合 [MiniMind架构图解析](MiniMind%20%E6%9E%B6%E6%9E%84%E8%A7%A3%E6%9E%90.md) 理解；架构图说明了 GQA 在完整模型中的位置。
 
 
 ### 数学公式
@@ -245,5 +245,5 @@ def forward(
 
 ## 相关笔记
 
-- **总览**：[MiniMind架构图解析](MiniMind%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3%E6%9E%90.md) — 架构图说明了 GQA 在完整模型中的位置。
-- **前置**：[RoPE位置编码与YaRN](RoPE%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E4%B8%8EYaRN.md) — 注意力中的 Query 和 Key 是 RoPE 旋转变换的直接对象。
+- **总览**：[MiniMind架构图解析](MiniMind%20%E6%9E%B6%E6%9E%84%E8%A7%A3%E6%9E%90.md) — 架构图说明了 GQA 在完整模型中的位置。
+- **前置**：[RoPE位置编码与YaRN](RoPE%20%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E4%B8%8E%20YaRN.md) — 注意力中的 Query 和 Key 是 RoPE 旋转变换的直接对象。

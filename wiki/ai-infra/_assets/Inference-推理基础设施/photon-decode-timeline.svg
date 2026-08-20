@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 314" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="900" height="314" fill="#ffffff"/>
+  <text x="20" y="26" font-size="15" font-weight="700" fill="#111827">One decode step, two ways (B200, 32 streams)</text>
+  <text x="20" y="46" font-size="11.5" fill="#6b7280">Per-step durations from CUDA-event timing; the CPU-phase layout within a step is schematic. Green = GPU running a forward.</text>
+
+  <!-- ===== BLOCKING lane (period 5.55ms: GPU 3.94 + bubble 1.61) ===== -->
+  <text x="20" y="100" font-size="12" font-weight="600" fill="#b91c1c">blocking</text>
+  <text x="20" y="114" font-size="10" fill="#9ca3af">depth-1</text>
+  <rect x="120" y="82" width="173" height="34" rx="2" fill="#dcfce7" stroke="#22c55e"/>
+  <rect x="293" y="82" width="71" height="34" fill="#fef2f2" stroke="#fecaca" stroke-dasharray="3 2"/>
+  <circle cx="293" cy="82" r="3.5" fill="#16a34a"/>
+  <rect x="364" y="82" width="173" height="34" rx="2" fill="#dcfce7" stroke="#22c55e"/>
+  <rect x="537" y="82" width="71" height="34" fill="#fef2f2" stroke="#fecaca" stroke-dasharray="3 2"/>
+  <circle cx="537" cy="82" r="3.5" fill="#16a34a"/>
+  <rect x="608" y="82" width="173" height="34" rx="2" fill="#dcfce7" stroke="#22c55e"/>
+  <rect x="781" y="82" width="71" height="34" fill="#fef2f2" stroke="#fecaca" stroke-dasharray="3 2"/>
+  <circle cx="781" cy="82" r="3.5" fill="#16a34a"/>
+  <text x="328" y="103" font-size="9" fill="#b91c1c" text-anchor="middle">bubble</text>
+
+  <!-- ===== PIPELINED lane (period 3.98ms: GPU 3.94, no bubble) ===== -->
+  <text x="20" y="174" font-size="12" font-weight="600" fill="#15803d">pipelined</text>
+  <text x="20" y="188" font-size="10" fill="#9ca3af">depth-2</text>
+  <rect x="120" y="156" width="173" height="34" rx="2" fill="#dcfce7" stroke="#22c55e"/>
+  <circle cx="293" cy="156" r="3.5" fill="#16a34a"/>
+  <rect x="295" y="156" width="173" height="34" rx="2" fill="#dcfce7" stroke="#22c55e"/>
+  <circle cx="468" cy="156" r="3.5" fill="#16a34a"/>
+  <rect x="470" y="156" width="173" height="34" rx="2" fill="#dcfce7" stroke="#22c55e"/>
+  <circle cx="643" cy="156" r="3.5" fill="#16a34a"/>
+  <text x="381" y="176" font-size="10" fill="#166534" text-anchor="middle">forward + sampling, back-to-back</text>
+
+  <!-- pipelined CPU: idle through the forward's first half (waiting on GPU), then ~1.4ms of work -->
+  <rect x="120" y="196" width="88" height="13" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="2 2"/>
+  <rect x="208" y="196" width="6" height="13" fill="#dbeafe" stroke="#3b82f6"/>
+  <rect x="214" y="196" width="9" height="13" fill="#fef3c7" stroke="#d97706"/>
+  <rect x="223" y="196" width="35" height="13" rx="1" fill="#ede9fe" stroke="#8b5cf6"/>
+  <rect x="258" y="196" width="13" height="13" rx="1" fill="#ccfbf1" stroke="#14b8a6"/>
+  <rect x="271" y="196" width="22" height="13" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="2 2"/>
+  <rect x="220" y="215" width="6" height="11" fill="#fee2e2" stroke="#ef4444"/>
+  <rect x="295" y="196" width="88" height="13" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="2 2"/>
+  <rect x="383" y="196" width="6" height="13" fill="#dbeafe" stroke="#3b82f6"/>
+  <rect x="389" y="196" width="9" height="13" fill="#fef3c7" stroke="#d97706"/>
+  <rect x="398" y="196" width="35" height="13" rx="1" fill="#ede9fe" stroke="#8b5cf6"/>
+  <rect x="433" y="196" width="13" height="13" rx="1" fill="#ccfbf1" stroke="#14b8a6"/>
+  <rect x="446" y="196" width="22" height="13" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="2 2"/>
+  <rect x="395" y="215" width="6" height="11" fill="#fee2e2" stroke="#ef4444"/>
+  <rect x="470" y="196" width="88" height="13" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="2 2"/>
+  <rect x="558" y="196" width="6" height="13" fill="#dbeafe" stroke="#3b82f6"/>
+  <rect x="564" y="196" width="9" height="13" fill="#fef3c7" stroke="#d97706"/>
+  <rect x="573" y="196" width="35" height="13" rx="1" fill="#ede9fe" stroke="#8b5cf6"/>
+  <rect x="608" y="196" width="13" height="13" rx="1" fill="#ccfbf1" stroke="#14b8a6"/>
+  <rect x="621" y="196" width="22" height="13" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="2 2"/>
+  <rect x="570" y="215" width="6" height="11" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="164" y="205" font-size="8" fill="#9ca3af" text-anchor="middle">waiting on GPU</text>
+  <!-- legend (right of the pipelined lane) -->
+  <rect x="705" y="158" width="9" height="9" fill="#dbeafe" stroke="#3b82f6"/><text x="718" y="166" font-size="8.5" fill="#6b7280">commit</text>
+  <rect x="705" y="171" width="9" height="9" fill="#fef3c7" stroke="#d97706"/><text x="718" y="179" font-size="8.5" fill="#6b7280">mask</text>
+  <rect x="705" y="184" width="9" height="9" fill="#ede9fe" stroke="#8b5cf6"/><text x="718" y="192" font-size="8.5" fill="#6b7280">finalize</text>
+  <rect x="705" y="197" width="9" height="9" fill="#ccfbf1" stroke="#14b8a6"/><text x="718" y="205" font-size="8.5" fill="#6b7280">launch</text>
+  <rect x="705" y="210" width="9" height="9" fill="#fee2e2" stroke="#ef4444"/><text x="718" y="218" font-size="8.5" fill="#6b7280">mask H2D (copy)</text>
+
+  <!-- finish markers -->
+  <line x1="643" y1="150" x2="643" y2="192" stroke="#15803d" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="648" y="148" font-size="9.5" font-weight="600" fill="#15803d">3 tokens</text>
+  <line x1="781" y1="76" x2="781" y2="116" stroke="#b91c1c" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="786" y="74" font-size="9.5" font-weight="600" fill="#b91c1c">3 tokens</text>
+
+  <!-- time axis (44 px/ms, x0=120) -->
+  <line x1="120" y1="244" x2="856" y2="244" stroke="#d1d5db"/>
+  <line x1="120" y1="240" x2="120" y2="248" stroke="#9ca3af"/><text x="120" y="260" font-size="9.5" fill="#6b7280" text-anchor="middle">0</text>
+  <line x1="296" y1="240" x2="296" y2="248" stroke="#9ca3af"/><text x="296" y="260" font-size="9.5" fill="#6b7280" text-anchor="middle">4</text>
+  <line x1="472" y1="240" x2="472" y2="248" stroke="#9ca3af"/><text x="472" y="260" font-size="9.5" fill="#6b7280" text-anchor="middle">8</text>
+  <line x1="648" y1="240" x2="648" y2="248" stroke="#9ca3af"/><text x="648" y="260" font-size="9.5" fill="#6b7280" text-anchor="middle">12</text>
+  <line x1="824" y1="240" x2="824" y2="248" stroke="#9ca3af"/><text x="824" y="260" font-size="9.5" fill="#6b7280" text-anchor="middle">16 ms</text>
+
+  <text x="20" y="284" font-size="10" fill="#6b7280">The CPU's real work per step is only ~1.4 ms (commit 0.13, mask 0.20, finalize 0.80, launch 0.30 — the GPU wait drained out) against a 3.9 ms forward, so it</text>
+  <text x="20" y="300" font-size="10" fill="#6b7280">hides easily. That same ~1.4 ms is the red bubble in blocking: exposed as GPU idle there, overlapped here. Same tokens, +35% throughput (see the table).</text>
+</svg>

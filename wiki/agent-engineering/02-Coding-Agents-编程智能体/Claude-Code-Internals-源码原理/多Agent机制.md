@@ -137,5 +137,5 @@ Worker 采用扁平结构，不能继续创建团队或调度其他 Worker，防
 ## 相关笔记
 
 - **协议视角**：[A2A](../../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/A2A.md) — 多 Agent 实现可用 A2A 的角色与消息边界进行分析。
-- **总览**：[Claude Code 架构](Claude%20Code%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.md) — 架构笔记为多 Agent 的委派机制提供系统边界。
+- **总览**：[Claude Code 架构](Claude%20Code%20%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.md) — 架构笔记为多 Agent 的委派机制提供系统边界。
 - **对照实现**：MiniCode 多智能体 — 两者都涉及任务拆分、委派、隔离上下文和结果回传。

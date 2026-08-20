@@ -1,6 +1,6 @@
 ## 一. 什么是 A2A 协议？
 
-关联阅读：可结合 [Agent 核心问题](Agent_16.md) 理解；理解单 Agent 循环后才能判断 Agent 间通信边界。
+关联阅读：可结合 [Agent 核心问题](Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) 理解；理解单 Agent 循环后才能判断 Agent 间通信边界。
 
 
 ### 1. 核心回答
@@ -383,7 +383,7 @@ A2A 解决的是：
 
 ## 相关笔记
 
-- **前置**：[Agent 核心问题](Agent_16.md) — 理解单 Agent 循环后才能判断 Agent 间通信边界。
-- **协议对比**：[Tools、MCP 与 Function Calling](Tools_16%EF%BC%88MCP%E3%80%81Function%20Calling%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%89.md) — A2A 面向 Agent 间通信，MCP／工具协议面向 Agent 与能力连接。
+- **前置**：[Agent 核心问题](Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) — 理解单 Agent 循环后才能判断 Agent 间通信边界。
+- **协议对比**：[Tools、MCP 与 Function Calling](Agent%20%E5%B7%A5%E5%85%B7%EF%BC%9AMCP%E3%80%81Function%20Calling%20%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE.md) — A2A 面向 Agent 间通信，MCP／工具协议面向 Agent 与能力连接。
 - **实现参考**：[Claude Code 多 Agent](../02-Coding-Agents-%E7%BC%96%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93/Claude-Code-Internals-%E6%BA%90%E7%A0%81%E5%8E%9F%E7%90%86/%E5%A4%9AAgent%E6%9C%BA%E5%88%B6.md) — Claude Code 的多 Agent 机制展示任务委派与结果回传。
 - **项目实例**：MiniCode 多智能体 — MiniCode 多智能体展示 Agent 协作的本地实现。
