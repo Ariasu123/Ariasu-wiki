@@ -232,4 +232,4 @@ Prefill 和 Decode 是 LLM 推理中两个计算特性截然不同的阶段。�
 
 ## 相关笔记
 
-- **内存管理深入**：[KV Cache 内存管理（PagedAttention）](../../ai-infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md) — block table 与分页内存管理的论文级原理。
+- **内存管理深入**：[KV Cache 内存管理（PagedAttention）](../../Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md) — block table 与分页内存管理的论文级原理。

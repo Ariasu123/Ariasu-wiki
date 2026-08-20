@@ -279,4 +279,4 @@ class MOEFeedForward(nn.Module):
 ## 相关笔记
 
 - **对比**：[MiniMind架构图解析](MiniMind%20%E6%9E%B6%E6%9E%84%E8%A7%A3%E6%9E%90.md) — MiniMind 的稠密结构可作为理解 MoE 改造的基线。
-- **系统影响**：[推理加速与算子优化路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — MoE 的专家路由和稀疏激活会改变推理调度与算子需求。
+- **系统影响**：[推理加速与算子优化路线](../../Infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — MoE 的专家路由和稀疏激活会改变推理调度与算子需求。

@@ -627,4 +627,4 @@ MoE 是 Mixture of Experts，**核心是把 Transformer 中的 FFN 层替换成�
 - **知识来源**：[PPO (近端策略优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/PPO%EF%BC%88%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%EF%BC%89.md) — PPO 专题补足综合复习中的强化学习细节。
 - **知识来源**：[GRPO (组相对策略优化)](../03-Post-Training-%E5%90%8E%E8%AE%AD%E7%BB%83/GRPO%EF%BC%88%E7%BB%84%E7%9B%B8%E5%AF%B9%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96%EF%BC%89.md) — GRPO 专题提供综合问答所需的算法细节。
 - **项目复习**：MiniMind 项目问答 — 综合 LLM 问题可直接支撑 MiniMind 的面试表达。
-- **延伸**：[推理加速与算子优化路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 模型原理复习之后可进一步理解量化、推理框架和算子优化。
+- **延伸**：[推理加速与算子优化路线](../../Infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 模型原理复习之后可进一步理解量化、推理框架和算子优化。

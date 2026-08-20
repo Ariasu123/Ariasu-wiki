@@ -93,4 +93,4 @@ $$\eta_{t} = \eta_{min} + \frac{1}{2}(\eta_{max} - \eta_{min}) \left(1 + \cos\le
 - **实现**：[预训练代码解析（Dataset 与训练循环）](../04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/%E9%A2%84%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90%EF%BC%88Dataset%20%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%BE%AA%E7%8E%AF%EF%BC%89.md) — 底层训练机制在 Dataset、训练循环和 Utils 中落地。
 - **阶段关系**：[SFT 监督微调](SFT%20%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83.md) — SFT 在预训练获得的语言建模能力上进行指令微调。
 - **工程基础**：[PyTorch及相关方法](../04-Engineering-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/PyTorch%20%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95.md) — 训练引擎依赖 PyTorch 的张量、梯度和 DataLoader 机制。
-- **系统联系**：[推理加速与算子优化路线](../../ai-infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 分布式训练、混合精度和硬件优化与 AI Infra 共用底层能力。
+- **系统联系**：[推理加速与算子优化路线](../../Infra/01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — 分布式训练、混合精度和硬件优化与 AI Infra 共用底层能力。

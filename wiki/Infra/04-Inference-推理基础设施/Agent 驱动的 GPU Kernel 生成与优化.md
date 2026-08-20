@@ -131,7 +131,7 @@ $$\mathrm{Speedup} = \frac{\text{mean baseline latency}}{\text{mean solution lat
 
 ## 9. 相关页面
 
-- [Harness Engineering](../../agent-engineering/03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) — Agent-Assisted 路线即该范式在 kernel 生成比赛中的落地：人设计约束与评估，Agent 在受控闭环内迭代
+- [Harness Engineering](../../Agent/03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Harness%20Engineering.md) — Agent-Assisted 路线即该范式在 kernel 生成比赛中的落地：人设计约束与评估，Agent 在受控闭环内迭代
 - [LLM 推理加速与算子优化学习路线](../01-Roadmaps-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/LLM%20%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F%E4%B8%8E%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md) — kernel 优化是学习路线的核心主题，本文展示「让 agent 写 kernel」的新范式
 - [Hy3 preview Hopper 推理优化实践](%E6%8E%A8%E7%90%86%E6%80%A7%E8%83%BD%E5%85%A8%E6%A0%88%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%EF%BC%88Hopper%20%E6%A1%88%E4%BE%8B%EF%BC%89.md) — 对照：腾讯混元人工打造 HPC-Ops 算子库 vs 本文用 agent 自动生成/优化 kernel
 - [推理全流程串讲（概览篇）](LLM%20%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E6%A6%82%E8%A7%88.md) — MoE、Attention 等待优化算子在推理链路中的位置

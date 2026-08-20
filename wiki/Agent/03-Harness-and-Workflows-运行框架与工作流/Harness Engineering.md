@@ -1,5 +1,5 @@
 
-关联阅读：可结合 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) 理解；Harness Engineering 面向的是 Agent 系统的可靠交付。企业级落地案例见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B.md)。比赛场景案例见 [Agent 驱动 GPU Kernel 生成（MLSys 2026 FlashInfer 比赛）](../../ai-infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Agent%20%E9%A9%B1%E5%8A%A8%E7%9A%84%20GPU%20Kernel%20%E7%94%9F%E6%88%90%E4%B8%8E%E4%BC%98%E5%8C%96.md)。
+关联阅读：可结合 [Agent 核心问题](../01-Foundations-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) 理解；Harness Engineering 面向的是 Agent 系统的可靠交付。企业级落地案例见 [从 Prompt 到 Harness：企业级 Agent 工程演进（千问 AI 平台）](%E4%BB%8E%20Prompt%20%E5%88%B0%20Harness%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%20Agent%20%E5%B7%A5%E7%A8%8B%E6%BC%94%E8%BF%9B.md)。比赛场景案例见 [Agent 驱动 GPU Kernel 生成（MLSys 2026 FlashInfer 比赛）](../../Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Agent%20%E9%A9%B1%E5%8A%A8%E7%9A%84%20GPU%20Kernel%20%E7%94%9F%E6%88%90%E4%B8%8E%E4%BC%98%E5%8C%96.md)。
 
 
 Harness Engineering 是围绕大模型搭建一套可靠运行环境，让 Agent 在长链路任务中能够稳定执行、及时纠偏、失败恢复。

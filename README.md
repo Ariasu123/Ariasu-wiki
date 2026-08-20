@@ -10,11 +10,9 @@ The full table of contents lives in [index.md](index.md). **`index.md` is auto-g
 
 | Directory | Contents |
 |---|---|
-| `wiki/llm/` | Large language models: architecture, pretraining, post-training, engineering practice, review notes |
-| `wiki/ai-infra/` | AI infrastructure: inference acceleration, kernel/operator optimization, learning roadmaps |
-| `wiki/agent-engineering/` | Agent engineering: foundations, coding agents, harnesses & workflows, project references |
-| `wiki/IC/` | Integrated circuits: AI for hardware design (RTL)|
-| `wiki/rag/` | RAG and knowledge bases |
+| `wiki/Agent/` | Agent engineering: foundations, coding agents, harnesses & workflows, project references, RAG |
+| `wiki/Infra/` | AI infrastructure: inference acceleration, kernel/operator optimization, learning roadmaps |
+| `wiki/LLM/` | Large language models: architecture, pretraining, post-training, engineering practice, review notes |
 
 Each topic directory is further organized into numbered subdirectories (`01-`, `02-`, ...), with attachments stored in per-topic `_assets/` folders.
 

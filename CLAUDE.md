@@ -4,7 +4,7 @@
 
 ## 目录结构
 
-- `wiki/` — 所有知识页面，按主题分目录（`llm/`、`ai-infra/`、`agent-engineering/`、`IC/`）
+- `wiki/` — 所有知识页面，按主题分目录（`Agent/`、`Infra/`、`LLM/`）
 - `index.md` — 全站内容目录，按一级主题 + 二级子目录分组（由 `node publish-wiki.js` 自动生成，不要手改）
 - `log.md` — 操作日志，每次操作必须追加
 
@@ -61,7 +61,7 @@ ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI
 
 - 页面间引用统一用标准 Markdown 相对路径链接：`[显示名](相对路径.md)`，路径需 URL 编码（如 `[MoE学习笔记](MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)`）。**目标含空格或括号时必须编码**（空格 `%20`、半角括号 `%28`/`%29`、全角括号百分号编码），否则 GitHub 会把链接截断、显示为源码。不使用 Obsidian 的 `[[wikilink]]` 语法——GitHub 无法渲染。
 - 页内锚点用 `[显示名](#标题slug)`，slug 规则同 GitHub：小写、去标点、空格转连字符。
-- 图片放本主题目录下的 `_assets/` 子目录（如 `wiki/llm/_assets/`），用标准 markdown 相对路径引用，不用外链。
+- 图片放本主题目录下的 `_assets/` 子目录（如 `wiki/LLM/_assets/`），用标准 markdown 相对路径引用，不用外链。
 
 ## LaTeX 公式规范（GitHub MathJax 兼容）
 

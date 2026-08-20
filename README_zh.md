@@ -10,11 +10,9 @@
 
 | 目录 | 内容 |
 |---|---|
-| `wiki/llm/` | 大语言模型：模型架构、预训练、后训练、工程实践、复习总结 |
-| `wiki/ai-infra/` | AI 基础设施：推理加速、算子优化、学习路线 |
-| `wiki/agent-engineering/` | Agent 工程：基础概念、Coding Agents、运行框架与工作流、项目参考 |
-| `wiki/IC/` | 集成电路：AI for 硬件设计（RTL） |
-| `wiki/rag/` | RAG 与知识库 |
+| `wiki/Agent/` | Agent 工程：基础概念、Coding Agents、运行框架与工作流、项目参考、RAG |
+| `wiki/Infra/` | AI 基础设施：推理加速、算子优化、学习路线 |
+| `wiki/LLM/` | 大语言模型：模型架构、预训练、后训练、工程实践、复习总结 |
 
 每个主题目录下按 `01-`、`02-` 等编号子目录进一步分类，图片等附件放在各主题的 `_assets/` 子目录。
 

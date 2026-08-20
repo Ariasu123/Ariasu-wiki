@@ -79,6 +79,6 @@ $$8 \times 180\mathrm{GB} = 1440\mathrm{GB} = 1.44\mathrm{TB} < 4\mathrm{TB}$$
 - **KV Cache 结构基础**：[Attention 与 GQA](../../llm/01-Architecture-%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/Attention%20%E4%B8%8E%20GQA.md) — GQA 直接决定 KV Cache 的显存占用。
 - **推理引擎**：[vLLM 论文精读](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/vLLM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md) — PagedAttention、块级内存管理与 2-4× 吞吐提升。
 - **KV 内存**：[KV Cache 内存管理（PagedAttention）](../04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md) — 分页思想、block table 与 copy-on-write 共享。
-- **Agent 评估平台**：[Langfuse](../../agent-engineering/04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Langfuse.md) — 文中提到的 Agent Infra 组件之一。
-- **Agent 框架**：[AgentScope](../../agent-engineering/04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 文中提到的 Agent 框架代表。
+- **Agent 评估平台**：[Langfuse](../../Agent/04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Langfuse.md) — 文中提到的 Agent Infra 组件之一。
+- **Agent 框架**：[AgentScope](../../Agent/04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 文中提到的 Agent 框架代表。
 - **前沿趋势**：[ICML 2026 AI Infra 论文趋势解读](AI%20Infra%20%E5%89%8D%E6%B2%BF%E8%AE%BA%E6%96%87%E8%B6%8B%E5%8A%BF%EF%BC%88ICML%202026%EF%BC%89.md) — GPU/Training Systems、LLM Serving、Agent Infra 三条主线的九篇代表论文（DITRON、Quartet II、UPipe、PPD、AMPD、UniBoost、ThunderAgent、CONCUR、GraphFlow）。

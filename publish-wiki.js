@@ -18,10 +18,9 @@ const INDEX_FILE = path.join(__dirname, 'index.md');
 
 /** 一级主题目录 → index.md 区段名 */
 const SECTION_NAMES = {
-  'agent-engineering': 'Agent 工程',
-  'ai-infra': 'AI 基础设施',
-  'IC': 'IC 集成电路',
-  'llm': 'LLM 大语言模型',
+  'Agent': 'Agent 工程',
+  'Infra': 'AI 基础设施',
+  'LLM': 'LLM 大语言模型',
 };
 
 /** 递归收集目录下所有 .md 文件（跳过 _ 开头目录与隐藏文件） */
