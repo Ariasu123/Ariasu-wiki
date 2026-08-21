@@ -63,6 +63,7 @@
 - [流水线化解码：消除 GPU 气泡](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8C%96%E8%A7%A3%E7%A0%81%EF%BC%9A%E6%B6%88%E9%99%A4%20GPU%20%E6%B0%94%E6%B3%A1.md)
 - [推理性能全栈优化实践（Hopper 案例）](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/%E6%8E%A8%E7%90%86%E6%80%A7%E8%83%BD%E5%85%A8%E6%A0%88%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%EF%BC%88Hopper%20%E6%A1%88%E4%BE%8B%EF%BC%89.md)
 - [Agent 驱动的 GPU Kernel 生成与优化](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Agent%20%E9%A9%B1%E5%8A%A8%E7%9A%84%20GPU%20Kernel%20%E7%94%9F%E6%88%90%E4%B8%8E%E4%BC%98%E5%8C%96.md)
+- [Attention 优化技术综述](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/Attention%20%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0.md)
 - [KV Cache 内存管理（PagedAttention）](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/KV%20Cache%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%88PagedAttention%EF%BC%89.md)
 - [LLM 推理全流程概览](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/LLM%20%E6%8E%A8%E7%90%86%E5%85%A8%E6%B5%81%E7%A8%8B%E6%A6%82%E8%A7%88.md)
 - [vLLM 论文精读](wiki/Infra/04-Inference-%E6%8E%A8%E7%90%86%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/vLLM%20%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB.md)
