@@ -200,3 +200,4 @@ OpenSpec 的贡献，是让我们重新重视规范和工件；Superpowers 的�
 
 - **理论**：[Harness Engineering](Harness%20Engineering.md) — OpenSpec 到 TRELLIS 展示 Harness 的演进路径。
 - **规范**：Claude Code 认证指南 — 认证操作要求可用规范驱动、可验证的工作流来落实。
+- **下一站**：[Comet 工作流框架](Comet%20%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A1%86%E6%9E%B6.md) — comet 的 classic 模式编排 openspec + superpowers，native 模式面向强模型转向轻约束，是这条演进线的延续。
