@@ -367,6 +367,7 @@ MCP 提供：
 ## 相关笔记
 
 - **系统位置**：[Agent 核心问题](Agent%20%E6%A0%B8%E5%BF%83%2016%20%E9%97%AE.md) — Skill 是 Agent 能力组织与渐进加载机制。
+- **编写实践**：[Skill 编写最佳实践](../03-Harness-and-Workflows-%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%B5%81/Skill%20%E7%BC%96%E5%86%99%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.md) — 如何写好一个 Skill：SKILL.md 路由、薄壳、任务闭环与知识库自增强。
 - **边界**：[Tools、MCP 与 Function Calling](Agent%20%E5%B7%A5%E5%85%B7%EF%BC%9AMCP%E3%80%81Function%20Calling%20%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE.md) — Skill 负责能力说明与流程，Tool 负责实际执行接口。
 - **项目应用**：MiniCode 工具系统 — MiniCode 将 Skill 路由和 Tool／MCP 执行组合成能力系统。
 - **概念落点**：业务会议 — 业务流程展示 Skill 如何承载行业规则。

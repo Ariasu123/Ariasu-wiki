@@ -206,3 +206,4 @@ Harness 主要包含六部分：
 - **实现工具**：[Langfuse](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/Langfuse.md) — 将 Harness 的 Trace、指标、评测集和版本比较落实为统一平台。
 - **框架实现**：[AgentScope 2.0](../04-References-%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83/AgentScope.md) — 将 Context、Tool、Permission、State、Workspace 和 Middleware 组成生产型 Agent Harness。
 - **方法论**：第一性原则 — 从 Agent 的真实失效事实与硬约束出发，决定需要建设哪些 Harness 层。
+- **Skill 层落地**：[Skill 编写最佳实践](Skill%20%E7%BC%96%E5%86%99%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.md) — 薄壳、SessionStart / PreToolUse hook、AAR 任务闭环是 Harness 原则在 Skill 层的具体实现。
