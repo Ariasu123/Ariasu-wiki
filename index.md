@@ -51,6 +51,7 @@
 - [CUDA 程序调试与性能优化](wiki/Infra/CUDA/CUDA%20%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
 - [CUDA 程序基本框架](wiki/Infra/CUDA/CUDA%20%E7%A8%8B%E5%BA%8F%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.md)
 - [CUDA 基础](wiki/Infra/CUDA/CUDA%20%E5%9F%BA%E7%A1%80.md)
+- [CUDA 内存组织与 SM 资源](wiki/Infra/CUDA/CUDA%20%E5%86%85%E5%AD%98%E7%BB%84%E7%BB%87%E4%B8%8E%20SM%20%E8%B5%84%E6%BA%90.md)
 
 ### Distributed
 
