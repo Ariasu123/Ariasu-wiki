@@ -16,11 +16,12 @@ const path = require('path');
 const WIKI_ROOT = path.join(__dirname, 'wiki');
 const INDEX_FILE = path.join(__dirname, 'index.md');
 
-/** 一级主题目录 → index.md 区段名 */
+/** 一级主题目录 → index.md 区段名（按学习顺序排列） */
 const SECTION_NAMES = {
-  'Agent': 'Agent 工程',
-  'Infra': 'AI 基础设施',
+  'Programming': '编程基础',
   'LLM': 'LLM 大语言模型',
+  'Infra': 'AI 基础设施',
+  'Agent': 'Agent 工程',
 };
 
 /** 递归收集目录下所有 .md 文件（跳过 _ 开头目录与隐藏文件） */
@@ -48,10 +49,13 @@ function toRepoPath(abs) {
 }
 
 function buildIndex() {
+  const sectionOrder = new Map(Object.keys(SECTION_NAMES).map((name, index) => [name, index]));
   const tops = fs.readdirSync(WIKI_ROOT, { withFileTypes: true })
     .filter((e) => e.isDirectory() && !e.name.startsWith('_') && !e.name.startsWith('.'))
     .map((e) => e.name)
-    .sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
+    .sort((a, b) =>
+      (sectionOrder.get(a) ?? sectionOrder.size) - (sectionOrder.get(b) ?? sectionOrder.size)
+      || a.localeCompare(b, 'zh-Hans-CN'));
 
   const lines = ['# 内容目录', '', '> 本文件由 `publish-wiki.js` 自动生成，请勿手改。'];
 
@@ -60,7 +64,7 @@ function buildIndex() {
     lines.push('', `## ${title}`);
     const topDir = path.join(WIKI_ROOT, top);
     const files = collectMarkdown(topDir);
-    // 按相对子目录分组（保持目录编号顺序），顶层散文件排在最前
+    // 按相对子目录分组；总览、路线和综合复习等顶层页面排在最前
     const groups = new Map();
     for (const f of files) {
       const relDir = path.relative(topDir, path.dirname(f)).split(path.sep).join(' / ');
@@ -68,7 +72,12 @@ function buildIndex() {
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(f);
     }
-    for (const [dir, groupFiles] of groups) {
+    const orderedGroups = [...groups].sort(([a], [b]) => {
+      if (!a) return -1;
+      if (!b) return 1;
+      return a.localeCompare(b, 'zh-Hans-CN');
+    });
+    for (const [dir, groupFiles] of orderedGroups) {
       if (dir) lines.push('', `### ${dir}`, '');
       else lines.push('');
       for (const f of groupFiles) {

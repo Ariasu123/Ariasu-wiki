@@ -4,9 +4,26 @@
 
 ## 目录结构
 
-- `wiki/` — 所有知识页面，按主题分目录（`Agent/`、`Infra/`、`LLM/`）
-- `index.md` — 全站内容目录，按一级主题 + 二级子目录分组（由 `node publish-wiki.js` 自动生成，不要手改）
+- `wiki/` — 所有知识页面，按主题分目录（`Programming/`、`LLM/`、`Infra/`、`Agent/`）
+- `index.md` — 全站内容目录，按 Programming → LLM → Infra → Agent 顺序和实际子目录分组（由 `node publish-wiki.js` 自动生成，不要手改）
 - `log.md` — 操作日志，每次操作必须追加
+
+## 归档边界
+
+| 一级主题 | 归档内容 | 子目录 |
+|---|---|---|
+| `Programming` | 通用语言、开发环境、基础库，如 Python、C++、PyTorch | 当前笔记直接放主题根目录 |
+| `LLM` | 模型结构、预训练、微调与对齐算法 | `Architecture`、`Pretraining`、`PostTraining`、`Projects` |
+| `Infra` | GPU 编程、算子、分布式通信、训练系统与推理系统 | `Distributed`、`CUDA`、`Kernels`、`Training`、`Inference` |
+| `Agent` | 智能体协议、Skills、上下文、工作流、项目与检索增强 | `Protocols`、`Skills`、`Context`、`Workflows`、`Projects`、`RAG` |
+
+- **按核心研究对象归档**：一篇笔记只保留一个实体位置，通过链接关联其他主题。例如 Agent 驱动的 GPU Kernel 优化归 `Infra/Kernels`。
+- **算法与执行系统区分**：SFT、LoRA 和偏好优化归 `LLM/PostTraining`；张量并行、Megatron-LM 等资源分配与执行机制归 `Infra/Training`。
+- **原理与算子优化区分**：Attention 原理归 `LLM/Architecture`，Attention 算子优化归 `Infra/Kernels`；CUDA 编程基础归 `Infra/CUDA`。
+- **项目系列集中保存**：多篇围绕同一项目的解析放 `Projects/<项目名>/`，现有系列为 `LLM/Projects/MiniMind` 与 `Agent/Projects/ClaudeCode`。单篇项目介绍放主题的 `Projects/`；通用原理页仍归对应专题。
+- **综合入口放主题根目录**：跨多个子专题的总览、学习路线、研究趋势和综合复习直接放一级主题目录；只涉及一个子专题的笔记归该专题。
+- **目录用简短英文、无编号**：复用现有子目录；确有新主题时再增加目录，避免把暂时难分类的页面堆进泛化的“其他”目录。
+- **附件按一级主题平铺**：放在所属主题的 `_assets/` 中，不建分类子目录；跨主题共用图片通过相对路径复用原文件。重命名或移动页面、附件时，同步更新所有真实引用，再生成索引。
 
 ## 信源获取（firecrawl，可选）
 
@@ -23,7 +40,7 @@ ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI
 
 1. 通读原始资料全文。
 2. 检查相关现有页面（先查 `index.md`，必要时全文搜索）。
-3. 提炼关键点，创建新页面或更新已有页面——不是摘要，而是把线性资料拆解成网状知识结构：概念、人物、工具、方法各自成页，互相链接。
+3. 按归档边界选择位置，提炼关键点，创建新页面或更新已有页面——不是摘要，而是把线性资料拆解成网状知识结构：概念、人物、工具、方法各自成页，互相链接。
 4. 建立交叉引用；发现与已有内容矛盾时，在页面中显式标记冲突，不要静默覆盖。
 5. 运行 `node publish-wiki.js` 重新生成 `index.md`，追加 `log.md`。
 
@@ -61,7 +78,7 @@ ingest 时可用 Firecrawl 获取原始资料（需本机已安装 Firecrawl CLI
 
 - 页面间引用统一用标准 Markdown 相对路径链接：`[显示名](相对路径.md)`，路径需 URL 编码（如 `[MoE学习笔记](MoE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)`）。**目标含空格或括号时必须编码**（空格 `%20`、半角括号 `%28`/`%29`、全角括号百分号编码），否则 GitHub 会把链接截断、显示为源码。不使用 Obsidian 的 `[[wikilink]]` 语法——GitHub 无法渲染。
 - 页内锚点用 `[显示名](#标题slug)`，slug 规则同 GitHub：小写、去标点、空格转连字符。
-- 图片放本主题目录下的 `_assets/` 子目录（如 `wiki/LLM/_assets/`），用标准 markdown 相对路径引用，不用外链。
+- 图片直接放本一级主题目录下的 `_assets/` 子目录（如 `wiki/LLM/_assets/`），附件目录内不再分层；用标准 markdown 相对路径引用，不用外链。
 
 ## LaTeX 公式规范（GitHub MathJax 兼容）
 
